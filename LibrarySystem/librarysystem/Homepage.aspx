@@ -7,10 +7,7 @@
     <title></title>
 </head>
 <body>
-     comp213project
-
     <form id="form1" runat="server">
-
     <div>
     
     </div>
