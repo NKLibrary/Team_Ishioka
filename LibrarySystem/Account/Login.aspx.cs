@@ -25,16 +25,30 @@ namespace VirtualCollege.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (IsValid)
+           /* if (IsValid)
             {
                 // Validate the user password
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.Find(Email.Text, Password.Text);
+                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
                 if (user != null)
                 {
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                }
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
+                    string username = UserName.Text.ToString();
+                    string password = Password.Text.ToString();
+                    if (username.Equals("user") && password.Equals("user")) 
+                    {
+                        Response.Redirect("Member.aspx");
+                    }
+                    else if (username.Equals("lib") && password.Equals("lib"))
+                    {
+                        Response.Redirect("Librarian.aspx");
+                    }
+                    else if (username.Equals("manger") && password.Equals("manager"))
+                    {
+                        Response.Redirect("Manager.aspx");
+                    }
+                
                 else
                 {
                     FailureText.Text = "Invalid username or password.";
@@ -43,4 +57,3 @@ namespace VirtualCollege.Account
             }
         }
     }
-}
