@@ -8,7 +8,7 @@
         <p><a href="http://www.centennialcollege.ca/?gclid=CNKstOO59sMCFQsxaQodYhYAag" class="btn btn-primary btn-lg">Centennial College &raquo;</a></p>
     </div>
       <div class="MainMenu"> <ul>
-          <li><a href="Default">Main Page</a></li>
+          <li><a href="Default">Main PageforMandeep</a></li>
           <li><a href="Default">Drop Course</a></li>
           <li><a href="Default">Make appointment</a></li>
           <li><a href="Default">WaitingList</a></li>
