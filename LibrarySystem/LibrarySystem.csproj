@@ -159,7 +159,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\ManageStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\manage_logo.jpg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -201,6 +203,11 @@
     <Content Include="Site.Master" />
     <Content Include="slider.js" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="View\AddBook.aspx" />
+    <Content Include="View\BookListView.aspx" />
+    <Content Include="View\AddDiscView.aspx" />
+    <Content Include="View\DiscListView.aspx" />
+    <Content Include="View\EditBookView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -305,7 +312,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\Entity\Book.cs" />
+    <Compile Include="Models\Entity\Category.cs" />
+    <Compile Include="Models\Entity\Disc.cs" />
+    <Compile Include="Models\Entity\DiscModel.cs" />
+    <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IDiscModel.cs" />
+    <Compile Include="Presenter\AddBookPresenter.cs" />
+    <Compile Include="Presenter\AddDiscPresenter.cs" />
+    <Compile Include="Presenter\BookListPresenter.cs" />
+    <Compile Include="Presenter\DiscListPresenter.cs" />
+    <Compile Include="Presenter\EditBookPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -322,6 +342,9 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\DatabaseConfiguration.cs" />
+    <Compile Include="Utils\GenericDataAccess.cs" />
+    <Compile Include="Utils\Link.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,10 +352,51 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="View\AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookListView.aspx.cs">
+      <DependentUpon>BookListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\BookListView.aspx.designer.cs">
+      <DependentUpon>BookListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddDiscView.aspx.cs">
+      <DependentUpon>AddDiscView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AddDiscView.aspx.designer.cs">
+      <DependentUpon>AddDiscView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DiscListView.aspx.cs">
+      <DependentUpon>DiscListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DiscListView.aspx.designer.cs">
+      <DependentUpon>DiscListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditBookView.aspx.cs">
+      <DependentUpon>EditBookView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\EditBookView.aspx.designer.cs">
+      <DependentUpon>EditBookView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\IAddBook.cs" />
+    <Compile Include="View\IAddDiscView.cs" />
+    <Compile Include="View\IBookListView.cs" />
+    <Compile Include="View\IDiscList.cs" />
+    <Compile Include="View\IEditBookView.cs" />
+    <Compile Include="View\IEditDiscView.cs" />
+    <Compile Include="View\IPcListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
