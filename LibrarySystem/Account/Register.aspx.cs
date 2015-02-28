@@ -11,7 +11,7 @@ namespace VirtualCollege.Account
 {
     public partial class Register : Page
     {
-        protected void CreateUser_Click(object sender, EventArgs e)
+       /* protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
@@ -31,6 +31,14 @@ namespace VirtualCollege.Account
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
+        } */
+
+
+
+        protected void Page_Load(object sender, EventArgs e) 
+        {
+            DateTimeLbl.Text = System.DateTime.Now.ToString();
         }
+        
     }
 }

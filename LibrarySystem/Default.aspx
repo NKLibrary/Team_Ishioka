@@ -2,11 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>Welcome to Virtual College</h1>
-        <p class="lead">A web-based student service tool with a simple interface</p>
-        <p><a href="http://www.centennialcollege.ca/?gclid=CNKstOO59sMCFQsxaQodYhYAag" class="btn btn-primary btn-lg">Centennial College &raquo;</a></p>
-    </div>
+   
       <div class="MainMenu"> <ul>
           <li><a href="Default">Main Page</a></li>
           <li><a href="Default">Drop Course</a></li>
@@ -18,9 +14,9 @@
 
         <div>
             <div id="slider">
-                <img id="1" src="Images/centennial1.jpg" />
-                <img id="2" src ="Images/centennial2.jpg" />
-                <img id="3"  src ="Images/centennial3.jpg" />
+                <img id="1" src="Images/new1.jpg" />
+                <img id="2" src ="Images/new2.jpg" />
+                <img id="3"  src ="Images/new3.jpg" />
             </div>
     </div>
     <script src="Scripts/jquery-1.8.2.js"></script>

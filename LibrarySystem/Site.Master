@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Ishioka Library</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -46,7 +46,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Virtual College</a>
+                    <a class="navbar-brand" runat="server" href="~/">Ishiyoka Libarary</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -70,18 +70,28 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+                    <br />
                 </div>
             </div>
         </div>
         <div class="container body-content">
+            <div class="jumbotron">
+                    <h1>Welcome to Ishiyoka Library</h1>
+                    <p class="lead">
+                        A great experience to learn online</p>
+                    <p>
+                        <a class="btn btn-primary btn-lg" href="http://www.centennialcollege.ca/?gclid=CNKstOO59sMCFQsxaQodYhYAag">Centennial College »</a></p>
+                </div>
 
 
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
+                
+
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Ishioka Online Library</p>
             </footer>
         </div>
     </form>
