@@ -39,5 +39,34 @@ namespace VirtualCollege.Utils
         {
             return "C://upload//";
         }
+
+        public static string GetBookEbookDispatcher(BookTypeEnum bookType)
+        {
+            switch (bookType)
+            {
+                case BookTypeEnum.Book: return "BookListView.aspx";
+                case BookTypeEnum.Ebook:
+                default:
+                    return "EBookListView.aspx";
+            }
+        }
+
+        internal static string GetAddEbook()
+        {
+            //return "AddEbookView.aspx";
+            return "AddBook.aspx?bookType=2";
+        }
+
+        internal static string GetEbookList()
+        {
+            //return "EbookListView.aspx";
+            return "BookListView.aspx?bookType=2";
+        }
+
+        internal static string GetEditEbook(string bookId)
+        {
+            //return "EditEbookView.aspx";
+            return "EditBookView.aspx?bookType=2&bookId="+bookId;
+        }
     }
 }

@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Book List<br />
+            &nbsp;<asp:Label ID="lblBookType" runat="server" Text="Label"></asp:Label>
+&nbsp;List<br />
             <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add New Book" />
 
             <asp:GridView ID="grdBook" runat="server" OnRowDeleting="grdBook_RowDeleting" OnRowEditing="grdBook_RowEditing">

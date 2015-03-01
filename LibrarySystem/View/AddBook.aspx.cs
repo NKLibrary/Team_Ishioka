@@ -11,12 +11,22 @@ using VirtualCollege.Utils;
 
 namespace VirtualCollege.View
 {
-    public partial class AddBook : System.Web.UI.Page, IAddBook
+    public partial class AddBook : System.Web.UI.Page, IAddBook, IAddEbookView
     {
+        string bookType;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            IBookModel model = new BookModel();
-            AddBookPresenter presenter = new AddBookPresenter(this, model);
+            bookType = Request.QueryString["bookType"];
+            if (BookType.IsBook(bookType))
+            {
+                IBookModel model = new BookModel();
+                AddBookPresenter presenter = new AddBookPresenter(this, model);
+            }
+            else
+            {
+                AddEbookPresenter persenter = new AddEbookPresenter(this, new EbookModel());
+            }
             FillControls();
         }
 
@@ -169,20 +179,41 @@ namespace VirtualCollege.View
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            Book book = new Book();
-            book.BookTitle = BookTitle;
-            book.Author = Author;
-            book.AvailableCopies = int.Parse(AvailableCopies);
-            book.Category = Category;
-            book.Description = Description;
-            book.ISBN = ISBN;
-            book.PublishedYear = Convert.ToDateTime(PublishedYear);
-            book.Publisher = Publisher;
-            book.Status = Status;
-            book.ThumbnailPicture = ThumbnailPicture;
-            book.TotalPages = int.Parse(TotalPages);
-            this.presenter.AddBook(book);
-            Response.Redirect(Link.ToBookList());
+            if (BookType.IsBook(bookType))
+            {
+                Book book = new Book();
+                book.BookTitle = BookTitle;
+                book.Author = Author;
+                book.AvailableCopies = int.Parse(AvailableCopies);
+                book.Category = Category;
+                book.Description = Description;
+                book.ISBN = ISBN;
+                book.PublishedYear = Convert.ToDateTime(PublishedYear);
+                book.Publisher = Publisher;
+                book.Status = Status;
+                book.ThumbnailPicture = ThumbnailPicture;
+                book.TotalPages = int.Parse(TotalPages);
+                this.presenter.AddBook(book);
+                Response.Redirect(Link.ToBookList());
+            }
+            else
+            {
+                Ebook book = new Ebook();
+                book.BookTitle = BookTitle;
+                book.Author = Author;
+                book.AvailableCopies = int.Parse(AvailableCopies);
+                book.Category = Category;
+                book.Description = Description;
+                book.ISBN = ISBN;
+                book.PublishedYear = Convert.ToDateTime(PublishedYear);
+                book.Publisher = Publisher;
+                book.Status = Status;
+                book.ThumbnailPicture = ThumbnailPicture;
+                book.TotalPages = int.Parse(TotalPages);
+                this.ePresenter.AddEbook(book);
+                Response.Redirect(Link.GetEbookList());
+
+            }
         }
 
         private AddBookPresenter presenter;
@@ -195,6 +226,19 @@ namespace VirtualCollege.View
             set
             {
                 this.presenter = value;
+            }
+        }
+
+        private AddEbookPresenter ePresenter;
+        AddEbookPresenter IAddEbookView.Presenter
+        {
+            get
+            {
+                return this.ePresenter;
+            }
+            set
+            {
+                this.ePresenter = value;
             }
         }
     }

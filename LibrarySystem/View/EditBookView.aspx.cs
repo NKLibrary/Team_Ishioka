@@ -11,11 +11,21 @@ using VirtualCollege.Utils;
 
 namespace VirtualCollege.View
 {
-    public partial class EditBookView : System.Web.UI.Page, IEditBookView
+    public partial class EditBookView : System.Web.UI.Page, IEditBookView, IEditEbookView
     {
+        string bookType;
         protected void Page_Load(object sender, EventArgs e)
         {
-            EditBookPresenter presenter = new EditBookPresenter(this, new BookModel());
+            bookType = Request.QueryString["bookType"];
+            if (BookType.IsBook(bookType))
+            {
+                EditBookPresenter presenter = new EditBookPresenter(this, new BookModel());
+
+            }
+            else
+            {
+                new EditEbookPresenter(this, new EbookModel());
+            }
             if (!IsPostBack)
             {
                 FillControls();
@@ -31,19 +41,39 @@ namespace VirtualCollege.View
             ddlCategory.Items.Add("IT");
             ddlCategory.Items.Add("Engineer");
             // fill content
-            Book book = presenter.GetBook(Request.QueryString["BookId"]);
-            lblBookId.Text = book.BookId;
-            BookTitle = book.BookTitle;
-            Author = book.Author;
-            Publisher = book.Publisher;
-            Category = book.Category;
-            PublishedYear = book.PublishedYear.ToShortDateString();
-            TotalPages = book.TotalPages + "";
-            ISBN = book.ISBN;
-            Description = book.Description;
-            ThumbnailPicture = book.ThumbnailPicture;
-            AvailableCopies = book.AvailableCopies + "";
-            Status = book.Status;
+            if (BookType.IsBook(bookType))
+            {
+                Book book = presenter.GetBook(Request.QueryString["BookId"]);
+                lblBookId.Text = book.BookId;
+                BookTitle = book.BookTitle;
+                Author = book.Author;
+                Publisher = book.Publisher;
+                Category = book.Category;
+                PublishedYear = book.PublishedYear.ToShortDateString();
+                TotalPages = book.TotalPages + "";
+                ISBN = book.ISBN;
+                Description = book.Description;
+                ThumbnailPicture = book.ThumbnailPicture;
+                AvailableCopies = book.AvailableCopies + "";
+                Status = book.Status;
+            }
+            else
+            {
+                Ebook book = ePresenter.GetEbook(Request.QueryString["BookId"]);
+                lblBookId.Text = book.BookId;
+                BookTitle = book.BookTitle;
+                Author = book.Author;
+                Publisher = book.Publisher;
+                Category = book.Category;
+                PublishedYear = book.PublishedYear.ToShortDateString();
+                TotalPages = book.TotalPages + "";
+                ISBN = book.ISBN;
+                Description = book.Description;
+                ThumbnailPicture = book.ThumbnailPicture;
+                AvailableCopies = book.AvailableCopies + "";
+                Status = book.Status;
+
+            }
         }
 
         public string BookTitle
@@ -212,28 +242,77 @@ namespace VirtualCollege.View
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Book book = new Book();
-            book.BookId = BookId;
-            book.BookTitle = BookTitle;
-            book.Author = Author;
-            book.AvailableCopies = int.Parse(AvailableCopies);
-            book.Category = Category;
-            book.Description = Description;
-            book.ISBN = ISBN;
-            book.PublishedYear = Convert.ToDateTime(PublishedYear);
-            book.Publisher = Publisher;
-            book.Status = Status;
-            book.ThumbnailPicture = ThumbnailPicture;
-            book.TotalPages = int.Parse(TotalPages);
-            this.presenter.UpdateBook(book);
-            Response.Write("<script>alert('Edit successfully!')</script>");
-            Response.Redirect(Link.ToBookList());
+            if (BookType.IsBook(bookType))
+            {
+                Book book = new Book();
+                book.BookId = BookId;
+                book.BookTitle = BookTitle;
+                book.Author = Author;
+                book.AvailableCopies = int.Parse(AvailableCopies);
+                book.Category = Category;
+                book.Description = Description;
+                book.ISBN = ISBN;
+                book.PublishedYear = Convert.ToDateTime(PublishedYear);
+                book.Publisher = Publisher;
+                book.Status = Status;
+                book.ThumbnailPicture = ThumbnailPicture;
+                book.TotalPages = int.Parse(TotalPages);
+                this.presenter.UpdateBook(book);
+                Response.Write("<script>alert('Edit successfully!')</script>");
+                Response.Redirect(Link.ToBookList());
+            }
+            else
+            {
+                Ebook book = new Ebook();
+                book.BookId = BookId;
+                book.BookTitle = BookTitle;
+                book.Author = Author;
+                book.AvailableCopies = int.Parse(AvailableCopies);
+                book.Category = Category;
+                book.Description = Description;
+                book.ISBN = ISBN;
+                book.PublishedYear = Convert.ToDateTime(PublishedYear);
+                book.Publisher = Publisher;
+                book.Status = Status;
+                book.ThumbnailPicture = ThumbnailPicture;
+                book.TotalPages = int.Parse(TotalPages);
+                this.ePresenter.EditEbook(book);
+                Response.Write("<script>alert('Edit successfully!')</script>");
+                Response.Redirect(Link.GetEbookList());
+
+            }
         }
 
 
         public string BookId
         {
             get { return lblBookId.Text; }
+        }
+
+        public object Books
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        private EditEbookPresenter ePresenter;
+        
+        EditEbookPresenter IEditEbookView.Presenter
+        {
+            get
+            {
+                return ePresenter;
+            }
+            set
+            {
+                ePresenter = value;
+            }
         }
     }
 }
