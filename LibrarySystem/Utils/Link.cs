@@ -37,7 +37,7 @@ namespace VirtualCollege.Utils
         }
         public static string GetUploadPath()
         {
-            return "upload//";
+            return "C://upload//";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -203,7 +204,13 @@ namespace VirtualCollege.View
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             updateListener(sender, e);
-            //Response.Redirect(Link.ToDiscList());
+            // upload file
+            if (!Directory.Exists(Link.GetUploadPath()))
+            {
+                Directory.CreateDirectory(Link.GetUploadPath());
+            }
+            //string fullpath = Link.GetUploadPath() + fuPicture.PostedFile.FileName;
+            fuPicture.SaveAs(Link.GetUploadPath() + fuPicture.FileName);
             Response.Write("<script>alert('edit successfully!');window.location.href='" + Link.ToDiscList() + "';</script>");
         }
 

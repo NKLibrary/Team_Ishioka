@@ -99,13 +99,13 @@
             <tr>
                 <td class="auto-style2">Status</td>
                 <td>
-                    <asp:RadioButton ID="rbtnAvailable" runat="server" Text="Available" />
+                    <asp:RadioButton ID="rbtnAvailable" runat="server" Text="Available" GroupName="status" />
                     <asp:RadioButton ID="rbtnNa" runat="server" Text="NA" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="btnDisc" runat="server" Text="Add Disc" OnClick="btnDisc_Click" />
+                    <asp:Button ID="btnDisc" runat="server" Text="Add Disc" OnClick="btnDisc_Click" GroupName="status" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
