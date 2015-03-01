@@ -432,6 +432,7 @@
     <Compile Include="View\IEditBookView.cs" />
     <Compile Include="View\IEditDiscView.cs" />
     <Compile Include="View\IPcListView.cs" />
+    <Compile Include="View\IRoomListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
