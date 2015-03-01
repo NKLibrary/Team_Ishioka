@@ -39,20 +39,6 @@ namespace VirtualCollege.Account
         {
             DateTimeLbl.Text = System.DateTime.Now.ToString();
         }
-
-        protected void Clearbtn_Click(object sender, EventArgs e)
-        {
-            Nametb.Text = "";
-            Addresstb .Text = "";
-            Citytb.Text = "";
-            Postaltb .Text = "";
-            Hometb .Text = "";
-            Celltb .Text = "";
-            Emailtb .Text = "";
-            SecEmailtb.Text = "";
-            Schooltb .Text = "";
-            
-        }
         
     }
 }
