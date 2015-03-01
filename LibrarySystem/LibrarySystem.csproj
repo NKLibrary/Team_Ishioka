@@ -217,6 +217,8 @@
     <Content Include="View\DiscListView.aspx" />
     <Content Include="View\EditBookView.aspx" />
     <Content Include="View\EditDiscView.aspx" />
+    <Content Include="View\PcListView.aspx" />
+    <Content Include="View\RoomListView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -433,6 +435,20 @@
     <Compile Include="View\IEditDiscView.cs" />
     <Compile Include="View\IPcListView.cs" />
     <Compile Include="View\IRoomListView.cs" />
+    <Compile Include="View\PcListView.aspx.cs">
+      <DependentUpon>PcListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PcListView.aspx.designer.cs">
+      <DependentUpon>PcListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoomListView.aspx.cs">
+      <DependentUpon>RoomListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RoomListView.aspx.designer.cs">
+      <DependentUpon>RoomListView.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
