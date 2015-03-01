@@ -10,7 +10,7 @@
 namespace VirtualCollege.View {
     
     
-    public partial class PcListView {
+    public partial class EditPcView {
         
         /// <summary>
         /// form1 control.
@@ -22,21 +22,39 @@ namespace VirtualCollege.View {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnAdd control.
+        /// hfPcId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.HiddenField hfPcId;
         
         /// <summary>
-        /// gvPc control.
+        /// rbtnAvailable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPc;
+        protected global::System.Web.UI.WebControls.RadioButton rbtnAvailable;
+        
+        /// <summary>
+        /// rbtnNa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnNa;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
     }
 }

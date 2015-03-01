@@ -8,5 +8,10 @@ namespace VirtualCollege.View
 {
     public interface IPcListView
     {
+        object Pcs { set; }
+        string SelectedPcId { get; }
+
+        event EventHandler fillView;
+        event EventHandler deletePc;
     }
 }
