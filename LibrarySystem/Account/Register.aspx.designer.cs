@@ -22,6 +22,15 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.Literal ErrorMessage;
         
         /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// NameLbl control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Nametb;
         
         /// <summary>
+        /// UserNameRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired;
+        
+        /// <summary>
         /// GenderLbl control.
         /// </summary>
         /// <remarks>
@@ -49,13 +67,22 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.Label GenderLbl;
         
         /// <summary>
-        /// Gendertb control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Gendertb;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// AddressLbl control.
@@ -76,6 +103,15 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Addresstb;
         
         /// <summary>
+        /// UserNameRequired1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired1;
+        
+        /// <summary>
         /// CityLbl control.
         /// </summary>
         /// <remarks>
@@ -94,6 +130,15 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Citytb;
         
         /// <summary>
+        /// UserNameRequired2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired2;
+        
+        /// <summary>
         /// PostalLbl control.
         /// </summary>
         /// <remarks>
@@ -110,6 +155,24 @@ namespace VirtualCollege.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Postaltb;
+        
+        /// <summary>
+        /// UserNameRequired3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired3;
+        
+        /// <summary>
+        /// RegularExpressionValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator4;
         
         /// <summary>
         /// ProLbl control.
@@ -148,6 +211,24 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Hometb;
         
         /// <summary>
+        /// UserNameRequired4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired4;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// CellLbl control.
         /// </summary>
         /// <remarks>
@@ -166,6 +247,24 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Celltb;
         
         /// <summary>
+        /// UserNameRequired5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired5;
+        
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
         /// EmailLbl control.
         /// </summary>
         /// <remarks>
@@ -182,6 +281,24 @@ namespace VirtualCollege.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Emailtb;
+        
+        /// <summary>
+        /// UserNameRequired6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired6;
+        
+        /// <summary>
+        /// RegularExpressionValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
         /// SecEmailLbl control.
@@ -211,22 +328,22 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.Label StudentLbl;
         
         /// <summary>
-        /// YesRbtn control.
+        /// RadioButtonList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton YesRbtn;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
         
         /// <summary>
-        /// NoRbtn control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton NoRbtn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// SchoolLbl control.
@@ -247,6 +364,15 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.TextBox Schooltb;
         
         /// <summary>
+        /// UserNameRequired7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameRequired7;
+        
+        /// <summary>
         /// StatusLbl control.
         /// </summary>
         /// <remarks>
@@ -256,22 +382,22 @@ namespace VirtualCollege.Account {
         protected global::System.Web.UI.WebControls.Label StatusLbl;
         
         /// <summary>
-        /// FTRbtn control.
+        /// RadioButtonList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton FTRbtn;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList3;
         
         /// <summary>
-        /// PTRbtn control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton PTRbtn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// DateLbl control.
