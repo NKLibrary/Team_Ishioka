@@ -216,6 +216,7 @@
     <Content Include="View\AddDiscView.aspx" />
     <Content Include="View\DiscListView.aspx" />
     <Content Include="View\EditBookView.aspx" />
+    <Content Include="View\EditDiscView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -346,7 +347,7 @@
     <Compile Include="Models\Entity\Book.cs" />
     <Compile Include="Models\Entity\Category.cs" />
     <Compile Include="Models\Entity\Disc.cs" />
-    <Compile Include="Models\Entity\DiscModel.cs" />
+    <Compile Include="Models\DiscModel.cs" />
     <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
@@ -355,6 +356,7 @@
     <Compile Include="Presenter\BookListPresenter.cs" />
     <Compile Include="Presenter\DiscListPresenter.cs" />
     <Compile Include="Presenter\EditBookPresenter.cs" />
+    <Compile Include="Presenter\EditDiscPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -415,6 +417,13 @@
     </Compile>
     <Compile Include="View\EditBookView.aspx.designer.cs">
       <DependentUpon>EditBookView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditDiscView.aspx.cs">
+      <DependentUpon>EditDiscView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\EditDiscView.aspx.designer.cs">
+      <DependentUpon>EditDiscView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\IAddBook.cs" />
     <Compile Include="View\IAddDiscView.cs" />

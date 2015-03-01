@@ -35,5 +35,9 @@ namespace VirtualCollege.Utils
         {
             return "DiscListView.aspx";
         }
+        public static string GetUploadPath()
+        {
+            return "upload//";
+        }
     }
 }
