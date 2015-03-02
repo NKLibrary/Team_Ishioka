@@ -226,8 +226,8 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
     <Content Include="View\AddPcView.aspx" />
-    <Content Include="View\BookListView.aspx" />
     <Content Include="View\AddDiscView.aspx" />
+    <Content Include="View\BookListView.aspx" />
     <Content Include="View\DiscListView.aspx" />
     <Content Include="View\EditBookView.aspx" />
     <Content Include="View\EditDiscView.aspx" />
@@ -507,19 +507,19 @@
     <Compile Include="View\AddPcView.aspx.designer.cs">
       <DependentUpon>AddPcView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\BookListView.aspx.cs">
-      <DependentUpon>BookListView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\BookListView.aspx.designer.cs">
-      <DependentUpon>BookListView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="View\AddDiscView.aspx.cs">
       <DependentUpon>AddDiscView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\AddDiscView.aspx.designer.cs">
       <DependentUpon>AddDiscView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookListView.aspx.cs">
+      <DependentUpon>BookListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\BookListView.aspx.designer.cs">
+      <DependentUpon>BookListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\DiscListView.aspx.cs">
       <DependentUpon>DiscListView.aspx</DependentUpon>
