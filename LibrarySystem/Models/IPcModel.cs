@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace VirtualCollege.Models
 {
-    interface IPcModel
+    public interface IPcModel
     {
+        void AddPc(VirtualCollege.Models.Entity.Pc pc);
+        void DeletePc(VirtualCollege.Models.Entity.Pc pc);
+        System.Collections.Generic.List<VirtualCollege.Models.Entity.Pc> GetAllPcs();
+        VirtualCollege.Models.Entity.Pc GetPcById(string pcId);
+        void UpdatePc(VirtualCollege.Models.Entity.Pc pc);
     }
 }

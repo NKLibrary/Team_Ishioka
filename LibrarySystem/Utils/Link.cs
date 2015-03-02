@@ -68,5 +68,19 @@ namespace VirtualCollege.Utils
             //return "EditEbookView.aspx";
             return "EditBookView.aspx?bookType=2&bookId="+bookId;
         }
+
+        public static string GetPcList()
+        {
+            return "PcListView.aspx";
+        }
+        public static string GetEditPc(string pcId)
+        {
+            return "EditPcView.aspx?pcId=" + pcId;
+        }
+
+        public static string GetAddPc()
+        {
+            return "AddPcView.aspx";
+        }
     }
 }
