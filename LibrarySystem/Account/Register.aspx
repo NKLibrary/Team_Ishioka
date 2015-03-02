@@ -1,5 +1,26 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="VirtualCollege.Account.Register" %>
 
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        DateTimeLbl.Text = System.DateTime.Now.ToString();
+    }
+    protected void Clearbtn_Click(object sender, EventArgs e)
+    {
+        Nametb.Text = "";
+        Addresstb.Text = "";
+        Citytb.Text = "";
+        Postaltb.Text = "";
+        Hometb.Text = "";
+        Celltb.Text = "";
+        Emailtb.Text = "";
+        SecEmailtb.Text = "";
+        Schooltb.Text = "";
+    }
+</script>
+
+
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     
     <p class="text-danger">
@@ -215,7 +236,7 @@
                            
                         </td>
                         <td style="width: 240px; height: 44px;">
-                            <asp:Button ID="Clearbtn" runat="server" OnClick="Button2_Click" Text="Clear All" />
+                            <asp:Button ID="Clearbtn" runat="server" OnClick="Clearbtn_Click" Text="Clear All" />
                             </td>
                     </tr>
                 </table>

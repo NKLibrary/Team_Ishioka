@@ -7,33 +7,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using VirtualCollege.Models;
 
+
 namespace VirtualCollege.Account
 {
-    public partial class Register : Page
+    public partial class Register : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e) 
-        {
-            DateTimeLbl.Text = System.DateTime.Now.ToString();
-        }
-        protected void Button2_Click(object sender, EventArgs e)
-             {
-                 Nametb.Text = "";
-                 Addresstb.Text = "";
-                 Citytb.Text = "";
-                 Postaltb.Text = "";
-                 Hometb.Text = "";
-                 Celltb.Text = "";
-                 Emailtb.Text = "";
-                 SecEmailtb.Text = "";
-                 Schooltb.Text = "";
-             }
-
-        protected void SecEmailtb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
        
-        
+
+               
     }
 }
