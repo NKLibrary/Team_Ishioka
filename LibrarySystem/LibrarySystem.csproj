@@ -151,29 +151,41 @@
     <Content Include="Account\Librarian.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
-    <Content Include="Account\Member.aspx" />
+    <Content Include="Account\MemberWelcome.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\User.aspx" />
+    <Content Include="App_Data\LibraryDB.sql" />
+    <Content Include="books.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\ManageStyle.css" />
+    <Content Include="css\menu.css" />
+    <Content Include="dvd.aspx" />
+    <Content Include="ebooks.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="home.aspx" />
+    <Content Include="horizontalNav.ascx" />
     <Content Include="Images\manage_logo.jpg" />
     <Content Include="Images\new1.jpg" />
     <Content Include="Images\new2.jpg" />
     <Content Include="Images\new3.jpg" />
+    <Content Include="itemsIssued.aspx" />
+    <Content Include="leftNav.ascx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="paymentHistory.aspx" />
+    <Content Include="pc.aspx" />
+    <Content Include="reserveItem.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -210,6 +222,7 @@
       <BrowseToURL>~/Site.Master</BrowseToURL>
     </Content>
     <Content Include="slider.js" />
+    <Content Include="updateAccount.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
     <Content Include="View\BookListView.aspx" />
@@ -267,12 +280,12 @@
     <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Member.aspx.cs">
-      <DependentUpon>Member.aspx</DependentUpon>
+    <Compile Include="Account\MemberWelcome.aspx.cs">
+      <DependentUpon>MemberWelcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Member.aspx.designer.cs">
-      <DependentUpon>Member.aspx</DependentUpon>
+    <Compile Include="Account\MemberWelcome.aspx.designer.cs">
+      <DependentUpon>MemberWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
@@ -327,6 +340,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="books.aspx.cs">
+      <DependentUpon>books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="books.aspx.designer.cs">
+      <DependentUpon>books.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,8 +361,50 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dvd.aspx.cs">
+      <DependentUpon>dvd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dvd.aspx.designer.cs">
+      <DependentUpon>dvd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ebooks.aspx.cs">
+      <DependentUpon>ebooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ebooks.aspx.designer.cs">
+      <DependentUpon>ebooks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="horizontalNav.ascx.cs">
+      <DependentUpon>horizontalNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="horizontalNav.ascx.designer.cs">
+      <DependentUpon>horizontalNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="itemsIssued.aspx.cs">
+      <DependentUpon>itemsIssued.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="itemsIssued.aspx.designer.cs">
+      <DependentUpon>itemsIssued.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="leftNav.ascx.cs">
+      <DependentUpon>leftNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="leftNav.ascx.designer.cs">
+      <DependentUpon>leftNav.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
@@ -356,6 +418,20 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
     <Compile Include="Models\IEbookModel.cs" />
+    <Compile Include="paymentHistory.aspx.cs">
+      <DependentUpon>paymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paymentHistory.aspx.designer.cs">
+      <DependentUpon>paymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pc.aspx.cs">
+      <DependentUpon>pc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pc.aspx.designer.cs">
+      <DependentUpon>pc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\AddBookPresenter.cs" />
     <Compile Include="Presenter\AddDiscPresenter.cs" />
     <Compile Include="Presenter\AddEbookPresenter.cs" />
@@ -366,6 +442,13 @@
     <Compile Include="Presenter\EditDiscPresenter.cs" />
     <Compile Include="Presenter\EditEbookPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reserveItem.aspx.cs">
+      <DependentUpon>reserveItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reserveItem.aspx.designer.cs">
+      <DependentUpon>reserveItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,6 +464,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="updateAccount.aspx.cs">
+      <DependentUpon>updateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updateAccount.aspx.designer.cs">
+      <DependentUpon>updateAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\BookType.cs" />
     <Compile Include="Utils\DatabaseConfiguration.cs" />
     <Compile Include="Utils\GenericDataAccess.cs" />
@@ -460,9 +550,7 @@
       <DependentUpon>RoomListView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

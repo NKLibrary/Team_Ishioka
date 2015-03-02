@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="VirtualCollege.Account.Member" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paymentHistory.aspx.cs" Inherits="VirtualCollege.Payment" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    Welcome to Payment History page!
     </div>
     </form>
 </body>

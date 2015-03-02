@@ -17,19 +17,19 @@
                     <tr>
                         <td style="width: 113px; height: 34px">
                         <td style="width: 161px; height: 34px">
-                <asp:Label ID="NameLbl" runat="server" Text="Name:" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
+                <asp:Label ID="NameLbl" runat="server" Text="Name:" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 34px">
-                            <asp:TextBox ID="Nametb" runat="server" Width="269px"></asp:TextBox>
+                            <asp:TextBox ID="Nametb" runat="server" Width="269px" CssClass="textContact" ></asp:TextBox>
                             &nbsp;</td>
                         <td style="width: 240px; height: 34px">
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Nametb" ErrorMessage="User Name is required." ToolTip="User Name is required." ID="UserNameRequired" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Name</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Nametb" CssClass="textContact" ErrorMessage="User Name is required." ToolTip="User Name is required." ID="UserNameRequired" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Name</asp:RequiredFieldValidator>
                             </td>
                     </tr>
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px; height: 50px;">
-                <asp:Label ID="GenderLbl" runat="server" Text="Gender:"></asp:Label>
+                <asp:Label ID="GenderLbl" CssClass ="infoLabel" runat="server" Text="Gender:"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 50px;">
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server">
@@ -46,10 +46,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="AddressLbl" runat="server" Text="Address:"></asp:Label>
+                <asp:Label ID="AddressLbl" CssClass ="infoLabel" runat="server" Text="Address:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Addresstb" runat="server" TextMode="MultiLine"></asp:TextBox>
+                            <asp:TextBox ID="Addresstb" runat="server" CssClass="textContact" TextMode="MultiLine"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Addresstb" ErrorMessage="Address is required." ToolTip="Address is required." ID="UserNameRequired1" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Address</asp:RequiredFieldValidator>
@@ -58,10 +58,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="CityLbl" runat="server" Text="City:"></asp:Label>
+                <asp:Label ID="CityLbl" runat="server" CssClass ="infoLabel" Text="City:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Citytb" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="Citytb" CssClass="textContact" runat="server"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Citytb" ErrorMessage="City is required." ToolTip="City is required." ID="UserNameRequired2" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter City</asp:RequiredFieldValidator>
@@ -70,10 +70,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="PostalLbl" runat="server" Text="Postal Code:"></asp:Label>
+                <asp:Label ID="PostalLbl" runat="server" CssClass ="infoLabel" Text="Postal Code:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Postaltb" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="Postaltb" CssClass="textContact" runat="server"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Postaltb" ErrorMessage="Postal Code is required." ToolTip="Postal Code is required." ID="UserNameRequired3" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Postal Code</asp:RequiredFieldValidator>
@@ -84,7 +84,7 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="ProLbl" runat="server" Text="Province:"></asp:Label>
+                <asp:Label ID="ProLbl" runat="server" CssClass ="infoLabel" Text="Province:"></asp:Label>
                         </td>
                         <td style="width: 267px">
                             <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
@@ -99,10 +99,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="HomeLbl" runat="server" Text="Home Phone #:"></asp:Label>
+                <asp:Label ID="HomeLbl" runat="server" CssClass ="infoLabel" Text="Home Phone #:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Hometb" runat="server" TextMode="Phone"></asp:TextBox>
+                            <asp:TextBox ID="Hometb" CssClass="textContact" runat="server" TextMode="Phone"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Hometb" ErrorMessage="Home # is required." ToolTip="Home # is required." ID="UserNameRequired4" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Home Phone #</asp:RequiredFieldValidator>
@@ -113,10 +113,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px; height: 42px;">
-                <asp:Label ID="CellLbl" runat="server" Text="Cell Phone #:"></asp:Label>
+                <asp:Label ID="CellLbl" runat="server" CssClass ="infoLabel" Text="Cell Phone #:"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 42px;">
-                            <asp:TextBox ID="Celltb" runat="server" TextMode="Phone"></asp:TextBox>
+                            <asp:TextBox ID="Celltb" CssClass="textContact" runat="server" TextMode="Phone"></asp:TextBox>
                         </td>
                         <td style="width: 240px; height: 42px;">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Celltb" ErrorMessage="Cell # is required." ToolTip="Cell # is required." ID="UserNameRequired5" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Cell Phone #</asp:RequiredFieldValidator>
@@ -127,10 +127,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="EmailLbl" runat="server" Text="Primary Email ID:"></asp:Label>
+                <asp:Label ID="EmailLbl" runat="server" CssClass ="infoLabel" Text="Primary Email ID:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Emailtb" runat="server" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="Emailtb" CssClass="textContact" runat="server" TextMode="Email"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Emailtb" ErrorMessage="Email ID is required." ToolTip="Email ID is required." ID="UserNameRequired6" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Email ID</asp:RequiredFieldValidator>
@@ -142,10 +142,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="SecEmailLbl" runat="server" Text="Secondary Email ID:"></asp:Label>
+                <asp:Label ID="SecEmailLbl" runat="server" CssClass ="infoLabel" Text="Secondary Email ID:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="SecEmailtb" runat="server" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="SecEmailtb" CssClass="textContact" runat="server" TextMode="Email" OnTextChanged="SecEmailtb_TextChanged"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             &nbsp;</td>
@@ -153,7 +153,7 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="StudentLbl" runat="server" Text="Student:"></asp:Label>
+                <asp:Label ID="StudentLbl" runat="server" CssClass ="infoLabel" Text="Student:"></asp:Label>
                         </td>
                         <td style="width: 267px">
                             <asp:RadioButtonList ID="RadioButtonList2" runat="server">
@@ -168,10 +168,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="SchoolLbl" runat="server" Text="School Name:"></asp:Label>
+                <asp:Label ID="SchoolLbl" runat="server" CssClass ="infoLabel" Text="School Name:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:TextBox ID="Schooltb" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="Schooltb" CssClass="textContact" runat="server"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Schooltb" ErrorMessage="School Name is required." ToolTip="School Name is required." ID="UserNameRequired7" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter School Name</asp:RequiredFieldValidator>
@@ -180,7 +180,7 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="StatusLbl" runat="server" Text="Status:"></asp:Label>
+                <asp:Label ID="StatusLbl" runat="server" CssClass ="infoLabel" Text="Status:"></asp:Label>
                         </td>
                         <td style="width: 267px">
                             <asp:RadioButtonList ID="RadioButtonList3" runat="server">
@@ -195,10 +195,10 @@
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px">
-                <asp:Label ID="DateLbl" runat="server" Text="Current Date:"></asp:Label>
+                <asp:Label ID="DateLbl" runat="server" CssClass ="infoLabel" Text="Current Date:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            <asp:Label ID="DateTimeLbl" runat="server" Text="DateTime"></asp:Label>
+                            <asp:Label ID="DateTimeLbl" CssClass ="infoLabel" runat="server" Text="DateTime"></asp:Label>
                         </td>
                         <td style="width: 240px">
                             &nbsp;</td>

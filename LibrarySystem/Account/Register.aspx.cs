@@ -28,6 +28,11 @@ namespace VirtualCollege.Account
                  Schooltb.Text = "";
              }
 
+        protected void SecEmailtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
        
         
     }
