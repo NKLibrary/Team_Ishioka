@@ -3,14 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
    
-      <div class="MainMenu"> <ul>
-          <li><a href="Default">Main Page</a></li>
-          <li><a href="Default">Drop Course</a></li>
-          <li><a href="Default">Make appointment</a></li>
-          <li><a href="Default">WaitingList</a></li>
-          <li><a href="Default">FeedBack</a></li>
-          <li><a href="Default">Contact Us</a></li>
-           </ul> </div>
+     
 
         <div>
             <div id="slider">

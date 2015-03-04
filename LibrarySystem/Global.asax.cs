@@ -9,6 +9,7 @@ using System.Web.SessionState;
 
 namespace VirtualCollege
 {
+
     public class Global : HttpApplication
     {
         void Application_Start(object sender, EventArgs e)

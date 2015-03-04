@@ -7,13 +7,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Ishioka Library</title>
-
+   
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="css/menu.css"/>
+     <link href="css/Style1.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -84,7 +85,26 @@
                         <a class="btn btn-primary btn-lg" href="http://www.centennialcollege.ca/?gclid=CNKstOO59sMCFQsxaQodYhYAag">Centennial College »</a></p>
                 </div>
 
-
+             <div class="MainMenu"> 
+          <nav id="primary_nav_wrap">
+                 <ul>
+          <li><a href="Defaul.aspx">Search</a>
+             <ul>
+             <li><a href="books.aspx">Books</a></li>
+             <li><a href="ebooks.aspx">Ebooks</a></li>
+             <li><a href="dvd.aspx">DVD/CD</a></li>
+             <li><a href="rooms.aspx">Rooms</a></li>
+             <li><a href="pc.aspx">PCs</a></li>
+                          </ul></li>
+          <li><a href="Default">Drop Course</a></li>
+          <li><a href="Default">Make appointment</a></li>
+          <li><a href="Default">WaitingList</a></li>
+          <li><a href="Default">FeedBack</a></li>
+          <li><a href="Default">Contact Us</a></li>
+           </ul>
+              </nav>
+               </div>
+            
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
                 

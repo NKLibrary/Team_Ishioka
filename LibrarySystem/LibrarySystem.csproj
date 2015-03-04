@@ -175,6 +175,7 @@
     <Content Include="Images\new1.jpg" />
     <Content Include="Images\new2.jpg" />
     <Content Include="Images\new3.jpg" />
+    <Content Include="img\reserve-button.png" />
     <Content Include="itemsIssued.aspx" />
     <Content Include="leftNav.ascx" />
     <Content Include="packages.config" />
@@ -185,6 +186,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
     <Content Include="pc.aspx" />
+    <Content Include="pc1.aspx" />
     <Content Include="reserveItem.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -222,6 +224,7 @@
       <BrowseToURL>~/Site.Master</BrowseToURL>
     </Content>
     <Content Include="slider.js" />
+    <Content Include="css\Style1.css" />
     <Content Include="updateAccount.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
@@ -431,6 +434,13 @@
     </Compile>
     <Compile Include="pc.aspx.designer.cs">
       <DependentUpon>pc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pc1.aspx.cs">
+      <DependentUpon>pc1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pc1.aspx.designer.cs">
+      <DependentUpon>pc1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presenter\AddBookPresenter.cs" />
     <Compile Include="Presenter\AddDiscPresenter.cs" />
