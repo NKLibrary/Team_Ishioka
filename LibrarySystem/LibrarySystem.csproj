@@ -185,7 +185,6 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
-    <Content Include="pc.aspx" />
     <Content Include="pc1.aspx" />
     <Content Include="reserveItem.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -427,13 +426,6 @@
     </Compile>
     <Compile Include="paymentHistory.aspx.designer.cs">
       <DependentUpon>paymentHistory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pc.aspx.cs">
-      <DependentUpon>pc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pc.aspx.designer.cs">
-      <DependentUpon>pc.aspx</DependentUpon>
     </Compile>
     <Compile Include="pc1.aspx.cs">
       <DependentUpon>pc1.aspx</DependentUpon>
