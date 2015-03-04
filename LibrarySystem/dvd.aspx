@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-  <h4 style="padding-top:40px"> You can reserve a PC here</h4>
+  <h4 style="padding-top:40px"> You can reserve a DVD or CD here</h4>
         <div style="position:relative; left:1%;">
 
 
@@ -16,7 +16,6 @@
 </ItemTemplate>
 </asp:TemplateField>
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                    <asp:BoundField DataField="ThumbnailPicture" HeaderText="Cover" SortExpression="ThumbnailPicture" />
                     <asp:BoundField DataField="DiscTitle" HeaderText="DiscTitle" SortExpression="DiscTitle" />
                     <asp:BoundField DataField="Artist" HeaderText="Artist" SortExpression="Artist" />
                     <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
@@ -27,6 +26,7 @@
                     <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
                     <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                     <asp:BoundField DataField="Duration" HeaderText="Duration" SortExpression="Duration" />
+                    <asp:BoundField DataField="ThumbnailPicture" HeaderText="Cover" SortExpression="ThumbnailPicture" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
