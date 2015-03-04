@@ -13,7 +13,13 @@ namespace VirtualCollege
         {
 
         }
-
+        protected void reserve_dvd(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "reserve")
+            {
+                //Response.Write("<script type=\"text/javascript\">alert('Your Message');</script>");
+            }
+        }
        
     }
 }
