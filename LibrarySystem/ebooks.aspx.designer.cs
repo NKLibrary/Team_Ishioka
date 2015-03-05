@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirtualCollege.Account
+namespace VirtualCollege
 {
 
 
-    public partial class Member
+    public partial class Ebooks
     {
 
         /// <summary>

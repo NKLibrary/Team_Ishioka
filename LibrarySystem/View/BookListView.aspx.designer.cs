@@ -13,39 +13,39 @@ namespace VirtualCollege.View {
     public partial class BookListView {
         
         /// <summary>
-        /// form1 control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
         
         /// <summary>
-        /// lblBookType control.
+        /// ListView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBookType;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
-        /// btnAdd control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// grdBook control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdBook;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

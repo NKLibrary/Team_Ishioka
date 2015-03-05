@@ -22,7 +22,7 @@ namespace VirtualCollege.Presenter
 
         private void EditPc(object sender, EventArgs e)
         {
-            Pc pc = new Pc();
+            VirtualCollege.Models.Entity.Pc pc = new VirtualCollege.Models.Entity.Pc();
             pc.pcId = this.view.PcId;
             pc.status = this.view.Status;
             model.UpdatePc(pc);
@@ -31,7 +31,7 @@ namespace VirtualCollege.Presenter
 
         private void FillView(object sender, EventArgs e)
         {
-            Pc pc = model.GetPcById(this.view.PcId);
+            VirtualCollege.Models.Entity.Pc pc = model.GetPcById(this.view.PcId);
             this.view.PcId = pc.pcId;
             this.view.Status = pc.status;
         }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDiscView.aspx.cs" Inherits="VirtualCollege.View.AddDiscView" %>
 <%@ Register TagPrefix="Custom" Namespace="VirtualCollege.View.Controls" Assembly="VirtualCollege" %>
-
+<asp:Content>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -126,3 +126,4 @@
     </form>
 </body>
 </html>
+</asp:Content>

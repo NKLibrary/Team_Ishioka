@@ -22,7 +22,7 @@ namespace VirtualCollege.Presenter
 
         private void AddPcHandler(object sender, EventArgs e)
         {
-            Pc pc = new Pc();
+            VirtualCollege.Models.Entity.Pc pc = new VirtualCollege.Models.Entity.Pc();
             pc.status = view.Status;
             model.AddPc(pc);
         }

@@ -24,4 +24,12 @@
     <script src="slider.js"></script>
  
 
+      <br />
+ 
+    <div>
+       <h2> Online Public Library </h2>
+        <p> <span style="color: rgb(84, 84, 84); font-family: arial, sans-serif; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 16.5454540252686px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">Get books, videos, music, programs, databases and more,<span class="Apple-converted-space">&nbsp;</span></span><em style="font-weight: bold; font-style: normal; color: rgb(84, 84, 84); font-family: arial, sans-serif; font-size: small; font-variant: normal; letter-spacing: normal; line-height: 16.5454540252686px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">online</em><span style="color: rgb(84, 84, 84); font-family: arial, sans-serif; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 16.5454540252686px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"><span class="Apple-converted-space">&nbsp;</span>. 
+            Staff can help to find the information or entertainment items. Great experience to learn wirh new learning tools and easy access t all information with the touch of hand.</span></p>
+    </div>
+
 </asp:Content>

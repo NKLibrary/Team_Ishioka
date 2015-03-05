@@ -9,9 +9,9 @@ using VirtualCollege.Utils;
 
 namespace VirtualCollege.Models
 {
-    public class PcModel : VirtualCollege.Models.IPcModel
+    public class PcModel : IPcModel
     {
-        public void AddPc(Pc pc)
+        public void AddPc(VirtualCollege.Models.Entity.Pc pc)
         {
             string sql = "insert into pc (status) values ('" + pc.status + "')";
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
@@ -19,29 +19,29 @@ namespace VirtualCollege.Models
 
         }
 
-        public void DeletePc(Pc pc)
+        public void DeletePc(VirtualCollege.Models.Entity.Pc pc)
         {
             string sql = "delete from pc where pcid = '" + pc.pcId + "'";
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
             GenericDataAccess.ExecuteNonQuery(comm);
         }
 
-        public void UpdatePc(Pc pc)
+        public void UpdatePc(VirtualCollege.Models.Entity.Pc pc)
         {
             string sql = "update pc set status='" + pc.status + "' where pcid='" + pc.pcId + "'";
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
             GenericDataAccess.ExecuteNonQuery(comm);
         }
 
-        public List<Pc> GetAllPcs()
+        public List<VirtualCollege.Models.Entity.Pc> GetAllPcs()
         {
             string sql = "select pcid, status from pc order by pcid";
-            List<Pc> pcs = new List<Pc>();
+            List<VirtualCollege.Models.Entity.Pc> pcs = new List<VirtualCollege.Models.Entity.Pc>();
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
             DataTable table = GenericDataAccess.ExecuteSelectCommand(comm);
             foreach (DataRow row in table.Rows)
             {
-                Pc pc = new Pc();
+                VirtualCollege.Models.Entity.Pc pc = new VirtualCollege.Models.Entity.Pc();
                 pc.pcId = row["pcid"].ToString();
                 pc.status = row["status"].ToString();
                 pcs.Add(pc);
@@ -49,12 +49,12 @@ namespace VirtualCollege.Models
             return pcs;
         }
 
-        public Pc GetPcById(string pcId)
+        public VirtualCollege.Models.Entity.Pc GetPcById(string pcId)
         {
             string sql = "select pcid, status from pc where pcid='" + pcId + "'";
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
             DataTable table = GenericDataAccess.ExecuteSelectCommand(comm);
-            Pc pc = new Pc();
+            VirtualCollege.Models.Entity.Pc pc = new VirtualCollege.Models.Entity.Pc();
             if (table.Rows.Count > 0)
             {
                 pc.pcId = table.Rows[0]["pcid"].ToString();

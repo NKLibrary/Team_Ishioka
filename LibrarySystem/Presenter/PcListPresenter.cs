@@ -24,7 +24,7 @@ namespace VirtualCollege.Presenter
         private void deletePcHandler(object sender, EventArgs e)
         {
             string deletePcId = view.SelectedPcId;
-            Pc pc = new Pc();
+            VirtualCollege.Models.Entity.Pc pc = new VirtualCollege.Models.Entity.Pc();
             pc.pcId = deletePcId;
             model.DeletePc(pc);
 

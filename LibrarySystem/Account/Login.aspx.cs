@@ -38,7 +38,7 @@ namespace VirtualCollege.Account
                     string password = Password.Text.ToString();
                     if (username.Equals("user") && password.Equals("user")) 
                     {
-                        Response.Redirect("Member.aspx");
+                        Response.Redirect("MemberWelcome.aspx");
                     }
                     else if (username.Equals("lib") && password.Equals("lib"))
                     {
