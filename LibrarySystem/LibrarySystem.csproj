@@ -416,6 +416,7 @@
     <Compile Include="Models\Entity\Disc.cs" />
     <Compile Include="Models\DiscModel.cs" />
     <Compile Include="Models\Entity\Ebook.cs" />
+    <Compile Include="Models\Entity\Reservation.cs" />
     <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
