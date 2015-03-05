@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDiscView.aspx.cs" Inherits="VirtualCollege.View.AddDiscView" %>
+<%@ Register TagPrefix="Custom" Namespace="VirtualCollege.View.Controls" Assembly="VirtualCollege" %>
 
 <!DOCTYPE html>
 
@@ -21,6 +22,14 @@
         .auto-style4 {
             height: 26px;
         }
+        .auto-style5 {
+            width: 258px;
+            text-align: right;
+            height: 211px;
+        }
+        .auto-style6 {
+            height: 211px;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +42,7 @@
                 <td class="auto-style2">DiscTitle</td>
                 <td>
                     <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTitle" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -54,9 +64,10 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">ReleaseDate</td>
-                <td>
-                    <asp:Calendar ID="calRelease" runat="server"></asp:Calendar>
+                <td class="auto-style5">ReleaseDate</td>
+                <td class="auto-style6">
+                    <Custom:VCalendar id="calRelease" runat="server"></Custom:VCalendar>
+                    <asp:CustomValidator ID="calReleaseValidator" runat="server" ControlToValidate="calRelease" EnableClientScript="False" ErrorMessage="Release date is required" OnServerValidate="calReleaseValidator_ServerValidate"></asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -100,12 +111,12 @@
                 <td class="auto-style2">Status</td>
                 <td>
                     <asp:RadioButton ID="rbtnAvailable" runat="server" Text="Available" GroupName="status" />
-                    <asp:RadioButton ID="rbtnNa" runat="server" Text="NA" />
+                    <asp:RadioButton ID="rbtnNa" runat="server" Text="NA" GroupName="status" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="btnDisc" runat="server" Text="Add Disc" OnClick="btnDisc_Click" GroupName="status" />
+                    <asp:Button ID="btnDisc" runat="server" Text="Add Disc" OnClick="btnDisc_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

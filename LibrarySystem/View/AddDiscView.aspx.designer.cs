@@ -31,6 +31,15 @@ namespace VirtualCollege.View {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// txtArtist control.
         /// </summary>
         /// <remarks>
@@ -64,7 +73,16 @@ namespace VirtualCollege.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calRelease;
+        protected global::VirtualCollege.View.Controls.VCalendar calRelease;
+        
+        /// <summary>
+        /// calReleaseValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator calReleaseValidator;
         
         /// <summary>
         /// txtLanguage control.

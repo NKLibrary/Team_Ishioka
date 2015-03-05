@@ -13,6 +13,8 @@ namespace VirtualCollege.View
 {
     public partial class AddDiscView : System.Web.UI.Page, IAddDiscView
     {
+        private bool isInputValid = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             AddDiscPresenter presenter = new AddDiscPresenter(this, new DiscModel());
@@ -102,9 +104,33 @@ namespace VirtualCollege.View
 
         protected void btnDisc_Click(object sender, EventArgs e)
         {
-            addDiscListener(sender, e);
-            Response.Redirect(Link.ToDiscList());
+            if (isInputValid)
+            {
+                addDiscListener(sender, e);
+                Response.Redirect(Link.ToDiscList());
+            }
         }
+
+
+        protected void calReleaseValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            //if (calRelease.SelectedDate == null || calRelease.SelectedDate == new DateTime(0001, 1, 1, 0, 0, 0) || calRelease.SelectedDate == new DateTime(0001, 1, 1, 12, 0, 0))
+            if (calRelease.SelectedDate == default(DateTime))
+            {
+                args.IsValid = false;
+                isInputValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+                isInputValid = true;
+            }
+
+            //args.IsValid = calRelease.SelectedDate != default(DateTime);
+        }
+
+
+
     }
 
 }

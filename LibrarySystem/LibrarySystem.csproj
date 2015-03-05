@@ -417,6 +417,7 @@
     <Compile Include="Models\DiscModel.cs" />
     <Compile Include="Models\Entity\Ebook.cs" />
     <Compile Include="Models\Entity\Reservation.cs" />
+    <Compile Include="Models\Entity\Reservation.cs" />
     <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
@@ -435,6 +436,7 @@
     <Compile Include="pc1.aspx.designer.cs">
       <DependentUpon>pc1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\IReservationModel.cs" />
     <Compile Include="Presenter\AddBookPresenter.cs" />
     <Compile Include="Presenter\AddDiscPresenter.cs" />
     <Compile Include="Presenter\AddEbookPresenter.cs" />
@@ -506,6 +508,7 @@
     <Compile Include="View\BookListView.aspx.designer.cs">
       <DependentUpon>BookListView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Controls\VCalendar.cs" />
     <Compile Include="View\DiscListView.aspx.cs">
       <DependentUpon>DiscListView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
