@@ -423,10 +423,13 @@
     <Compile Include="Models\Entity\Ebook.cs" />
     <Compile Include="Models\Entity\Reservation.cs" />
     <Compile Include="Models\Entity\ReservationModel.cs" />
+    <Compile Include="Models\Entity\Room.cs" />
     <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
     <Compile Include="Models\IEbookModel.cs" />
+    <Compile Include="Models\IRoomModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="paymentHistory.aspx.cs">
       <DependentUpon>paymentHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -446,17 +449,20 @@
     <Compile Include="Presenter\AddDiscPresenter.cs" />
     <Compile Include="Presenter\AddEbookPresenter.cs" />
     <Compile Include="Presenter\AddReservationPresenter.cs" />
+    <Compile Include="Presenter\AddRoomPresenter.cs" />
     <Compile Include="Presenter\BookListPresenter.cs" />
     <Compile Include="Presenter\DiscListPresenter.cs" />
     <Compile Include="Presenter\EbookListPresenter.cs" />
     <Compile Include="Presenter\EditBookPresenter.cs" />
     <Compile Include="Presenter\EditDiscPresenter.cs" />
     <Compile Include="Presenter\EditEbookPresenter.cs" />
+    <Compile Include="Presenter\EditRoomPresenter.cs" />
     <Compile Include="Presenter\IAddReservationPresenter.cs" />
     <Compile Include="Presenter\IProcessReservationPresenter.cs" />
     <Compile Include="Presenter\IReservationListPresenter.cs" />
     <Compile Include="Presenter\ProcessReservationPresenter.cs" />
     <Compile Include="Presenter\ReservationListPresenter.cs" />
+    <Compile Include="Presenter\RoomListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reserveItem.aspx.cs">
       <DependentUpon>reserveItem.aspx</DependentUpon>

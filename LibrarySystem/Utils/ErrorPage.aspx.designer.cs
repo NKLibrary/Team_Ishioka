@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirtualCollege.View {
+namespace VirtualCollege.Utils {
     
     
-    public partial class AddReservationView {
+    public partial class ErrorPage {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,21 @@ namespace VirtualCollege.View {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// calExpireDate control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calExpireDate;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
         
         /// <summary>
-        /// lblReserveStatus control.
+        /// btnReturn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReserveStatus;
-        
-        /// <summary>
-        /// btnReserve control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReserve;
+        protected global::System.Web.UI.WebControls.Button btnReturn;
     }
 }

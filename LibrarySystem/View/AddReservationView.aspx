@@ -9,7 +9,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        
+        <asp:Calendar ID="calExpireDate" runat="server"></asp:Calendar>
+        <asp:Label ID="lblReserveStatus" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="btnReserve" runat="server" Text="Reserve Now" />
+        
     </div>
     </form>
 </body>
