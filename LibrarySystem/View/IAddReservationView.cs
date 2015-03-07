@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace VirtualCollege.View
 {
-    interface IAddReservationView
+    public interface IAddReservationView
     {
+        string UserId { get; }
+        string ItemType { get; }
+        string ItemId { get; }
+        DateTime ExpireDate { get; }
+
     }
 }
