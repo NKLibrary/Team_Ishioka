@@ -225,14 +225,19 @@
     <Content Include="slider.js" />
     <Content Include="css\Style1.css" />
     <Content Include="updateAccount.aspx" />
+    <Content Include="UserControls\AddReservationControl.ascx" />
+    <Content Include="UserControls\WebForm1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
     <Content Include="View\AddDiscView.aspx" />
+    <Content Include="View\AddReservationView.aspx" />
     <Content Include="View\BookListView.aspx" />
     <Content Include="View\DiscListView.aspx" />
     <Content Include="View\EditBookView.aspx" />
     <Content Include="View\EditDiscView.aspx" />
     <Content Include="View\PcListView.aspx" />
+    <Content Include="View\ProcessReservationView.aspx" />
+    <Content Include="View\ReservationListView.aspx" />
     <Content Include="View\RoomListView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -417,7 +422,8 @@
     <Compile Include="Models\DiscModel.cs" />
     <Compile Include="Models\Entity\Ebook.cs" />
     <Compile Include="Models\Entity\Reservation.cs" />
-   <Compile Include="Models\IBookModel.cs" />
+    <Compile Include="Models\Entity\ReservationModel.cs" />
+    <Compile Include="Models\IBookModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDiscModel.cs" />
     <Compile Include="Models\IEbookModel.cs" />
@@ -439,12 +445,18 @@
     <Compile Include="Presenter\AddBookPresenter.cs" />
     <Compile Include="Presenter\AddDiscPresenter.cs" />
     <Compile Include="Presenter\AddEbookPresenter.cs" />
+    <Compile Include="Presenter\AddReservationPresenter.cs" />
     <Compile Include="Presenter\BookListPresenter.cs" />
     <Compile Include="Presenter\DiscListPresenter.cs" />
     <Compile Include="Presenter\EbookListPresenter.cs" />
     <Compile Include="Presenter\EditBookPresenter.cs" />
     <Compile Include="Presenter\EditDiscPresenter.cs" />
     <Compile Include="Presenter\EditEbookPresenter.cs" />
+    <Compile Include="Presenter\IAddReservationPresenter.cs" />
+    <Compile Include="Presenter\IProcessReservationPresenter.cs" />
+    <Compile Include="Presenter\IReservationListPresenter.cs" />
+    <Compile Include="Presenter\ProcessReservationPresenter.cs" />
+    <Compile Include="Presenter\ReservationListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reserveItem.aspx.cs">
       <DependentUpon>reserveItem.aspx</DependentUpon>
@@ -475,10 +487,27 @@
     <Compile Include="updateAccount.aspx.designer.cs">
       <DependentUpon>updateAccount.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddReservationControl.ascx.cs">
+      <DependentUpon>AddReservationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddReservationControl.ascx.designer.cs">
+      <DependentUpon>AddReservationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IAddReservationControl.cs" />
+    <Compile Include="UserControls\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\BookType.cs" />
     <Compile Include="Utils\DatabaseConfiguration.cs" />
     <Compile Include="Utils\GenericDataAccess.cs" />
+    <Compile Include="Utils\ItemType.cs" />
     <Compile Include="Utils\Link.cs" />
+    <Compile Include="Utils\Settings.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,6 +528,13 @@
     </Compile>
     <Compile Include="View\AddDiscView.aspx.designer.cs">
       <DependentUpon>AddDiscView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddReservationView.aspx.cs">
+      <DependentUpon>AddReservationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AddReservationView.aspx.designer.cs">
+      <DependentUpon>AddReservationView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\BookListView.aspx.cs">
       <DependentUpon>BookListView.aspx</DependentUpon>
@@ -532,6 +568,7 @@
     <Compile Include="View\IAddBook.cs" />
     <Compile Include="View\IAddDiscView.cs" />
     <Compile Include="View\IAddEbookView.cs" />
+    <Compile Include="View\IAddReservationView.cs" />
     <Compile Include="View\IBookListView.cs" />
     <Compile Include="View\IDiscList.cs" />
     <Compile Include="View\IEbookListView.cs" />
@@ -539,6 +576,8 @@
     <Compile Include="View\IEditDiscView.cs" />
     <Compile Include="View\IEditEbookView.cs" />
     <Compile Include="View\IPcListView.cs" />
+    <Compile Include="View\IProcessReservationView.cs" />
+    <Compile Include="View\IReservationListView.cs" />
     <Compile Include="View\IRoomListView.cs" />
     <Compile Include="View\PcListView.aspx.cs">
       <DependentUpon>PcListView.aspx</DependentUpon>
@@ -546,6 +585,20 @@
     </Compile>
     <Compile Include="View\PcListView.aspx.designer.cs">
       <DependentUpon>PcListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProcessReservationView.aspx.cs">
+      <DependentUpon>ProcessReservationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ProcessReservationView.aspx.designer.cs">
+      <DependentUpon>ProcessReservationView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReservationListView.aspx.cs">
+      <DependentUpon>ReservationListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ReservationListView.aspx.designer.cs">
+      <DependentUpon>ReservationListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\RoomListView.aspx.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>

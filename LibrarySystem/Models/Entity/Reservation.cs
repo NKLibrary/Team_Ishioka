@@ -7,13 +7,13 @@ namespace VirtualCollege.Models.Entity
 {
     public struct Reservation
     {
-        string reservationId;
-        string itemType;
-        string itemId;
-        string userId;
-        DateTime expireDate;
-        DateTime processDate;
-        DateTime pickupDate;
-        string statue;
+        public string reservationId;
+        public string itemType;
+        public string itemId;
+        public string userId;
+        public DateTime expireDate;
+        public DateTime processDate;
+        public DateTime pickupDate;
+        public string status;
     }
 }
