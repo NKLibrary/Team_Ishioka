@@ -15,8 +15,7 @@ namespace VirtualCollege.Utils
 
         static DatabaseConfiguration()
         {
-            dbConnectionString = "Data Source=ANDY-PC\\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
-            //dbConnectionString = "Server=ANDYF-PC; Database=LibraryDB;Integrated Security=True";
+            dbConnectionString = "Data Source=MAUNIL-PC;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
             dbProviderName = "System.Data.SqlClient";
             productsPerPage = 10;
             productDescriptionLength = 70;
