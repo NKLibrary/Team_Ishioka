@@ -26,6 +26,8 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Nametb" CssClass="textContact" ErrorMessage="User Name is required." ToolTip="User Name is required." ID="UserNameRequired" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Name</asp:RequiredFieldValidator>
                             </td>
                     </tr>
+                    <tr><td></td><td>Password : <asp:TextBox ID="passwordtb" runat="server" TextMode="Password"></asp:TextBox>
+                        </td><td></td></tr>
                     <tr>
                         <td style="width: 113px">
                         <td style="width: 161px; height: 50px;">
@@ -211,7 +213,7 @@
                         <td style="width: 267px; height: 44px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            
-                            <asp:Button ID="Submitbtn" runat="server" Text="Submit" />
+                            <asp:Button ID="Submitbtn" runat="server" Text="Submit" OnClick="Submitbtn_Click" />
                            
                         </td>
                         <td style="width: 240px; height: 44px;">
@@ -228,6 +230,7 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />--%>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </div>
         </div>
         <div class="form-group">
