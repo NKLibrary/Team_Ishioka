@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="books.aspx.cs" Inherits="VirtualCollege.Books" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="books.aspx.cs" Inherits="VirtualCollege.Books" %>
 
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
+
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" >
     <div>
     Welcome to Books page!
         <br />
@@ -42,3 +41,4 @@
     </form>
 </body>
 </html>
+</asp:Content>
