@@ -513,6 +513,7 @@
     </Compile>
     <Compile Include="Utils\BookType.cs" />
     <Compile Include="Utils\DatabaseConfiguration.cs" />
+    <Compile Include="Utils\EmailManager.cs" />
     <Compile Include="Utils\ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
