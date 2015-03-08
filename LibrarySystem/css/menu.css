@@ -62,6 +62,25 @@
     color: #fff;
 }
 
+.infoButton {
+    background-color:mediumblue;
+    width:100px;
+    margin-bottom:10px;
+    padding:5px 5px 5px 10px;
+    font-size:15px;
+    font-family: 'Roboto', serif;
+    border:solid 1px #a4cebe;
+    border-radius:15px;
+    width: 170px;
+    text-align:left;
+    display:inline-block;
+    width: 170px;
+    text-align:left;
+    display:inline-block;
+    color: white ;
+    
+}
+
 .textContact {
     padding:5px;
     margin-left:-15px;
