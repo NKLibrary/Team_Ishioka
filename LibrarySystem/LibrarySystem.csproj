@@ -240,7 +240,9 @@
     <Content Include="View\ProcessReservationView.aspx" />
     <Content Include="View\ReservationListView.aspx" />
     <Content Include="View\RoomListView.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
