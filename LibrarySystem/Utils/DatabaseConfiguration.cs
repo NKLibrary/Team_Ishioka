@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -15,7 +16,8 @@ namespace VirtualCollege.Utils
 
         static DatabaseConfiguration()
         {
-            dbConnectionString = "Data Source=MAUNIL-PC;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            //dbConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            dbConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             dbProviderName = "System.Data.SqlClient";
             productsPerPage = 10;
             productDescriptionLength = 70;
