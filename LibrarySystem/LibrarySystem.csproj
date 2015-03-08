@@ -227,6 +227,7 @@
     <Content Include="updateAccount.aspx" />
     <Content Include="UserControls\AddReservationControl.ascx" />
     <Content Include="UserControls\WebForm1.aspx" />
+    <Content Include="Utils\ErrorPage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
     <Content Include="View\AddDiscView.aspx" />
@@ -510,6 +511,13 @@
     </Compile>
     <Compile Include="Utils\BookType.cs" />
     <Compile Include="Utils\DatabaseConfiguration.cs" />
+    <Compile Include="Utils\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utils\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\GenericDataAccess.cs" />
     <Compile Include="Utils\ItemType.cs" />
     <Compile Include="Utils\Link.cs" />

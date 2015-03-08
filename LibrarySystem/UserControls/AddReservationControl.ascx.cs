@@ -13,7 +13,7 @@ namespace VirtualCollege.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            new AddReservationPresenter(this, new ReservationModel());
+            //new AddReservationPresenter(this, new ReservationModel());
         }
         private string userId;
         public string UserId

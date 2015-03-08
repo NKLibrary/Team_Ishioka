@@ -23,7 +23,10 @@ namespace VirtualCollege.Utils
             Cancel
         }
 
-        public static const string Invalid_BookType = "book type is invalid";
-        public static const string Invalid_a = "";
+        //reserve
+        public const string Invalid_BookType = "book type is invalid";
+        public const string Invalid_a = "";
+        public const string Place_Hold = "Thank you for your reservation!";
+        public static DateTime Default_Reservation_Date = Convert.ToDateTime("2000-01-01");
     }
 }

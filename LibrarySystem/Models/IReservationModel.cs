@@ -14,5 +14,7 @@ namespace VirtualCollege.Models
        void UpdateReservation(Reservation reservation);
        Reservation GetReservationById(string reservationId);
        List<Reservation> GetAllReservations();
+
+       List<Reservation> GetReservationByUser(string userId);
     }
 }

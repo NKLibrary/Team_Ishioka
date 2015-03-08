@@ -19,7 +19,11 @@ namespace VirtualCollege.Utils
 
         protected void btnReturn_Click(object sender, EventArgs e)
         {
-            
+            if (!returnTo.Equals(""))
+            {
+                Response.Redirect(returnTo);
+            }
+
         }
 
 

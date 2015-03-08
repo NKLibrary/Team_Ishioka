@@ -12,6 +12,8 @@ namespace VirtualCollege.View
         string ItemType { get; }
         string ItemId { get; }
         DateTime ExpireDate { get; }
+        VirtualCollege.Utils.Settings.ReserveStatus Status { get; set; }
 
+        event EventHandler placeHoldHandler;
     }
 }

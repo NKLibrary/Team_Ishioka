@@ -10,9 +10,9 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Label ID="lblErrorMessage" runat="server" Font-Size="XX-Large" Text="Label"></asp:Label>
+        <asp:Label ID="lblErrorMessage" runat="server" Font-Size="XX-Large" Text="Error message"></asp:Label>
         <br />
-        <asp:Button ID="btnReturn" runat="server" Text="Button" />
+        <asp:Button ID="btnReturn" runat="server" OnClick="btnReturn_Click" Text="Return" />
     
     </div>
     </form>
