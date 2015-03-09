@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace VirtualCollege.View
 {
-    interface IReservationListView
+    public interface IReservationListView
     {
+        object Reservations{set;}
+        string SelectedReservationId { get; }
+
+        event EventHandler cancelHandler;
+
     }
 }

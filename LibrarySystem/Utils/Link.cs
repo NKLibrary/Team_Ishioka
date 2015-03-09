@@ -68,5 +68,10 @@ namespace VirtualCollege.Utils
             //return "EditEbookView.aspx";
             return "EditBookView.aspx?bookType=2&bookId="+bookId;
         }
+
+        internal static string GetErrorPage(string message, string returnTo)
+        {
+            return "ErrorPage.aspx?errorMessage=" + message + "&returnTo="+returnTo;
+        }
     }
 }

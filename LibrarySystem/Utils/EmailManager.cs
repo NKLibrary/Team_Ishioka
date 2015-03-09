@@ -5,12 +5,7 @@ using System.Web;
 
 namespace VirtualCollege.Utils
 {
-    //public enum ItemType
-    //{
-    //    Book,
-    //    Ebook,
-    //    Disc,
-    //    Room,
-    //    Pc
-    //}
+    public class EmailManager
+    {
+    }
 }
