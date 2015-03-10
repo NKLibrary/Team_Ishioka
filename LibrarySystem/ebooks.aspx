@@ -4,18 +4,20 @@
           <br />
         <br />
           <br />
+          Welcome to Ebooks page!
         <br />
-  Welcome to Ebooks page!
-    
-      &nbsp;&nbsp;<br />
+          &nbsp;&nbsp;<br />
           <table style="width: 100%">
               <tr>
-                  <td style="height: 30px; width: 382px">
-                      <asp:Label ID="ebook_titleLbl" runat="server" Text="Enter Ebook Title:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                  <td style="width: 182px">
+                      <asp:Label ID="ebook_titleLbl" CssClass ="infoLabel" runat="server" Text="Enter Ebook Title:" Width="158px"></asp:Label>
                   </td>
-                  <td style="height: 30px">
-                      <asp:Label ID="author_nameLbl" runat="server" Text="Enter Author Name:"></asp:Label>
+                  <td style="width: 225px"><asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True" style="margin-left: 0px"></asp:DropDownList>
+                  </td>
+                  <td style="width: 181px">
+                      <asp:Label ID="author_nameLbl" runat="server" CssClass ="infoLabel" Text="Enter Author Name:" Width="155px"></asp:Label>
+                  </td>
+                  <td>
     <asp:DropDownList ID="drpAuthor" runat="server" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
    
                   </td>
