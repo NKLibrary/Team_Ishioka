@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Master_Main_Content" runat="server">
      <h4 style="padding-top:40px"> You can reserve a PC here</h4>
         <div style="position:relative; left:30%;">
 
@@ -25,7 +25,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString2 %>" SelectCommand="SELECT * FROM [PC]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString2%>" SelectCommand="SELECT * FROM [PC]"></asp:SqlDataSource>
 
             </div>
 </asp:Content>

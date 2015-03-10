@@ -159,19 +159,28 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\User.aspx" />
     <Content Include="App_Data\LibraryDB.sql" />
-    <Content Include="books.aspx" />
+    <Content Include="Books.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\ManageStyle.css" />
     <Content Include="css\menu.css" />
+    <Content Include="css\style_Menu.css" />
+    <Content Include="css\style_VerticalMenu.css" />
     <Content Include="dvd.aspx" />
     <Content Include="ebooks.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="home.aspx" />
     <Content Include="horizontalNav.ascx" />
+    <Content Include="Images\dolphin_bg-ON.gif" />
+    <Content Include="Images\dolphin_bg-OVER.gif" />
+    <Content Include="Images\dolphin_bg.gif" />
+    <Content Include="Images\dolphin_left-ON.gif" />
+    <Content Include="Images\dolphin_right-ON.gif" />
+    <Content Include="Images\ImageBanner.jpg" />
     <Content Include="Images\manage_logo.jpg" />
+    <Content Include="Images\menu1.gif" />
     <Content Include="Images\new1.jpg" />
     <Content Include="Images\new2.jpg" />
     <Content Include="Images\new3.jpg" />
@@ -182,10 +191,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Account\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Master_Librarian.Master" />
+    <Content Include="Master_Main.Master" />
+    <Content Include="Master_Member.Master" />
+   <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
     <Content Include="pc1.aspx" />
     <Content Include="reserveItem.aspx" />
@@ -352,12 +361,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="books.aspx.cs">
-      <DependentUpon>books.aspx</DependentUpon>
+    <Compile Include="Books.aspx.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="books.aspx.designer.cs">
-      <DependentUpon>books.aspx</DependentUpon>
+    <Compile Include="Books.aspx.designer.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -417,6 +426,27 @@
     </Compile>
     <Compile Include="leftNav.ascx.designer.cs">
       <DependentUpon>leftNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Librarian.Master.cs">
+      <DependentUpon>Master_Librarian.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master_Librarian.Master.designer.cs">
+      <DependentUpon>Master_Librarian.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Main.Master.cs">
+      <DependentUpon>Master_Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master_Main.Master.designer.cs">
+      <DependentUpon>Master_Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Member.Master.cs">
+      <DependentUpon>Master_Member.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master_Member.Master.designer.cs">
+      <DependentUpon>Master_Member.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
@@ -626,7 +656,6 @@
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
     </Compile>
-    </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="dvd.aspx.cs" Inherits="VirtualCollege.Dvd" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="dvd.aspx.cs" Inherits="VirtualCollege.Dvd" %>
 
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
 
   <h4 style="padding-top:40px"> You can reserve a DVD or CD here</h4>
         <div style="position:relative; left:1%;">
@@ -39,7 +39,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString2 %>" SelectCommand="SELECT * FROM [Disc]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HConnection %>" SelectCommand="SELECT * FROM [Disc]"></asp:SqlDataSource>
 
 
             </div>

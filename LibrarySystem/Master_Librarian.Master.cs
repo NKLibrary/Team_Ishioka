@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace VirtualCollege
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class Master_Librarian : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
