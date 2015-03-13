@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Master_Main_Content" runat="server">
      <h4 style="padding-top:40px"> You can reserve a PC here</h4>
         <div style="position:relative; left:30%;">
 

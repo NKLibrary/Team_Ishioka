@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ebooks.aspx.cs" Inherits="VirtualCollege.Ebooks" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="ebooks.aspx.cs" Inherits="VirtualCollege.Ebooks" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
