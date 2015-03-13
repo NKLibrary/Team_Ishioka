@@ -159,7 +159,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\User.aspx" />
     <Content Include="App_Data\LibraryDB.sql" />
-    <Content Include="books.aspx" />
+    <Content Include="Books.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -194,6 +194,7 @@
     <Content Include="Master_Librarian.Master" />
     <Content Include="Master_Main.Master" />
     <Content Include="Master_Member.Master" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
     <Content Include="pc1.aspx" />
@@ -361,12 +362,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="books.aspx.cs">
-      <DependentUpon>books.aspx</DependentUpon>
+    <Compile Include="Books.aspx.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="books.aspx.designer.cs">
-      <DependentUpon>books.aspx</DependentUpon>
+    <Compile Include="Books.aspx.designer.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -429,18 +430,21 @@
     </Compile>
     <Compile Include="Master_Librarian.Master.cs">
       <DependentUpon>Master_Librarian.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master_Librarian.Master.designer.cs">
       <DependentUpon>Master_Librarian.Master</DependentUpon>
     </Compile>
     <Compile Include="Master_Main.Master.cs">
       <DependentUpon>Master_Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master_Main.Master.designer.cs">
       <DependentUpon>Master_Main.Master</DependentUpon>
     </Compile>
     <Compile Include="Master_Member.Master.cs">
       <DependentUpon>Master_Member.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master_Member.Master.designer.cs">
       <DependentUpon>Master_Member.Master</DependentUpon>
@@ -652,6 +656,13 @@
     </Compile>
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
