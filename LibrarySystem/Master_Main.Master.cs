@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VirtualCollege
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class Master_Main : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
