@@ -194,8 +194,7 @@
     <Content Include="Master_Librarian.Master" />
     <Content Include="Master_Main.Master" />
     <Content Include="Master_Member.Master" />
-    <Content Include="WebForm1.aspx" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+   <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
     <Content Include="pc1.aspx" />
     <Content Include="reserveItem.aspx" />
@@ -657,14 +656,7 @@
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
