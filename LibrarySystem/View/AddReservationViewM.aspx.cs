@@ -126,5 +126,27 @@ namespace VirtualCollege.View
                 }
             }
         }
+
+        protected void valCompareValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            DateTime tomorrow = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day +1);
+            if (calExpireDate.SelectedDate !=  default(DateTime))
+            {
+                if (calExpireDate.SelectedDate.CompareTo(tomorrow) < 0)
+                {
+                    isInputValid = false;
+                    args.IsValid = false;
+                }
+                else
+                {
+                    isInputValid = true;
+                    args.IsValid = true;
+                }
+            }
+            //else
+            //{
+            //    args.IsValid = true;                
+            //}
+        }
     }
 }

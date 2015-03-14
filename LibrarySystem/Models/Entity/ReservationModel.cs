@@ -38,15 +38,15 @@ namespace VirtualCollege.Models.Entity
             comm.Parameters.Add(new SqlParameter("@userId", DbType.String));
             comm.Parameters["@userId"].Value = reservation.userId;
             comm.Parameters.Add(new SqlParameter("@expireDate", DbType.Date));
-            Console.WriteLine(DateTime.ParseExact(reservation.expireDate.ToShortDateString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
+            //Console.WriteLine(DateTime.ParseExact(reservation.expireDate.ToShortDateString(), "yyyy-MM-dd", CultureInfo.InvariantCulture));
 
-            comm.Parameters["@expireDate"].Value = reservation.expireDate.ToString("MM/dd/yyyy");
+            comm.Parameters["@expireDate"].Value = reservation.expireDate.ToShortDateString();
             //comm.Parameters["@expireDate"].Value = DateTime.ParseExact(reservation.expireDate.ToShortDateString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
             comm.Parameters.Add(new SqlParameter("@processDate", DbType.Date));
-            comm.Parameters["@processDate"].Value = reservation.processDate.ToString("MM/dd/yyyy");
+            comm.Parameters["@processDate"].Value = reservation.processDate.ToShortDateString();
             //comm.Parameters["@processDate"].Value = DateTime.ParseExact(reservation.processDate.ToShortDateString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
             comm.Parameters.Add(new SqlParameter("@pickupDate", DbType.Date));
-            comm.Parameters["@pickupDate"].Value = reservation.pickupDate.ToString("MM/dd/yyyy");
+            comm.Parameters["@pickupDate"].Value = reservation.pickupDate.ToShortDateString();
             //comm.Parameters["@pickupDate"].Value = DateTime.ParseExact(reservation.pickupDate.ToShortDateString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
             comm.Parameters.Add(new SqlParameter("@status", SqlDbType.NVarChar));
             comm.Parameters["@status"].Value = reservation.status;
