@@ -16,17 +16,17 @@ namespace VirtualCollege.View
 
         protected void btnReserve1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddReservationView.aspx?itemType=book&itemId=12");
+            Response.Redirect("AddReservationViewM.aspx?itemType=book&itemId=12");
         }
 
         protected void btnReserve2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddReservationView.aspx?itemType=disc&itemId=84");
+            Response.Redirect("AddReservationViewM.aspx?itemType=disc&itemId=84");
         }
 
         protected void btnReserve3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddReservationView.aspx?itemType=room&itemId=23");
+            Response.Redirect("AddReservationViewM.aspx?itemType=room&itemId=23");
         }
 
 
