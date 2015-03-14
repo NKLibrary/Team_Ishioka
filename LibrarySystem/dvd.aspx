@@ -7,14 +7,16 @@
         <div style="position:relative; left:1%;">
 
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DiscId" OnRowCommand="reserve_dvd" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DiscId" OnRowCommand="reserve_dvd" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+                         <asp:CommandField ShowSelectButton="True" />
                          <asp:TemplateField HeaderText="Reserve">
 <ItemTemplate>
 <asp:Button ID="imageButtonreserve" Text="Reserve" OnClientClick="javascript:return alert('you have successfully reserved the room');" AlternateText="reserve" CommandName="reserve" runat="server" />
 </ItemTemplate>
 </asp:TemplateField>
+                    <asp:BoundField DataField="DiscId" HeaderText="Status" SortExpression="Status" Visible="false"/>
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                     <asp:BoundField DataField="DiscTitle" HeaderText="DiscTitle" SortExpression="DiscTitle" />
                     <asp:BoundField DataField="Artist" HeaderText="Artist" SortExpression="Artist" />

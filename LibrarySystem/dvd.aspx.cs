@@ -20,6 +20,13 @@ namespace VirtualCollege
                 //Response.Write("<script type=\"text/javascript\">alert('Your Message');</script>");
             }
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string dvdid = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Value.ToString();
+            Response.Redirect("~/dvddetails?id="+dvdid);
+
+        }
        
     }
 }

@@ -6,12 +6,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <body>
-  Welcome to Ebooks page!
+  WelcWelcome to Ebooks page!
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="EbookId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowPaging="True" AllowSorting="True">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="EbookId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="EbookId" HeaderText="EbookId" InsertVisible="False" ReadOnly="True" SortExpression="EbookId" />
                 <asp:BoundField DataField="EbookTitle" HeaderText="EbookTitle" SortExpression="EbookTitle" />
                 <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
@@ -36,8 +37,8 @@
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
         <br />
-        Ebooks page!!        <br />
-        Ebooks page!!<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString2 %>" SelectCommand="SELECT * FROM [Ebook]"></asp:SqlDataSource>
+        Ebooks page!!        />
+        Ebooks page!!<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HConnection %>" SelectCommand="SELECT * FROM [Ebook]"></asp:SqlDataSource>
     </div>
     </form>
 </body>

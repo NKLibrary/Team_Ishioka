@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -159,6 +160,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\User.aspx" />
     <Content Include="App_Data\LibraryDB.sql" />
+    <Content Include="bookdetails.aspx" />
     <Content Include="Books.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -169,6 +171,8 @@
     <Content Include="css\style_Menu.css" />
     <Content Include="css\style_VerticalMenu.css" />
     <Content Include="dvd.aspx" />
+    <Content Include="dvddetails.aspx" />
+    <Content Include="ebookdetails.aspx" />
     <Content Include="ebooks.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="home.aspx" />
@@ -187,6 +191,7 @@
     <Content Include="img\reserve-button.png" />
     <Content Include="itemsIssued.aspx" />
     <Content Include="leftNav.ascx" />
+    <Content Include="Librariansdetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -194,7 +199,20 @@
     <Content Include="Master_Librarian.Master" />
     <Content Include="Master_Main.Master" />
     <Content Include="Master_Member.Master" />
-   <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="manager.Master" />
+    <Content Include="LibraryDBDataSet.xsc">
+      <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="LibraryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="LibraryDBDataSet.xss">
+      <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="paymentHistory.aspx" />
     <Content Include="pc1.aspx" />
     <Content Include="reserveItem.aspx" />
@@ -361,6 +379,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="bookdetails.aspx.cs">
+      <DependentUpon>bookdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookdetails.aspx.designer.cs">
+      <DependentUpon>bookdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Books.aspx.cs">
       <DependentUpon>Books.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,6 +413,20 @@
     </Compile>
     <Compile Include="dvd.aspx.designer.cs">
       <DependentUpon>dvd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dvddetails.aspx.cs">
+      <DependentUpon>dvddetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dvddetails.aspx.designer.cs">
+      <DependentUpon>dvddetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ebookdetails.aspx.cs">
+      <DependentUpon>ebookdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ebookdetails.aspx.designer.cs">
+      <DependentUpon>ebookdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ebooks.aspx.cs">
       <DependentUpon>ebooks.aspx</DependentUpon>
@@ -426,6 +465,25 @@
     </Compile>
     <Compile Include="leftNav.ascx.designer.cs">
       <DependentUpon>leftNav.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Librariansdetails.aspx.cs">
+      <DependentUpon>Librariansdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Librariansdetails.aspx.designer.cs">
+      <DependentUpon>Librariansdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="manager.Master.cs">
+      <DependentUpon>manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager.Master.designer.cs">
+      <DependentUpon>manager.Master</DependentUpon>
     </Compile>
     <Compile Include="Master_Librarian.Master.cs">
       <DependentUpon>Master_Librarian.Master</DependentUpon>
@@ -656,8 +714,17 @@
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
     </Compile>
-   </ItemGroup>
-  <ItemGroup />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

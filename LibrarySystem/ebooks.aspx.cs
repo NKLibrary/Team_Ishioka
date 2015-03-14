@@ -13,5 +13,11 @@ namespace VirtualCollege
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ebookid = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Value.ToString();
+            Response.Redirect("~/ebookdetails.aspx?id=" + ebookid);
+        }
     }
 }
