@@ -33,7 +33,7 @@
         <br />
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
+                    <asp:GridView ID="GridView1" runat="server" DataKeyNames="BookId" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" />
                         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -44,6 +44,9 @@
                         <SortedAscendingHeaderStyle BackColor="#4D0000" />
                         <SortedDescendingCellStyle BackColor="#FCF6C0" />
                         <SortedDescendingHeaderStyle BackColor="#820000" />
+                         <Columns>
+                                  <asp:ButtonField ButtonType="Button" CommandName="Select" Text="View" />
+                         </Columns>
                     </asp:GridView>
             </ContentTemplate>
      </asp:UpdatePanel>

@@ -192,6 +192,7 @@
     <Content Include="itemsIssued.aspx" />
     <Content Include="leftNav.ascx" />
     <Content Include="Librariansdetails.aspx" />
+    <Content Include="manager.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -480,6 +481,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="manager.aspx.cs">
+      <DependentUpon>manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager.aspx.designer.cs">
+      <DependentUpon>manager.aspx</DependentUpon>
     </Compile>
     <Compile Include="manager.Master.cs">
       <DependentUpon>manager.Master</DependentUpon>

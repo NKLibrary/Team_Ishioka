@@ -10,7 +10,7 @@ namespace VirtualCollege
 {
     public partial class Ebooks : System.Web.UI.Page
     {
-        string connection = ConfigurationManager.ConnectionStrings["LibraryDB_ConnectionString"].ConnectionString;
+        string connection = ConfigurationManager.ConnectionStrings["HConnection"].ConnectionString;
         DataSet ds = new DataSet();
         SqlCommand cmd;
         SqlDataAdapter da = new SqlDataAdapter();
@@ -106,6 +106,12 @@ namespace VirtualCollege
         {
             string searchbook = drpBookTitle.SelectedItem.ToString();
             search(searchbook, drpAuthor.SelectedItem.ToString());
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ebookid = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Value.ToString();
+            Response.Redirect("~/ebookdetails.aspx?id=" + ebookid);
         }
     }
 }

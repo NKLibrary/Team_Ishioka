@@ -44,9 +44,9 @@ namespace VirtualCollege.Account
                     {
                         Response.Redirect("Librarian.aspx");
                     }
-                    else if (username.Equals("manger") && password.Equals("manager"))
+                    else if (username.Equals("manager") && password.Equals("manager"))
                     {
-                        Response.Redirect("Manager.aspx");
+                        Response.Redirect("~/Manager.aspx");
                     }
                 
                 else

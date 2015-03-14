@@ -26,8 +26,9 @@
         <br />
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None"  AllowPaging="True">
-        <AlternatingRowStyle BackColor="White" />
+    <asp:GridView ID="GridView1" runat="server" DataKeyNames="EbookId" CellPadding="4" ForeColor="#333333" GridLines="None"  AllowPaging="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+         
+         <AlternatingRowStyle BackColor="White" />
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
@@ -41,7 +42,7 @@
             <asp:BoundField DataField="EbookTitle" HeaderText="EbookTitle" 
                 SortExpression="EbookTitle" />
                   <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Download" />
-         
+                       <asp:ButtonField ButtonType="Button" CommandName="Select" Text="View" />
         </Columns>
     </asp:GridView>
               </ContentTemplate>

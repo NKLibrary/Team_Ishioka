@@ -11,17 +11,18 @@
 <body>
 <form id="form1" runat="server">
 <div>
-<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="180px" Width="100%" />
+<asp:ImageButton OnClientClick="manager.aspx" ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="180px" Width="100%" />
 <br /><br />
 </div>
 <hr />
 
 <div id="tabs30" style="font-family:Arial; font-size:large; text-align:center;">
   <ul>
-<li><a href='#1' title='Home' class='current'><span>Home</span></a></li>
-<li><a href="Books.aspx" title='Books'><span>Books</span></a></li>
-<li><a href="ebooks.aspx" title='eBooks'><span>Librarians</span></a></li>
-<li><a href="dvd.aspx" title='DVDs'><span>Members</span></a></li>
+<li><a href='default.aspx' title='Home' class='current'><span>Home</span></a></li>
+<li><a href="Books.aspx" title='Books'><span>Manage Books</span></a></li>
+<li><a href="Books.aspx" title='OrderBooks'><span>Order Books</span></a></li>
+<li><a href="librariansdetails.aspx" title='eBooks'><span>Manage Librarians</span></a></li>
+<li><a href="dvd.aspx" title='DVDs'><span>Manage Members</span></a></li>
 <li><a href='#5' title='Book Room'><span>Reports</span></a></li>
 <li></li>
 <li></li>
