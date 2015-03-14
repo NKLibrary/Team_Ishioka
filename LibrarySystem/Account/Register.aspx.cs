@@ -59,12 +59,12 @@ namespace VirtualCollege.Account
         private void ExecuteInsert(string name, string gender, string address, string city, string province, string postalcode, string home, string cell, string email,string stud, string school, string password, string lastname, string midname)
     {
 
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LibraryDBConnectionString2"].ToString());
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HConnection"].ToString());
         //string sql = @"INSERT INTO Member (Password, FirstName, Gender, Address, City, Province, PostalCode, Country, HomePhone, CellPhone, Email, Student, SchoolName) VALUES "
           //          + " (@Name,@UserName,@Password,@Gender,@Age,@Address)";
 
         string sql = "INSERT INTO Member (Password, FirstName,MiddleName,LastName, Gender, Address, City, Province, PostalCode, Country, HomePhone, CellPhone, Email, Student, SchoolName) VALUES ('" + password + "','" + name + "','" + midname + "','" + lastname + "','" + gender + "','" + address + "','" + city + "','" + province + "','" + postalcode + "','CA','" + home + "','" + cell + "','" + email + "','" + stud + "','" + school + "')";
-        Label1.Text = sql;
+       // Label1.Text = sql;
         try
         {
             conn.Open();

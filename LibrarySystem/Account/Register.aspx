@@ -243,7 +243,7 @@
                     </tr>
                 </table>
                 <br />
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
             </div>
         </div>
         <div class="form-group">
