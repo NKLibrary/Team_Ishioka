@@ -11,7 +11,11 @@ namespace VirtualCollege.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserID"] != null) 
+            {
+                string uid = Session["UserID"].ToString();
+                
+            }
         }
     }
 }

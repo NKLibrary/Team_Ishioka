@@ -27,9 +27,26 @@ namespace VirtualCollege
                 dvdAdapter.Fill(dvdSet, "Disc");
                 foreach (DataRow dvdRow in dvdSet.Tables["Disc"].Rows)
                 {
-                    Response.Write("\t"+dvdRow[0]);
+                   /* Response.Write("\t"+dvdRow[0]);
                     Response.Write("\t" + dvdRow[1]);
-
+                    Response.Write("\t" + dvdRow[2]);
+                    Response.Write("\t" + dvdRow[3]);
+                    Response.Write("\t" + dvdRow[4]);
+                    Response.Write("\t" + dvdRow[5]);
+                    Response.Write("\t" + dvdRow[6]);
+                    Response.Write("\t" + dvdRow[7]);
+                    Response.Write("\t" + dvdRow[8]);
+                    Response.Write("\t" + dvdRow[9]);*/
+                    lbltitle.Text = dvdRow[1].ToString();
+                    lblartist.Text=dvdRow[2].ToString();
+                    lbldirector.Text = dvdRow[3].ToString();
+                    lbldist.Text = dvdRow[4].ToString();
+                    lblrelease.Text = dvdRow[5].ToString();
+                    lblcategory.Text = dvdRow[6].ToString();
+                    lbldesc.Text = dvdRow[9].ToString();
+                    lblduration.Text = dvdRow[10].ToString();
+                    lblstatus.Text = dvdRow[11].ToString();
+                    
                 }
             }
             catch(SqlException ex) { }

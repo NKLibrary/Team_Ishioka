@@ -105,7 +105,7 @@ namespace VirtualCollege.Account
 
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
-            Label2.Text = "Member Successfully created !!aaa";
+            Label2.Text = "Member Successfully created !!";
             Label2.Visible = true;
             
         }

@@ -5,6 +5,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using VirtualCollege.Models;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace VirtualCollege.Account
 {
@@ -25,7 +28,27 @@ namespace VirtualCollege.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-           /* if (IsValid)
+
+          string username = UserName.Text.ToString();
+            string password = Password.Text.ToString();
+            string connection = ConfigurationManager.ConnectionStrings["HConnection"].ConnectionString;
+            DataSet ds = new DataSet();
+            SqlCommand cmd;
+            SqlDataAdapter da = new SqlDataAdapter();
+            SqlConnection con = new SqlConnection(connection);
+            string q1 = "select * from Member where UserId ="+username+" and Password = '"+password+"'";
+            cmd = new SqlCommand(q1,con);
+            da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Session["UserID"] = username;
+                Response.Redirect("MemberWelcome.aspx");
+              
+            }
+
+
+            /* if (IsValid)
             {
                 // Validate the user password
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -34,8 +57,7 @@ namespace VirtualCollege.Account
                 {
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
-                    string username = UserName.Text.ToString();
-                    string password = Password.Text.ToString();
+                    
                     if (username.Equals("user") && password.Equals("user")) 
                     {
                         Response.Redirect("MemberWelcome.aspx");
