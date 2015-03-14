@@ -6,12 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using VirtualCollege.Models.Entity;
 using VirtualCollege.Presenter;
+using VirtualCollege.Utils;
 
 namespace VirtualCollege.View
 {
-    public partial class ReservationListView : System.Web.UI.Page, IReservationListView
+    public partial class ReservationListViewM : System.Web.UI.Page, IReservationListView
     {
         private ReservationListPresenter presenter;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             presenter = new ReservationListPresenter(this, new ReservationModel());
@@ -25,7 +27,7 @@ namespace VirtualCollege.View
             string userId = "3001477";
             List<Reservation> reservations = presenter.LoadReservationByUser(userId);
             Reservations = from reservation in reservations
-                   select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
+                           select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
         }
 
         public object Reservations
@@ -34,7 +36,7 @@ namespace VirtualCollege.View
             {
                 gvReservtions.DataSource = value;
                 gvReservtions.DataBind();
-                gvReservtions.DataKeyNames = new string[]{"reservationId"};
+                gvReservtions.DataKeyNames = new string[] { "reservationId" };
             }
         }
 
@@ -48,7 +50,7 @@ namespace VirtualCollege.View
 
         protected void gvReservtions_DataBound(object sender, EventArgs e)
         {
-            //gvReservtions.Columns[0].Visible = false;
+
         }
 
         protected void gvReservtions_RowEditing(object sender, GridViewEditEventArgs e)
@@ -57,5 +59,11 @@ namespace VirtualCollege.View
             cancelHandler(sender, e);
             LoadReservationList();
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Link.GetAddReservation());
+        }
+
     }
 }

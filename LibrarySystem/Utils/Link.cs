@@ -73,5 +73,15 @@ namespace VirtualCollege.Utils
         {
             return "ErrorPage.aspx?errorMessage=" + message + "&returnTo="+returnTo;
         }
+
+        internal static string GetAddReservation()
+        {
+            return "AddReservationViewM.aspx";
+        }
+
+        internal static string GetReservationList()
+        {
+            return "ReservationListViewM.aspx";
+        }
     }
 }

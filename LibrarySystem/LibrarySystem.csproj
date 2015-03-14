@@ -199,6 +199,9 @@
     <Content Include="Master_Librarian.Master" />
     <Content Include="Master_Main.Master" />
     <Content Include="Master_Member.Master" />
+    <Content Include="View\AddReservationViewM.aspx" />
+    <Content Include="View\PlaceReservationSample.aspx" />
+    <Content Include="View\ReservationListViewM.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="manager.Master" />
     <Content Include="LibraryDBDataSet.xsc">
@@ -643,6 +646,13 @@
     <Compile Include="View\AddReservationView.aspx.designer.cs">
       <DependentUpon>AddReservationView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\AddReservationViewM.aspx.cs">
+      <DependentUpon>AddReservationViewM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AddReservationViewM.aspx.designer.cs">
+      <DependentUpon>AddReservationViewM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\BookListView.aspx.cs">
       <DependentUpon>BookListView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -693,6 +703,13 @@
     <Compile Include="View\PcListView.aspx.designer.cs">
       <DependentUpon>PcListView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\PlaceReservationSample.aspx.cs">
+      <DependentUpon>PlaceReservationSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PlaceReservationSample.aspx.designer.cs">
+      <DependentUpon>PlaceReservationSample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\ProcessReservationView.aspx.cs">
       <DependentUpon>ProcessReservationView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -707,6 +724,13 @@
     <Compile Include="View\ReservationListView.aspx.designer.cs">
       <DependentUpon>ReservationListView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\ReservationListViewM.aspx.cs">
+      <DependentUpon>ReservationListViewM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ReservationListViewM.aspx.designer.cs">
+      <DependentUpon>ReservationListViewM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\RoomListView.aspx.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -714,7 +738,6 @@
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -727,7 +750,6 @@
     <EmbeddedResource Include="Report1.rdlc" />
   </ItemGroup>
   <ItemGroup />
-
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
