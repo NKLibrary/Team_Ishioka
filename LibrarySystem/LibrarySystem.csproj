@@ -205,6 +205,7 @@
     <Content Include="Master_Librarian.Master" />
     <Content Include="Master_Main.Master" />
     <Content Include="Master_Member.Master" />
+    <Content Include="pcdetails.aspx" />
     <Content Include="View\AddReservationViewM.aspx" />
     <Content Include="View\PlaceReservationSample.aspx" />
     <Content Include="View\ReservationListViewM.aspx" />
@@ -631,6 +632,13 @@
       <DependentUpon>pc1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IReservationModel.cs" />
+    <Compile Include="pcdetails.aspx.cs">
+      <DependentUpon>pcdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pcdetails.aspx.designer.cs">
+      <DependentUpon>pcdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\AddBookPresenter.cs" />
     <Compile Include="Presenter\AddDiscPresenter.cs" />
     <Compile Include="Presenter\AddEbookPresenter.cs" />

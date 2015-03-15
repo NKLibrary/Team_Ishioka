@@ -20,5 +20,11 @@ namespace VirtualCollege
                 //Response.Write("<script type=\"text/javascript\">alert('Your Message');</script>");
             }
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string pcid = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Value.ToString();
+            Response.Redirect("~/pcdetails.aspx?id=" + pcid);
+        }
     }
 }
