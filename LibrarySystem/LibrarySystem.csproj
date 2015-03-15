@@ -209,7 +209,6 @@
     <Content Include="View\AddReservationViewM.aspx" />
     <Content Include="View\PlaceReservationSample.aspx" />
     <Content Include="View\ReservationListViewM.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="manager.Master" />
     <Content Include="LibraryDBDataSet.xsc">
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
@@ -835,13 +834,6 @@
     </Compile>
     <Compile Include="View\RoomListView.aspx.designer.cs">
       <DependentUpon>RoomListView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
