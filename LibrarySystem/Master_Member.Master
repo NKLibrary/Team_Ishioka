@@ -11,8 +11,7 @@
 <body>
 <form id="form1" runat="server">
 <div>
-<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="180px" Width="100%" />
-<br /><br />
+<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="109px" Width="100%" />
 </div>
 <hr />
 

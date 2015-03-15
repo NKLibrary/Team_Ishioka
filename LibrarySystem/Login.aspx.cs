@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
@@ -34,26 +36,42 @@ namespace VirtualCollege.Account
                 {
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
+
                     string username = UserName.Text.ToString();
                     string password = Password.Text.ToString();
-                    if (username.Equals("user") && password.Equals("user")) 
+
+                    SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
+
+                    if (con.State == System.Data.ConnectionState.Closed)
                     {
-                        Response.Redirect("MemberWelcome.aspx");
+                        con.Open();
                     }
-                    else if (username.Equals("lib") && password.Equals("lib"))
+
+                    if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
                     {
-                        Response.Redirect("Librarian.aspx");
+
+                        if (username.Equals("user") && password.Equals("user"))
+                        {
+                            Response.Redirect("MemberWelcome.aspx");
+                        }
+                        else if (username.Equals("lib") && password.Equals("lib"))
+                        {
+                            Response.Redirect("Librarian.aspx");
+                        }
+                        else if (username.Equals("manager") && password.Equals("manager"))
+                        {
+                            Response.Redirect("~/Manager.aspx");
+                        }
+
+                        Response.Redirect("~/Home.aspx?login=true");
                     }
-                    else if (username.Equals("manager") && password.Equals("manager"))
+                    else
                     {
-                        Response.Redirect("~/Manager.aspx");
+                        FailureText.Text = "Invalid username or password.";
+                        ErrorMessage.Visible = true;
                     }
-                
-                else
-                {
-                    FailureText.Text = "Invalid username or password.";
-                    ErrorMessage.Visible = true;
-                }
             }
         }
     }

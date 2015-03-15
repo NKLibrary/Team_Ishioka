@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace VirtualCollege
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class WebForm5 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["login"]!=null &&  bool.Parse(Request.QueryString["login"].ToString()) == true)
-            {
-                lblLogin.Visible = true;
-            }
+
         }
     }
 }

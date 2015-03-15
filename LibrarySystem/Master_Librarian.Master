@@ -34,8 +34,7 @@
 
 
 <div>
-<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="180px" Width="100%" />
-<br /><br />
+<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="121px" Width="100%" />
 </div>
 <hr />
 

@@ -150,11 +150,11 @@
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Librarian.aspx" />
-    <Content Include="Account\Login.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\MemberWelcome.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
-    <Content Include="Account\Register.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
@@ -192,7 +192,7 @@
     <Content Include="itemsIssued.aspx" />
     <Content Include="leftNav.ascx" />
     <Content Include="Librariansdetails.aspx" />
-    <Content Include="manager.aspx" />
+    <Content Include="Manager_Home.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -211,6 +211,8 @@
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="WebForm2.aspx" />
+    <Content Include="Account\ManagerInfo.aspx" />
+    <Content Include="WebForm5.aspx" />
     <None Include="LibraryDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>LibraryDBDataSet.Designer.cs</LastGenOutput>
@@ -312,11 +314,11 @@
     <Compile Include="Account\Librarian.aspx.designer.cs">
       <DependentUpon>Librarian.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Manage.aspx.cs">
@@ -340,11 +342,11 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Register.aspx.cs">
+    <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
+    <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
@@ -485,12 +487,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="manager.aspx.cs">
-      <DependentUpon>manager.aspx</DependentUpon>
+    <Compile Include="Manager_Home.aspx.cs">
+      <DependentUpon>Manager_Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manager.aspx.designer.cs">
-      <DependentUpon>manager.aspx</DependentUpon>
+    <Compile Include="Manager_Home.aspx.designer.cs">
+      <DependentUpon>Manager_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master_Manager.Master.cs">
       <DependentUpon>Master_Manager.Master</DependentUpon>
@@ -776,6 +778,20 @@
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagerInfo.aspx.cs">
+      <DependentUpon>ManagerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagerInfo.aspx.designer.cs">
+      <DependentUpon>ManagerInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace VirtualCollege
             int id = Convert.ToInt32(dvdid);
             try
             {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HConnection"].ToString());
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
                 conn.Open();
                 string query = "select * from Disc where DiscId ="+dvdid;
                 SqlDataAdapter dvdAdapter = new SqlDataAdapter(query,conn);
