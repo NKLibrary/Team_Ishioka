@@ -10,7 +10,7 @@
 namespace VirtualCollege.Account {
     
     
-    public partial class Confirmed {
+    public partial class Confirm {
         
         /// <summary>
         /// status control.

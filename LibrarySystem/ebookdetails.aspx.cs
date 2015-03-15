@@ -19,7 +19,7 @@ namespace VirtualCollege
             int id = Convert.ToInt32(ebookid);
             try
             {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HConnection"].ToString());
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
                 conn.Open();
                 string query = "select * from Ebook where EbookId =" + ebookid;
                 SqlDataAdapter ebookAdapter = new SqlDataAdapter(query, conn);

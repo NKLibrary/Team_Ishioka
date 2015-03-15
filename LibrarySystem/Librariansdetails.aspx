@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/manager.Master" AutoEventWireup="true" CodeBehind="Librariansdetails.aspx.cs" Inherits="VirtualCollege.Librariansdetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Manager.Master" AutoEventWireup="true" CodeBehind="Librariansdetails.aspx.cs" Inherits="VirtualCollege.Librariansdetails" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="Master_Main_Content" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Master_Manager_Content" runat="server">
 
     <br />
     <span style="font-size: large"><strong>Manage all Librarians</strong><asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="LibrarianId" DataSourceID="sdsLibrarians">
@@ -22,7 +22,7 @@
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="sdsLibrarians" runat="server" ConnectionString="<%$ ConnectionStrings:HConnection %>" DeleteCommand="DELETE FROM [Librarian] WHERE [LibrarianId] = @LibrarianId" InsertCommand="INSERT INTO [Librarian] ([Password], [FirstName], [MiddleName], [LastName], [JoiningDate], [Gender], [Address], [City], [Province], [PostalCode], [Country], [CellPhone], [Email]) VALUES (@Password, @FirstName, @MiddleName, @LastName, @JoiningDate, @Gender, @Address, @City, @Province, @PostalCode, @Country, @CellPhone, @Email)" SelectCommand="SELECT * FROM [Librarian]" UpdateCommand="UPDATE [Librarian] SET [Password] = @Password, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [JoiningDate] = @JoiningDate, [Gender] = @Gender, [Address] = @Address, [City] = @City, [Province] = @Province, [PostalCode] = @PostalCode, [Country] = @Country, [CellPhone] = @CellPhone, [Email] = @Email WHERE [LibrarianId] = @LibrarianId">
+    <asp:SqlDataSource ID="sdsLibrarians" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>" DeleteCommand="DELETE FROM [Librarian] WHERE [LibrarianId] = @LibrarianId" InsertCommand="INSERT INTO [Librarian] ([Password], [FirstName], [MiddleName], [LastName], [JoiningDate], [Gender], [Address], [City], [Province], [PostalCode], [Country], [CellPhone], [Email]) VALUES (@Password, @FirstName, @MiddleName, @LastName, @JoiningDate, @Gender, @Address, @City, @Province, @PostalCode, @Country, @CellPhone, @Email)" SelectCommand="SELECT * FROM [Librarian]" UpdateCommand="UPDATE [Librarian] SET [Password] = @Password, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [JoiningDate] = @JoiningDate, [Gender] = @Gender, [Address] = @Address, [City] = @City, [Province] = @Province, [PostalCode] = @PostalCode, [Country] = @Country, [CellPhone] = @CellPhone, [Email] = @Email WHERE [LibrarianId] = @LibrarianId">
         <DeleteParameters>
             <asp:Parameter Name="LibrarianId" Type="Int32" />
         </DeleteParameters>

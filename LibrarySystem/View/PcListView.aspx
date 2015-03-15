@@ -112,7 +112,7 @@
             </SelectedItemTemplate>
         </asp:ListView>
         <p>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WeiYanConnection %>" SelectCommand="SELECT * FROM [PC]" DeleteCommand="DELETE FROM [PC] WHERE [PCId] = @PCId" InsertCommand="INSERT INTO [PC] ([Status]) VALUES (@Status)" UpdateCommand="UPDATE [PC] SET [Status] = @Status WHERE [PCId] = @PCId">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>" SelectCommand="SELECT * FROM [PC]" DeleteCommand="DELETE FROM [PC] WHERE [PCId] = @PCId" InsertCommand="INSERT INTO [PC] ([Status]) VALUES (@Status)" UpdateCommand="UPDATE [PC] SET [Status] = @Status WHERE [PCId] = @PCId">
                 <DeleteParameters>
                     <asp:Parameter Name="PCId" Type="Int32" />
                 </DeleteParameters>

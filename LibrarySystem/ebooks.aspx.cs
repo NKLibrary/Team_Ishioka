@@ -10,7 +10,7 @@ namespace VirtualCollege
 {
     public partial class Ebooks : System.Web.UI.Page
     {
-        string connection = ConfigurationManager.ConnectionStrings["HConnection"].ConnectionString;
+        string connection = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
         DataSet ds = new DataSet();
         SqlCommand cmd;
         SqlDataAdapter da = new SqlDataAdapter();

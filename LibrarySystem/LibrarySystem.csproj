@@ -206,10 +206,11 @@
     <Content Include="View\PlaceReservationSample.aspx" />
     <Content Include="View\ReservationListViewM.aspx" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="manager.Master" />
+    <Content Include="Master_Manager.Master" />
     <Content Include="LibraryDBDataSet.xsc">
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="WebForm2.aspx" />
     <None Include="LibraryDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>LibraryDBDataSet.Designer.cs</LastGenOutput>
@@ -491,12 +492,12 @@
     <Compile Include="manager.aspx.designer.cs">
       <DependentUpon>manager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manager.Master.cs">
-      <DependentUpon>manager.Master</DependentUpon>
+    <Compile Include="Master_Manager.Master.cs">
+      <DependentUpon>Master_Manager.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="manager.Master.designer.cs">
-      <DependentUpon>manager.Master</DependentUpon>
+    <Compile Include="Master_Manager.Master.designer.cs">
+      <DependentUpon>Master_Manager.Master</DependentUpon>
     </Compile>
     <Compile Include="Master_Librarian.Master.cs">
       <DependentUpon>Master_Librarian.Master</DependentUpon>
@@ -768,6 +769,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

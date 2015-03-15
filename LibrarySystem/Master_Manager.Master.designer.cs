@@ -31,6 +31,15 @@ namespace VirtualCollege {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// ImageBanner control.
         /// </summary>
         /// <remarks>
@@ -40,12 +49,12 @@ namespace VirtualCollege {
         protected global::System.Web.UI.WebControls.ImageButton ImageBanner;
         
         /// <summary>
-        /// Master_Main_Content control.
+        /// Master_Manager_Content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Master_Main_Content;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Master_Manager_Content;
     }
 }

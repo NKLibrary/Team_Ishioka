@@ -47,7 +47,7 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WeiYanConnection %>" DeleteCommand="DELETE FROM [Room] WHERE [RoomId] = @RoomId" InsertCommand="INSERT INTO [Room] ([Capacity], [Status]) VALUES (@Capacity, @Status)" SelectCommand="SELECT * FROM [Room]" UpdateCommand="UPDATE [Room] SET [Capacity] = @Capacity, [Status] = @Status WHERE [RoomId] = @RoomId">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>" DeleteCommand="DELETE FROM [Room] WHERE [RoomId] = @RoomId" InsertCommand="INSERT INTO [Room] ([Capacity], [Status]) VALUES (@Capacity, @Status)" SelectCommand="SELECT * FROM [Room]" UpdateCommand="UPDATE [Room] SET [Capacity] = @Capacity, [Status] = @Status WHERE [RoomId] = @RoomId">
                 <DeleteParameters>
                     <asp:Parameter Name="RoomId" Type="Int32" />
                 </DeleteParameters>
