@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VirtualCollege.Models.Entity;
 
 namespace VirtualCollege.View
 {
@@ -27,6 +28,11 @@ namespace VirtualCollege.View
         protected void btnReserve3_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddReservationViewM.aspx?itemType=room&itemId=23");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            new ReservationModel().Test();
         }
 
 

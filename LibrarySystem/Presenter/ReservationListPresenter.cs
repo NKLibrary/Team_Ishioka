@@ -23,12 +23,12 @@ namespace VirtualCollege.Presenter
         private void CancelReservation(object sender, EventArgs e)
         {
             string reservationId = this.view.SelectedReservationId;
-            Reservation reservation = new Reservation();
+            VirtualCollege.Models.Entity.Reservation reservation = new VirtualCollege.Models.Entity.Reservation();
             reservation.reservationId = reservationId;
             model.DeleteReservation(reservation);
         }
 
-        internal List<Reservation> LoadReservationByUser(string userId)
+        internal List<VirtualCollege.Models.Entity.Reservation> LoadReservationByUser(string userId)
         {
             return model.GetReservationByUser(userId);
         }

@@ -19,12 +19,12 @@ namespace VirtualCollege.Presenter
             view.Presenter = this;
         }
 
-        public void EditEbook(Ebook book)
+        public void EditEbook(VirtualCollege.Models.Entity.Ebook book)
         {
             model.EditEbook(book);
         }
 
-        public Ebook GetEbook(string bookId)
+        public VirtualCollege.Models.Entity.Ebook GetEbook(string bookId)
         {
             return model.GetEbookById(bookId);
         }

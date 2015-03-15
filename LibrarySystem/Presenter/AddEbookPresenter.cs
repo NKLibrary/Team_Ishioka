@@ -20,7 +20,7 @@ namespace VirtualCollege.Presenter
             view.Presenter = this;
         }
 
-        public void AddEbook(Ebook book)
+        public void AddEbook(VirtualCollege.Models.Entity.Ebook book)
         {
             model.AddEbook(book);
         }

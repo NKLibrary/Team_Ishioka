@@ -27,7 +27,7 @@ namespace VirtualCollege.Presenter
             view.Books = books;
         }
 
-        public void DeleteBook(Book book)
+        public void DeleteBook(VirtualCollege.Models.Entity.Book book)
         {
             model.DeleteBook(book);
         }

@@ -20,12 +20,12 @@ namespace VirtualCollege.Presenter
             view.Presenter = this;
         }
 
-        public List<Ebook> LoadAllEbooks()
+        public List<VirtualCollege.Models.Entity.Ebook> LoadAllEbooks()
         {
             return model.GetAllEbooks();
         }
 
-        public void DeleteEbook(Ebook book)
+        public void DeleteEbook(VirtualCollege.Models.Entity.Ebook book)
         {
             model.DeleteEbook(book);
         }
