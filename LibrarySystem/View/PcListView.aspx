@@ -8,9 +8,13 @@
 
     <div class="form-horizontal">
         <h4>PcView</h4>
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="PCId" DataSourceID="SqlDataSource1">
+        <asp:ListView ID="ListView1" runat="server" DataKeyNames="PCId" DataSourceID="SqlDataSource1" InsertItemPosition="LastItem">
             <AlternatingItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FAFAD2;color: #284775;">
+                    <td>
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    </td>
                     <td>
                         <asp:Label ID="PCIdLabel" runat="server" Text='<%# Eval("PCId") %>' />
                     </td>
@@ -20,7 +24,7 @@
                 </tr>
             </AlternatingItemTemplate>
             <EditItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFCC66;color: #000080;">
                     <td>
                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                         <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -34,7 +38,7 @@
                 </tr>
             </EditItemTemplate>
             <EmptyDataTemplate>
-                <table runat="server" style="">
+                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                     <tr>
                         <td>No data was returned.</td>
                     </tr>
@@ -53,7 +57,11 @@
                 </tr>
             </InsertItemTemplate>
             <ItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFFBD6;color: #333333;">
+                    <td>
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    </td>
                     <td>
                         <asp:Label ID="PCIdLabel" runat="server" Text='<%# Eval("PCId") %>' />
                     </td>
@@ -66,8 +74,9 @@
                 <table runat="server">
                     <tr runat="server">
                         <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
-                                <tr runat="server" style="">
+                            <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <tr runat="server" style="background-color: #FFFBD6;color: #333333;">
+                                    <th runat="server"></th>
                                     <th runat="server">PCId</th>
                                     <th runat="server">Status</th>
                                 </tr>
@@ -77,7 +86,7 @@
                         </td>
                     </tr>
                     <tr runat="server">
-                        <td runat="server" style="">
+                        <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
                             <asp:DataPager ID="DataPager1" runat="server">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
@@ -88,7 +97,11 @@
                 </table>
             </LayoutTemplate>
             <SelectedItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFCC66;font-weight: bold;color: #000080;">
+                    <td>
+                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    </td>
                     <td>
                         <asp:Label ID="PCIdLabel" runat="server" Text='<%# Eval("PCId") %>' />
                     </td>
@@ -99,7 +112,18 @@
             </SelectedItemTemplate>
         </asp:ListView>
         <p>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString %>" SelectCommand="SELECT * FROM [PC]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:WeiYanConnection %>" SelectCommand="SELECT * FROM [PC]" DeleteCommand="DELETE FROM [PC] WHERE [PCId] = @PCId" InsertCommand="INSERT INTO [PC] ([Status]) VALUES (@Status)" UpdateCommand="UPDATE [PC] SET [Status] = @Status WHERE [PCId] = @PCId">
+                <DeleteParameters>
+                    <asp:Parameter Name="PCId" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Status" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Status" Type="String" />
+                    <asp:Parameter Name="PCId" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </p></div>
 
 

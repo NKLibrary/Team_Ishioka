@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirtualCollege {
+namespace VirtualCollege.View {
     
     
-    public partial class Dvd {
+    public partial class EbookListView {
         
         /// <summary>
-        /// GridView1 control.
+        /// EbookGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView EbookGridView1;
         
         /// <summary>
         /// SqlDataSource1 control.

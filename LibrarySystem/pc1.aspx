@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="pc1.aspx.cs" Inherits="VirtualCollege.pc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Master_Main_Content" runat="server">
      <h4 style="padding-top:40px"> You can reserve a PC here</h4>
         <div style="position:relative; left:30%;">
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="PCId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="reserve_pc" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="PCId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="reserve_pc">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="PCId" HeaderText="PCId" InsertVisible="False" ReadOnly="True" SortExpression="PCId" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                     <asp:TemplateField HeaderText="Reserve">
@@ -26,7 +25,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HConnection%>" SelectCommand="SELECT * FROM [PC]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString2%>" SelectCommand="SELECT * FROM [PC]"></asp:SqlDataSource>
 
             </div>
 </asp:Content>

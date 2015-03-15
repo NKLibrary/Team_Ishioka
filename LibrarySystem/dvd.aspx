@@ -1,34 +1,34 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="dvd.aspx.cs" Inherits="VirtualCollege.Dvd" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="dvd.aspx.cs" Inherits="VirtualCollege.Dvd" %>
 
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-      <br />
-        <br />
-          <br />
-        <br />
-      &nbsp;&nbsp;
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
+
   <h4 style="padding-top:40px"> You can reserve a DVD or CD here</h4>
         <div style="position:relative; left:1%;">
-               &nbsp;&nbsp;<table style="width: 100%">
-                   <tr>
-                       <td>
-                           <asp:Label ID="dvdLbl" CssClass ="infoLabel" runat="server" Text="Enter DVD/CD Title:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
 
-                       </td>
-                   </tr>
-               </table>
-               <br />
 
-            <asp:GridView ID="GridView1" runat="server"  CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DiscId" OnRowCommand="reserve_dvd" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+                         <asp:CommandField ShowSelectButton="True" />
                          <asp:TemplateField HeaderText="Reserve">
 <ItemTemplate>
-<asp:Button ID="imageButtonreserve" Text="Reserve" OnClientClick="javascript:return alert('you have successfully reserved the DVD/CD');" AlternateText="reserve" CommandName="reserve" runat="server" />
+<asp:Button ID="imageButtonreserve" Text="Reserve" OnClientClick="javascript:return alert('you have successfully reserved the room');" AlternateText="reserve" CommandName="reserve" runat="server" />
 </ItemTemplate>
 </asp:TemplateField>
-                
+                    <asp:BoundField DataField="DiscId" HeaderText="Status" SortExpression="Status" Visible="false"/>
+                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+                    <asp:BoundField DataField="DiscTitle" HeaderText="DiscTitle" SortExpression="DiscTitle" />
+                    <asp:BoundField DataField="Artist" HeaderText="Artist" SortExpression="Artist" />
+                    <asp:BoundField DataField="Director" HeaderText="Director" SortExpression="Director" />
+                    <asp:BoundField DataField="Distributor" HeaderText="Distributor" SortExpression="Distributor" />
+                    <asp:BoundField DataField="ReleaseDate" HeaderText="ReleaseDate" SortExpression="ReleaseDate" />
+                    <asp:BoundField DataField="Language" HeaderText="Language" SortExpression="Language" />
+                    <asp:BoundField DataField="Subtitle" HeaderText="Subtitle" SortExpression="Subtitle" />
+                    <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+                    <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                    <asp:BoundField DataField="Duration" HeaderText="Duration" SortExpression="Duration" />
+                    <asp:BoundField DataField="ThumbnailPicture" HeaderText="Cover" SortExpression="ThumbnailPicture" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -41,7 +41,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-          
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HConnection %>" SelectCommand="SELECT * FROM [Disc]"></asp:SqlDataSource>
 
 
             </div>
