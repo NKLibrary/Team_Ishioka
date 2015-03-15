@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h4>
+        DVD Title:
         <asp:Label ID="lbltitle" runat="server" Text="Label"></asp:Label>
     </h4>
     <table class="nav-justified">
