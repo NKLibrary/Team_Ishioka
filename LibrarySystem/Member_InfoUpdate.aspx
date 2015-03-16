@@ -1,13 +1,14 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="VirtualCollege.Account.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Member.Master" AutoEventWireup="true" CodeBehind="Member_InfoUpdate.aspx.cs" Inherits="VirtualCollege.WebForm8" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Master_Member_Content" runat="server">
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="Master_Main_Content">
-    
+
+  
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
     <div class="form-horizontal">
-        <h4>Create a new account.&nbsp;
+        <h4>Update Account Info&nbsp;
             <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
         </h4>
         <hr />
@@ -110,6 +111,7 @@
                                 <asp:ListItem>PE</asp:ListItem>
                                 <asp:ListItem>QC</asp:ListItem>
                                 <asp:ListItem>SK</asp:ListItem>
+
                             </asp:DropDownList>
                         </td>
                         <td style="width: 240px">
@@ -168,7 +170,7 @@
                         </td>
                         <td style="width: 267px">
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="SecEmailtb" CssClass="textContact" runat="server" TextMode="Email" OnTextChanged="SecEmailtb_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="SecEmailtb" CssClass="textContact" runat="server" TextMode="Email"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             &nbsp;</td>
@@ -241,12 +243,12 @@
                     <tr>
                         <td style="width: 235px">
                             <br />
-                            <asp:Button ID="Submitbtn" runat="server" CssClass="infoButton" Text="Submit"  OnClick="Submitbtn_Click" Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
+                            <asp:Button ID="Submitbtn" runat="server" CssClass="infoButton" Text="Submit"  Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
                            
                         </td>
                         <td>
                             <br />
-                            <asp:Button ID="Clearbtn" runat="server" CssClass="infoButton" OnClick="Button2_Click" Text="Clear All" Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
+                            <asp:Button ID="Clearbtn" runat="server" CssClass="infoButton" Text="Clear All" Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
                             </td>
                     </tr>
                 </table>
@@ -261,5 +263,8 @@
         </div>
     </div>
 
-   
+  
+
+
+
 </asp:Content>

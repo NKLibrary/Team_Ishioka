@@ -45,7 +45,7 @@ namespace VirtualCollege.Account
 
             if (username.Equals("user") && password.Equals("user"))
             {
-                Response.Redirect("MemberWelcome.aspx");
+                Response.Redirect("Member_Home.aspx");
             }
             else if (username.Equals("lib") && password.Equals("lib"))
             {

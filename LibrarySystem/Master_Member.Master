@@ -17,14 +17,16 @@
 
 <div id="tabs30" style="font-family:Arial; font-size:large; text-align:center;">
   <ul>
-<li><a href='#1' title='Home' class='current'><span>Home</span></a></li>
-<li><a href='#2' title='Books'><span>Books</span></a></li>
-<li><a href='#3' title='eBooks'><span>eBooks</span></a></li>
-<li><a href='#4' title='DVDs'><span>DVDs</span></a></li>
-<li><a href='#5' title='Book Room'><span>Book a room</span></a></li>
-<li><a href='#6' title='Book PC'><span>Book a PC</span></a></li>
-<li><a href='#7' title='About Us'><span>About Us</span></a></li>
-<li><a href='#8' title='Contact Us'><span>Contact Us</span></a></li>
+  <ul>
+
+<li><a class='' runat="server" href='~/home.aspx' title='Home'><span>Home</span></a></li>
+<li><a href='~/Books.aspx'  runat="server" title='Books'><span>Books</span></a></li>
+<li><a href='~/ebooks.aspx' title='eBooks' runat="server"><span>eBooks</span></a></li>
+<li><a href='~/dvd.aspx' title='DVDs' runat="server"><span>DVDs</span></a></li>
+<li><a href="~/Room.aspx" title='Book Room' runat="server"><span>Book a room</span></a></li>
+<li><a href='~/pc1.aspx' title='Book PC' runat="server"><span>Book a PC</span></a></li>
+<li><a href='~/About.aspx' title='About Us' runat="server"><span>About Us</span></a></li>
+<li><a href='~/Contact.aspx' title='Contact Us' runat="server"><span>Contact Us</span></a></li>
   </ul>
 </div>
 <hr />
@@ -33,16 +35,16 @@
 <table>
 <tr>
 
-<td style="height:auto; width:40%;">
+<td style="height:auto; width:40%; vertical-align:top;">
 <div id="menu" style="font-size:medium; font-family:Arial;">
   <ul>
-    <li><a href="#1" title="Librarian Home Page">User Home Page</a></li>
-    <li><a href="#2" title="Update Account">Update User Account</a></li>
-    <li><a href="/Account/ResetPassword.aspx" title="Reset Password">Reset Password</a></li>
-    <li><a href="/View/ReservationListViewM.aspx" title="My Reservations">My Reservations</a></li>
-    <li><a href="#5" title="Pay Outstanding Balance">Pay Outstanding Balance</a></li>
-    <li><a href="#6" title="Print">Print</a></li>
-    <li><a href="#7" title="LogOut">Log Out</a></li>
+    <li><a href="~/Member_Home.aspx" title="Member Home Page" runat="server">User Home Page</a></li>
+    <li><a href="~/Member_InfoUpdate.aspx" runat="server" title="Update Account">Update User Account</a></li>
+    <li><a href="/Account/ResetPassword.aspx" runat="server" title="Reset Password">Reset Password</a></li>
+    <li><a href="/View/ReservationListViewM.aspx" runat="server" title="My Reservations">My Reservations</a></li>
+    <li><a href="~/Member_Pay.aspx" runat="server" title="Pay Outstanding Balance">Pay Outstanding Balance</a></li>
+    <li><a href="~/Member_Print.aspx" title="Print" runat="server">Print</a></li>
+    <li><a href="~/home.aspx" title="LogOut" runat="server">Log Out</a></li>
 
   </ul>
 </div>
