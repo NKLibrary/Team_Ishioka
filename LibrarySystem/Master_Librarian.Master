@@ -67,7 +67,7 @@
     <li><a href="/View/AddBook.aspx" title="Update inventory">Update inventory</a></li>
     <li><a href="#6" title="Update User Data">Update User Data</a></li>
     <li><a href="#7" title="Charge Fine">Charge Fine</a></li>
-    <li><a href="~/Default.aspx" title="LogOut">Log Out</a></li>
+    <li><a href="Default.aspx" title="LogOut">Log Out</a></li>
 
   </ul>
 </div>

@@ -19,14 +19,14 @@
   <ul>
   <ul>
 
-<li><a class='' runat="server" href='~/Default.aspx' title='Home'><span>Home</span></a></li>
-<li><a href='~/Books.aspx'  runat="server" title='Books'><span>Books</span></a></li>
-<li><a href='~/ebooks.aspx' title='eBooks' runat="server"><span>eBooks</span></a></li>
-<li><a href='~/dvd.aspx' title='DVDs' runat="server"><span>DVDs</span></a></li>
-<li><a href="~/Room.aspx" title='Book Room' runat="server"><span>Book a room</span></a></li>
-<li><a href='~/pc1.aspx' title='Book PC' runat="server"><span>Book a PC</span></a></li>
-<li><a href='~/About.aspx' title='About Us' runat="server"><span>About Us</span></a></li>
-<li><a href='~/Contact.aspx' title='Contact Us' runat="server"><span>Contact Us</span></a></li>
+<li><a class='' runat="server" href='Default.aspx' title='Home'><span>Home</span></a></li>
+<li><a href='Books.aspx'  runat="server" title='Books'><span>Books</span></a></li>
+<li><a href='ebooks.aspx' title='eBooks' runat="server"><span>eBooks</span></a></li>
+<li><a href='dvd.aspx' title='DVDs' runat="server"><span>DVDs</span></a></li>
+<li><a href="Room.aspx" title='Book Room' runat="server"><span>Book a room</span></a></li>
+<li><a href='pc1.aspx' title='Book PC' runat="server"><span>Book a PC</span></a></li>
+<li><a href='About.aspx' title='About Us' runat="server"><span>About Us</span></a></li>
+<li><a href='Contact.aspx' title='Contact Us' runat="server"><span>Contact Us</span></a></li>
   </ul>
 </div>
 <hr />
