@@ -67,6 +67,8 @@ namespace VirtualCollege.Account
                 if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
                 {
 
+                    
+                    Session["Userid"] = username;
                     Response.Redirect("~/Home.aspx?login=true");
                 }
                 else
