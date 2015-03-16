@@ -7,89 +7,60 @@
     </p>
 
     <div class="form-horizontal">
-        <h4>PcView</h4>
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="RoomId" DataSourceID="SqlDataSource1">
-            <AlternatingItemTemplate>
-                <li style="background-color: #FFF8DC;">RoomId:
-                    <asp:Label ID="RoomIdLabel" runat="server" Text='<%# Eval("RoomId") %>' />
-                    <br />
-                    Capacity:
-                    <asp:Label ID="CapacityLabel" runat="server" Text='<%# Eval("Capacity") %>' />
-                    <br />
-                    Status:
-                    <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
-                    <br />
-                </li>
-            </AlternatingItemTemplate>
-            <EditItemTemplate>
-                <li style="background-color: #008A8C;color: #FFFFFF;">RoomId:
-                    <asp:Label ID="RoomIdLabel1" runat="server" Text='<%# Eval("RoomId") %>' />
-                    <br />
-                    Capacity:
-                    <asp:TextBox ID="CapacityTextBox" runat="server" Text='<%# Bind("Capacity") %>' />
-                    <br />
-                    Status:
-                    <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' />
-                    <br />
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                </li>
-            </EditItemTemplate>
-            <EmptyDataTemplate>
-                No data was returned.
-            </EmptyDataTemplate>
-            <InsertItemTemplate>
-                <li style="">Capacity:
-                    <asp:TextBox ID="CapacityTextBox" runat="server" Text='<%# Bind("Capacity") %>' />
-                    <br />Status:
-                    <asp:TextBox ID="StatusTextBox" runat="server" Text='<%# Bind("Status") %>' />
-                    <br />
-                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                </li>
-            </InsertItemTemplate>
-            <ItemSeparatorTemplate>
-<br />
-            </ItemSeparatorTemplate>
-            <ItemTemplate>
-                <li style="background-color: #DCDCDC;color: #000000;">RoomId:
-                    <asp:Label ID="RoomIdLabel" runat="server" Text='<%# Eval("RoomId") %>' />
-                    <br />
-                    Capacity:
-                    <asp:Label ID="CapacityLabel" runat="server" Text='<%# Eval("Capacity") %>' />
-                    <br />
-                    Status:
-                    <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
-                    <br />
-                </li>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
-                    <li runat="server" id="itemPlaceholder" />
-                </ul>
-                <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
-                    <asp:DataPager ID="DataPager1" runat="server">
-                        <Fields>
-                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
-                        </Fields>
-                    </asp:DataPager>
-                </div>
-            </LayoutTemplate>
-            <SelectedItemTemplate>
-                <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">RoomId:
-                    <asp:Label ID="RoomIdLabel" runat="server" Text='<%# Eval("RoomId") %>' />
-                    <br />
-                    Capacity:
-                    <asp:Label ID="CapacityLabel" runat="server" Text='<%# Eval("Capacity") %>' />
-                    <br />
-                    Status:
-                    <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
-                    <br />
-                </li>
-            </SelectedItemTemplate>
-        </asp:ListView>
+        <h4>RoomView</h4>
         <p>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LibraryDBConnectionString %>" SelectCommand="SELECT * FROM [Room]"></asp:SqlDataSource>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RoomId" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:TemplateField ShowHeader="False">
+                        <EditItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="RoomId" InsertVisible="False" SortExpression="RoomId">
+                        <EditItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("RoomId") %>'></asp:Label>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("RoomId") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Capacity" SortExpression="Capacity">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Capacity") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Capacity") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Status" SortExpression="Status">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Status") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Status") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>" DeleteCommand="DELETE FROM [Room] WHERE [RoomId] = @RoomId" InsertCommand="INSERT INTO [Room] ([Capacity], [Status]) VALUES (@Capacity, @Status)" SelectCommand="SELECT * FROM [Room]" UpdateCommand="UPDATE [Room] SET [Capacity] = @Capacity, [Status] = @Status WHERE [RoomId] = @RoomId">
+                <DeleteParameters>
+                    <asp:Parameter Name="RoomId" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="Capacity" Type="Int32" />
+                    <asp:Parameter Name="Status" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="Capacity" Type="Int32" />
+                    <asp:Parameter Name="Status" Type="String" />
+                    <asp:Parameter Name="RoomId" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </p></div>
 
 

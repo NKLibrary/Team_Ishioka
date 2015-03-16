@@ -19,7 +19,7 @@ namespace VirtualCollege.Presenter
             this.model = model;
             this.view.Presenter = this;
         }
-        public void AddBook(VirtualCollege.Models.Entity.Book book)
+        public void AddBook(Book book)
         {
             model.AddBook(book);
         }

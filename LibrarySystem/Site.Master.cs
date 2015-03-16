@@ -68,16 +68,7 @@ namespace VirtualCollege
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            if (Session["UserID"] != null) 
-            {
-                string name = Session["UserID"].ToString();
-                Context.User.Identity.Name.Insert(0,name);
-              //  Label1.Text = Session["UserID"].ToString();
-               // Label1.Visible = true;
-                //logg.Visible = false;
 
-            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

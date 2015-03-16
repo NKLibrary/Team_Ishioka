@@ -17,7 +17,7 @@ namespace VirtualCollege.Utils
         static DatabaseConfiguration()
         {
             //dbConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
-            dbConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            dbConnectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbProviderName = "System.Data.SqlClient";
             productsPerPage = 10;
             productDescriptionLength = 70;

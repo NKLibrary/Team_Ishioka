@@ -1,16 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="VirtualCollege.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Master_Main.Master" CodeBehind="home.aspx.cs" Inherits="VirtualCollege.Home" %>
 
-<!DOCTYPE html>
+<asp:Content ID="content1" ContentPlaceHolderID="Master_Main_Content" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    Welcome to Home page!
-    </div>
-    </form>
-</body>
-</html>
+
+
+    <asp:Label ID="lblLogin" runat="server" Visible="false">
+        You have logged in successfully!
+        <br />
+        Now you can access the Library.
+    </asp:Label>
+
+</asp:Content>

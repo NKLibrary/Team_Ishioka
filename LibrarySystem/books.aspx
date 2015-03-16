@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Books.aspx.cs" Inherits="VirtualCollege.Books" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="Books.aspx.cs" Inherits="VirtualCollege.Books" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
     <!DOCTYPE html>
 
 <html>
@@ -17,17 +17,13 @@
     &nbsp;&nbsp;<br />
         <table style="width: 100%">
             <tr>
-                <td style="width: 183px">
-                    <asp:Label ID="book_titleLbl" CssClass ="infoLabel" runat="server" Text="Enter Book Title:" Width="134px"></asp:Label>
-&nbsp;</td>
-                <td style="width: 204px">
-                    <asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True" Height="16px"></asp:DropDownList>
+                <td style="width: 466px">
+                    <asp:Label ID="book_titleLbl" runat="server" Text="Enter Book Title:"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 </td>
-                <td style="width: 211px">
-                    <asp:Label ID="author_nameLbl" runat="server" CssClass ="infoLabel" Text="Enter Author Name:" Width="149px"></asp:Label>
-&nbsp;</td>
                 <td>
-                    <asp:DropDownList ID="drpAuthor" runat="server" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                    <asp:Label ID="author_nameLbl" runat="server" Text="Enter Author Name:"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpAuthor" runat="server" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
    
                 </td>
             </tr>

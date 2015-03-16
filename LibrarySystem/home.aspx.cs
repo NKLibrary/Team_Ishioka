@@ -11,7 +11,10 @@ namespace VirtualCollege
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["login"]!=null &&  bool.Parse(Request.QueryString["login"].ToString()) == true)
+            {
+                lblLogin.Visible = true;
+            }
         }
     }
 }

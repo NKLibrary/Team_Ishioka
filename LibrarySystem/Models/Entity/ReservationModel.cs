@@ -6,17 +6,16 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using VirtualCollege.Models.EntityFramework;
 using VirtualCollege.Utils;
 
 namespace VirtualCollege.Models.Entity
 {
     public class ReservationModel : IReservationModel
     {
-        public void Test()
+        private void Test()
         {
             Reservation r = new Reservation();
-            r.reservationId = "11029";
+            r.reservationId = "11025";
             r.itemType = VirtualCollege.Utils.Settings.ItemType.Book.ToString();
             r.itemId = "1002";
             r.userId = "3001477";
@@ -26,8 +25,7 @@ namespace VirtualCollege.Models.Entity
             r.status = VirtualCollege.Utils.Settings.ReserveStatus.Pending.ToString();
 
             //this.AddReservation(r);
-            //this.DeleteReservation(r);
-            this.UpdateReservation(r);
+            this.DeleteReservation(r);
         }
         public void AddReservation(Reservation reservation)
         {
@@ -67,15 +65,7 @@ namespace VirtualCollege.Models.Entity
 
         public void UpdateReservation(Reservation reservation)
         {
-            using (var db = new LibraryDBEntities())
-            {
-                // my defined data entity to Entity Framework's entity
-                var res = db.Reservations.Where(r => r.ReservationId+"" == reservation.reservationId).FirstOrDefault();
-                res.ProcessDate = reservation.processDate;
-                res.PickupDate = reservation.pickupDate;
-                res.Status = reservation.status;
-                db.SaveChanges();
-            }
+            throw new NotImplementedException();
         }
 
         public Reservation GetReservationById(string reservationId)

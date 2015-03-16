@@ -19,7 +19,7 @@ namespace VirtualCollege
             int id = Convert.ToInt32(ebookid);
             try
             {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HConnection"].ToString());
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
                 conn.Open();
                 string query = "select * from Ebook where EbookId =" + ebookid;
                 SqlDataAdapter ebookAdapter = new SqlDataAdapter(query, conn);
@@ -27,17 +27,8 @@ namespace VirtualCollege
                 ebookAdapter.Fill(ebookSet, "Ebook");
                 foreach (DataRow ebookRow in ebookSet.Tables["Ebook"].Rows)
                 {
-                    /*Response.Write("\t" + ebookRow[0]);
-                    Response.Write("\t" + ebookRow[1]);*/
-                    lbltitle.Text = ebookRow[1].ToString();
-                    txtauthor.Text = ebookRow[2].ToString();
-                    txtpublisher.Text = ebookRow[3].ToString();
-                    txtcategory.Text = ebookRow[4].ToString();
-                    txtyear.Text = ebookRow[5].ToString();
-                    txtpages.Text = ebookRow[6].ToString();
-                    txtISBN.Text = ebookRow[7].ToString();
-                    txtdesc.Text = ebookRow[8].ToString();
-                    txtstatus.Text = ebookRow[11].ToString();
+                    Response.Write("\t" + ebookRow[0]);
+                    Response.Write("\t" + ebookRow[1]);
 
                 }
             }

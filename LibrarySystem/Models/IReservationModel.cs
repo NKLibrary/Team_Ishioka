@@ -16,6 +16,5 @@ namespace VirtualCollege.Models
        List<Reservation> GetAllReservations();
 
        List<Reservation> GetReservationByUser(string userId);
-
     }
 }

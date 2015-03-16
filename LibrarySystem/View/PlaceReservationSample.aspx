@@ -21,9 +21,6 @@
         <asp:Image ID="Image3" runat="server" Height="160px" ImageUrl="~/Images/new3.jpg" Width="132px" />
         <asp:Button ID="btnReserve3" runat="server" OnClick="btnReserve3_Click" Text="Reserve Room" />
     
-        <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-    
     </div>
     </form>
 </body>
