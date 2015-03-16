@@ -27,51 +27,54 @@ namespace VirtualCollege.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-           /* if (IsValid)
-            {
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                if (user != null)
-                {
-                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
+            /* if (IsValid)
+             {
+                 // Validate the user password
+                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                 ApplicationUser user = manager.Find(UserName.Text, Password.Text);
+                 if (user != null)
+                 {
+                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
 
-                    string username = UserName.Text.ToString();
-                    string password = Password.Text.ToString();
+            string username = UserName.Text.ToString();
+            string password = Password.Text.ToString();
 
-                    SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
 
-                    if (con.State == System.Data.ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
+            if (username.Equals("user") && password.Equals("user"))
+            {
+                Response.Redirect("MemberWelcome.aspx");
+            }
+            else if (username.Equals("lib") && password.Equals("lib"))
+            {
+                Response.Redirect("Librarian_Home.aspx");
+            }
+            else if (username.Equals("manager") && password.Equals("manager"))
+            {
+                Response.Redirect("~/Manager.aspx");
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
 
-                    if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
-                    {
+                if (con.State == System.Data.ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
-                        if (username.Equals("user") && password.Equals("user"))
-                        {
-                            Response.Redirect("MemberWelcome.aspx");
-                        }
-                        else if (username.Equals("lib") && password.Equals("lib"))
-                        {
-                            Response.Redirect("Librarian.aspx");
-                        }
-                        else if (username.Equals("manager") && password.Equals("manager"))
-                        {
-                            Response.Redirect("~/Manager.aspx");
-                        }
+                if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
+                {
 
-                        Response.Redirect("~/Home.aspx?login=true");
-                    }
-                    else
-                    {
-                        FailureText.Text = "Invalid username or password.";
-                        ErrorMessage.Visible = true;
-                    }
+                    Response.Redirect("~/Home.aspx?login=true");
+                }
+                else
+                {
+                    FailureText.Text = "Invalid username or password.";
+                    ErrorMessage.Visible = true;
+                }
             }
         }
     }
+}

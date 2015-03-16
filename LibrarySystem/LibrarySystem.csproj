@@ -213,6 +213,7 @@
     <Content Include="WebForm2.aspx" />
     <Content Include="Account\ManagerInfo.aspx" />
     <Content Include="WebForm5.aspx" />
+    <Content Include="Librarian_Home.aspx" />
     <None Include="LibraryDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>LibraryDBDataSet.Designer.cs</LastGenOutput>
@@ -792,6 +793,13 @@
     </Compile>
     <Compile Include="WebForm5.aspx.designer.cs">
       <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian_Home.aspx.cs">
+      <DependentUpon>Librarian_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Librarian_Home.aspx.designer.cs">
+      <DependentUpon>Librarian_Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
