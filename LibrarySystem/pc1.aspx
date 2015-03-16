@@ -3,9 +3,10 @@
      <h4 style="padding-top:40px"> You can reserve a PC here</h4>
         <div style="position:relative; left:30%;">
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="PCId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="reserve_pc">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="10" DataKeyNames="PCId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="reserve_pc" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="PCId" HeaderText="PCId" InsertVisible="False" ReadOnly="True" SortExpression="PCId" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                     <asp:TemplateField HeaderText="Reserve">
