@@ -68,11 +68,14 @@ namespace VirtualCollege
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (Session["UserID"] != null) 
             {
-                Label1.Text = Session["UserID"].ToString();
-                Label1.Visible = true;
-                logg.Visible = false;
+                string name = Session["UserID"].ToString();
+                Context.User.Identity.Name.Insert(0,name);
+              //  Label1.Text = Session["UserID"].ToString();
+               // Label1.Visible = true;
+                //logg.Visible = false;
 
             }
         }
