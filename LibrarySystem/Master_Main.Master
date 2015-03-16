@@ -46,14 +46,14 @@
 <div id="tabs30" style="font-family:Arial; font-size:large; text-align:center;">
   <ul>
 
-<li><a class='' href='home.aspx' title='Home'><span>Home</span></a></li>
-<li><a href='Books.aspx' title='Books'><span>Books</span></a></li>
-<li><a href='ebooks.aspx' title='eBooks'><span>eBooks</span></a></li>
-<li><a href='dvd.aspx' title='DVDs'><span>DVDs</span></a></li>
-<li><a href="Room.aspx" title='Book Room'><span>Book a room</span></a></li>
-<li><a href='pc1.aspx' title='Book PC'><span>Book a PC</span></a></li>
-<li><a href='About.aspx' title='About Us'><span>About Us</span></a></li>
-<li><a href='Contact.aspx' title='Contact Us'><span>Contact Us</span></a></li>
+<li><a class='' href='~/Default.aspx' title='Home'><span>Home</span></a></li>
+<li><a href='~/Books.aspx' title='Books'><span>Books</span></a></li>
+<li><a href='~/ebooks.aspx' title='eBooks'><span>eBooks</span></a></li>
+<li><a href='~/dvd.aspx' title='DVDs'><span>DVDs</span></a></li>
+<li><a href="~/Room.aspx" title='Book Room'><span>Book a room</span></a></li>
+<li><a href='~/pc1.aspx' title='Book PC'><span>Book a PC</span></a></li>
+<li><a href='~/About.aspx' title='About Us'><span>About Us</span></a></li>
+<li><a href='~/Contact.aspx' title='Contact Us'><span>Contact Us</span></a></li>
   </ul>
 </div>
 <hr />

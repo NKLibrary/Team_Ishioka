@@ -47,13 +47,13 @@ namespace VirtualCollege.Account
             {
                 Response.Redirect("Member_Home.aspx");
             }
-            else if (username.Equals("lib") && password.Equals("lib"))
+            else if (username.Equals("300001") && password.Equals("lib"))
             {
-                Response.Redirect("Librarian_Home.aspx");
+                Response.Redirect("~/Librarian_Home.aspx");
             }
             else if (username.Equals("manager") && password.Equals("manager"))
             {
-                Response.Redirect("~/Manager.aspx");
+                Response.Redirect("~/Manager_Home.aspx");
             }
             else
             {

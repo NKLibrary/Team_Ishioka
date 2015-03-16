@@ -19,7 +19,7 @@
   <ul>
   <ul>
 
-<li><a class='' runat="server" href='~/home.aspx' title='Home'><span>Home</span></a></li>
+<li><a class='' runat="server" href='~/Default.aspx' title='Home'><span>Home</span></a></li>
 <li><a href='~/Books.aspx'  runat="server" title='Books'><span>Books</span></a></li>
 <li><a href='~/ebooks.aspx' title='eBooks' runat="server"><span>eBooks</span></a></li>
 <li><a href='~/dvd.aspx' title='DVDs' runat="server"><span>DVDs</span></a></li>

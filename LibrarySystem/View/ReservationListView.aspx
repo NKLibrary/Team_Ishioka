@@ -11,7 +11,7 @@
     <div>
     
         Reservation List:<br />
-        <asp:GridView ID="gvReservtions" runat="server" OnDataBound="gvReservtions_DataBound" OnRowEditing="gvReservtions_RowEditing">
+        <asp:GridView ID="gvReservtions" runat="server" OnDataBound="gvReservtions_DataBound" OnRowEditing="gvReservtions_RowEditing" OnSelectedIndexChanged="gvReservtions_SelectedIndexChanged">
             <Columns>
                 <asp:TemplateField>
                     <ItemTemplate>

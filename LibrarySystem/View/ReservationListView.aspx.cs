@@ -57,5 +57,10 @@ namespace VirtualCollege.View
             cancelHandler(sender, e);
             LoadReservationList();
         }
+
+        protected void gvReservtions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
