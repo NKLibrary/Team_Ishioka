@@ -7,13 +7,14 @@
         <div style="position:relative; left:1%;">
 
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="DiscId" OnRowCommand="reserve_dvd" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand = "OnRowCommand" CellPadding="4" DataKeyNames="DiscId"  DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                         <asp:CommandField ShowSelectButton="True" />
+                         <asp:CommandField ShowSelectButton="false"  />
                          <asp:TemplateField HeaderText="Reserve">
 <ItemTemplate>
-<asp:Button ID="imageButtonreserve" Text="Reserve" OnClientClick="javascript:return alert('you have successfully reserved the room');" AlternateText="reserve" CommandName="reserve" runat="server" />
+    <asp:Button ID="Button1" Text="View Details"  CommandName="details" CommandArgument="<%#((GridViewRow)Container).RowIndex %>" runat="server" />
+<asp:Button ID="imageButtonreserve" Text="Reserve"  CommandName="reserve" CommandArgument="<%#((GridViewRow)Container).RowIndex %>" runat="server" />
 </ItemTemplate>
 </asp:TemplateField>
                     <asp:BoundField DataField="DiscId" HeaderText="Status" SortExpression="Status" Visible="false"/>
