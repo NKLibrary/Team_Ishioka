@@ -83,5 +83,10 @@ namespace VirtualCollege.Utils
         {
             return "ReservationListViewM.aspx";
         }
+
+        internal static string GetLoginPage()
+        {
+            return "../Login.aspx";
+        }
     }
 }

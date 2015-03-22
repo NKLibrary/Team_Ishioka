@@ -277,14 +277,14 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\AddBook.aspx" />
     <Content Include="View\AddDiscView.aspx" />
-    <Content Include="View\AddReservationView.aspx" />
+    <Content Include="View\_AddReservationView.aspx" />
     <Content Include="View\BookListView.aspx" />
     <Content Include="View\DiscListView.aspx" />
     <Content Include="View\EditBookView.aspx" />
     <Content Include="View\EditDiscView.aspx" />
     <Content Include="View\PcListView.aspx" />
     <Content Include="View\ProcessReservationView.aspx" />
-    <Content Include="View\ReservationListView.aspx" />
+    <Content Include="View\_ReservationListView.aspx" />
     <Content Include="View\RoomListView.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -667,12 +667,12 @@
     <Compile Include="View\AddDiscView.aspx.designer.cs">
       <DependentUpon>AddDiscView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\AddReservationView.aspx.cs">
-      <DependentUpon>AddReservationView.aspx</DependentUpon>
+    <Compile Include="View\_AddReservationView.aspx.cs">
+      <DependentUpon>_AddReservationView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\AddReservationView.aspx.designer.cs">
-      <DependentUpon>AddReservationView.aspx</DependentUpon>
+    <Compile Include="View\_AddReservationView.aspx.designer.cs">
+      <DependentUpon>_AddReservationView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\AddReservationViewM.aspx.cs">
       <DependentUpon>AddReservationViewM.aspx</DependentUpon>
@@ -759,12 +759,12 @@
     <Compile Include="View\ProcessReservationView.aspx.designer.cs">
       <DependentUpon>ProcessReservationView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\ReservationListView.aspx.cs">
-      <DependentUpon>ReservationListView.aspx</DependentUpon>
+    <Compile Include="View\_ReservationListView.aspx.cs">
+      <DependentUpon>_ReservationListView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\ReservationListView.aspx.designer.cs">
-      <DependentUpon>ReservationListView.aspx</DependentUpon>
+    <Compile Include="View\_ReservationListView.aspx.designer.cs">
+      <DependentUpon>_ReservationListView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ReservationListViewM.aspx.cs">
       <DependentUpon>ReservationListViewM.aspx</DependentUpon>

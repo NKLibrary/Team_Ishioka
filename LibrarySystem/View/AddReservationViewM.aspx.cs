@@ -12,7 +12,7 @@ namespace VirtualCollege.View
 {
     public partial class AddReservationViewM : System.Web.UI.Page, IAddReservationView
     {
-        private string userId = "3001477";
+        private string currentUserId;
         private VirtualCollege.Utils.Settings.ItemType itemType;
         private string itemId = "0";
         private bool isInputValid = false;
@@ -20,39 +20,49 @@ namespace VirtualCollege.View
         protected void Page_Load(object sender, EventArgs e)
         {
             // get user id from session
-            userId = "3001477";
-
-            // get item type
-            if (Request.QueryString["itemType"] != null)
+            if (Session["Userid"] != null)
             {
-                string itemTypeValue = Request.QueryString["itemType"].ToString();
-                switch (itemTypeValue.ToLower())
+                currentUserId = Session["Userid"].ToString();
+                // get item type
+                if (Request.QueryString["itemType"] != null)
                 {
-                    case "book":
-                        this.itemType = VirtualCollege.Utils.Settings.ItemType.Book;
-                        break;
-                    case "room": this.itemType = VirtualCollege.Utils.Settings.ItemType.Room;
-                        break;
-                    case "pc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Pc;
-                        break;
-                    case "disc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Disc;
-                        break;
-                    default:
-                        string message = itemTypeValue + " " + Settings.Invalid_BookType;
-                        Response.Redirect(Link.GetErrorPage(message, ""));
-                        break;
+                    string itemTypeValue = Request.QueryString["itemType"].ToString();
+                    switch (itemTypeValue.ToLower())
+                    {
+                        case "book":
+                            this.itemType = VirtualCollege.Utils.Settings.ItemType.Book;
+                            break;
+                        case "room": this.itemType = VirtualCollege.Utils.Settings.ItemType.Room;
+                            break;
+                        case "pc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Pc;
+                            break;
+                        case "disc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Disc;
+                            break;
+                        default:
+                            string message = itemTypeValue + " " + Settings.Invalid_BookType;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                            break;
+                    }
                 }
+
+
+                // get item id
+                if (Request.QueryString["itemId"] != null)
+                {
+                    itemId = Request.QueryString["itemId"].ToString();
+                }
+
+                // connect presenter
+                new AddReservationPresenter(this, new ReservationModel());
+            
             }
-
-
-            // get item id
-            if (Request.QueryString["itemId"] != null)
+                // prompt to login
+            else
             {
-                itemId = Request.QueryString["itemId"].ToString();
+                Response.Write("<script>alert('Please login first');window.location.href='../Login.aspx?forward="+Link.GetAddReservation()+"'</script>");
             }
 
-            // connect presenter
-            new AddReservationPresenter(this, new ReservationModel());
+
         }
 
         protected void btnReserve_Click(object sender, EventArgs e)
@@ -79,7 +89,7 @@ namespace VirtualCollege.View
 
         public string UserId
         {
-            get { return this.userId; }
+            get { return this.currentUserId; }
         }
 
         public string ItemType

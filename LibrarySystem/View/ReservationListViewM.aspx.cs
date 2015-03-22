@@ -24,10 +24,19 @@ namespace VirtualCollege.View
         private void LoadReservationList()
         {
             // get current user id
-            string userId = "3001477";
-            List<Reservation> reservations = presenter.LoadReservationByUser(userId);
-            Reservations = from reservation in reservations
-                           select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
+            if (Session["Userid"] != null)
+            {
+                string userId = Session["Userid"].ToString();
+
+                List<Reservation> reservations = presenter.LoadReservationByUser(userId);
+                Reservations = from reservation in reservations
+                               select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
+            }
+            else
+            {
+                Response.Write("<script>alert('Please login first');window.location.href='"+Link.GetLoginPage()+"?foward="+Link.GetReservationList()+"'</script>");
+                //Response.Redirect("../Login.aspx");
+            }
         }
 
         public object Reservations

@@ -9,4 +9,6 @@
     <br />
     <asp:Button ID="btnReserve" runat="server" OnClick="btnReserve_Click" Text="Reserve Now" />
 
+<br />
+
 </asp:Content>

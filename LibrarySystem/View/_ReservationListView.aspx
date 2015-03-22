@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReservationListView.aspx.cs" Inherits="VirtualCollege.View.ReservationListView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="_ReservationListView.aspx.cs" Inherits="VirtualCollege.View.ReservationListView" %>
 
 <!DOCTYPE html>
 
