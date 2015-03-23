@@ -12,6 +12,6 @@ namespace VirtualCollege.View
         string SelectedReservationId { get; }
 
         event EventHandler cancelHandler;
-
+        
     }
 }

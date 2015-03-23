@@ -1,0 +1,1302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LibraryDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="LibraryDBModelStoreContainer">
+          <EntitySet Name="Book" EntityType="LibraryDBModel.Store.Book" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Disc" EntityType="LibraryDBModel.Store.Disc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ebook" EntityType="LibraryDBModel.Store.Ebook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IssueBook" EntityType="LibraryDBModel.Store.IssueBook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IssueDisc" EntityType="LibraryDBModel.Store.IssueDisc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IssueEbook" EntityType="LibraryDBModel.Store.IssueEbook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Librarian" EntityType="LibraryDBModel.Store.Librarian" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Manager" EntityType="LibraryDBModel.Store.Manager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Member" EntityType="LibraryDBModel.Store.Member" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payment" EntityType="LibraryDBModel.Store.Payment" store:Type="Tables" store:Schema="dbo" store:Name="Payment">
+            <DefiningQuery>SELECT 
+      [Payment].[UserId] AS [UserId], 
+      [Payment].[PaymentType] AS [PaymentType], 
+      [Payment].[CardNumber] AS [CardNumber], 
+      [Payment].[NameOnCard] AS [NameOnCard], 
+      [Payment].[ExpiryDate] AS [ExpiryDate], 
+      [Payment].[CSV] AS [CSV], 
+      [Payment].[BillingAddress] AS [BillingAddress], 
+      [Payment].[City] AS [City], 
+      [Payment].[Province] AS [Province], 
+      [Payment].[PostalCode] AS [PostalCode], 
+      [Payment].[Country] AS [Country], 
+      [Payment].[CellPhone] AS [CellPhone]
+      FROM [dbo].[Payment] AS [Payment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PC" EntityType="LibraryDBModel.Store.PC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reservation" EntityType="LibraryDBModel.Store.Reservation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReservePC" EntityType="LibraryDBModel.Store.ReservePC" store:Type="Tables" store:Schema="dbo" store:Name="ReservePC">
+            <DefiningQuery>SELECT 
+      [ReservePC].[PCId] AS [PCId], 
+      [ReservePC].[PCName] AS [PCName], 
+      [ReservePC].[UserId] AS [UserId], 
+      [ReservePC].[Notes] AS [Notes], 
+      [ReservePC].[StartTime] AS [StartTime], 
+      [ReservePC].[EndTime] AS [EndTime]
+      FROM [dbo].[ReservePC] AS [ReservePC]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReserveRoom" EntityType="LibraryDBModel.Store.ReserveRoom" store:Type="Tables" store:Schema="dbo" store:Name="ReserveRoom">
+            <DefiningQuery>SELECT 
+      [ReserveRoom].[RoomId] AS [RoomId], 
+      [ReserveRoom].[UserId] AS [UserId], 
+      [ReserveRoom].[Notes] AS [Notes], 
+      [ReserveRoom].[StartTime] AS [StartTime], 
+      [ReserveRoom].[EndTime] AS [EndTime]
+      FROM [dbo].[ReserveRoom] AS [ReserveRoom]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Room" EntityType="LibraryDBModel.Store.Room" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_IssueBook_BookId" Association="LibraryDBModel.Store.FK_IssueBook_BookId">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="IssueBook" EntitySet="IssueBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueBook_LibrarianId" Association="LibraryDBModel.Store.FK_IssueBook_LibrarianId">
+            <End Role="Librarian" EntitySet="Librarian" />
+            <End Role="IssueBook" EntitySet="IssueBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueBook_UserId" Association="LibraryDBModel.Store.FK_IssueBook_UserId">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="IssueBook" EntitySet="IssueBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_DiscId" Association="LibraryDBModel.Store.FK_IssueDisc_DiscId">
+            <End Role="Disc" EntitySet="Disc" />
+            <End Role="IssueDisc" EntitySet="IssueDisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_LibrarianId" Association="LibraryDBModel.Store.FK_IssueDisc_LibrarianId">
+            <End Role="Librarian" EntitySet="Librarian" />
+            <End Role="IssueDisc" EntitySet="IssueDisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_UserId" Association="LibraryDBModel.Store.FK_IssueDisc_UserId">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="IssueDisc" EntitySet="IssueDisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Ebook" Association="LibraryDBModel.Store.FK_IssueEbook_Ebook">
+            <End Role="Ebook" EntitySet="Ebook" />
+            <End Role="IssueEbook" EntitySet="IssueEbook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Librarian" Association="LibraryDBModel.Store.FK_IssueEbook_Librarian">
+            <End Role="Librarian" EntitySet="Librarian" />
+            <End Role="IssueEbook" EntitySet="IssueEbook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Member" Association="LibraryDBModel.Store.FK_IssueEbook_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="IssueEbook" EntitySet="IssueEbook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_UserId" Association="LibraryDBModel.Store.FK_Payment_UserId">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Member" Association="LibraryDBModel.Store.FK_Reservation_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservePC_PCId" Association="LibraryDBModel.Store.FK_ReservePC_PCId">
+            <End Role="PC" EntitySet="PC" />
+            <End Role="ReservePC" EntitySet="ReservePC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservePC_UserId" Association="LibraryDBModel.Store.FK_ReservePC_UserId">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ReservePC" EntitySet="ReservePC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReserveRoom_Member" Association="LibraryDBModel.Store.FK_ReserveRoom_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ReserveRoom" EntitySet="ReserveRoom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReserveRoom_Room" Association="LibraryDBModel.Store.FK_ReserveRoom_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="ReserveRoom" EntitySet="ReserveRoom" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Author" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Publisher" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Category" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PublishedYear" Type="datetime" Nullable="false" />
+          <Property Name="TotalPages" Type="int" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="ThumbnailPicture" Type="varchar" MaxLength="200" />
+          <Property Name="AvailableCopies" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Disc">
+          <Key>
+            <PropertyRef Name="DiscId" />
+          </Key>
+          <Property Name="DiscId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiscTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Artist" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Director" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Distributor" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+          <Property Name="Language" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Subtitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Category" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Duration" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ThumbnailPicture" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Ebook">
+          <Key>
+            <PropertyRef Name="EbookId" />
+          </Key>
+          <Property Name="EbookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EbookTitle" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Author" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Publisher" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Category" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PublishedYear" Type="datetime" Nullable="false" />
+          <Property Name="TotalPages" Type="int" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="ThumbnailPicture" Type="varchar" MaxLength="200" />
+          <Property Name="AvailableCopies" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="IssueBook">
+          <Key>
+            <PropertyRef Name="IssueBookId" />
+          </Key>
+          <Property Name="IssueBookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LibrarianId" Type="int" Nullable="false" />
+          <Property Name="NumberOfdays" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IssueDisc">
+          <Key>
+            <PropertyRef Name="IssueDiscId" />
+          </Key>
+          <Property Name="IssueDiscId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiscId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LibrarianId" Type="int" Nullable="false" />
+          <Property Name="NumberOfDays" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IssueEbook">
+          <Key>
+            <PropertyRef Name="IssueEbookId" />
+          </Key>
+          <Property Name="IssueEbookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EbookId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LibrarianId" Type="int" Nullable="false" />
+          <Property Name="NumberOfDays" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Librarian">
+          <Key>
+            <PropertyRef Name="LibrarianId" />
+          </Key>
+          <Property Name="LibrarianId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="JoiningDate" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Province" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CellPhone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="ManagerId" />
+          </Key>
+          <Property Name="ManagerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="JoiningDate" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Province" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CellPhone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Province" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="20" />
+          <Property Name="CellPhone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Student" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="SchoolName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LibraryDB.dbo.Payment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PaymentType" />
+            <PropertyRef Name="CardNumber" />
+            <PropertyRef Name="NameOnCard" />
+            <PropertyRef Name="ExpiryDate" />
+            <PropertyRef Name="CSV" />
+            <PropertyRef Name="BillingAddress" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="PostalCode" />
+            <PropertyRef Name="Country" />
+            <PropertyRef Name="CellPhone" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PaymentType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CardNumber" Type="varchar" Nullable="false" MaxLength="19" />
+          <Property Name="NameOnCard" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="CSV" Type="int" Nullable="false" />
+          <Property Name="BillingAddress" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Province" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CellPhone" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="PCId" />
+          </Key>
+          <Property Name="PCId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="ReservationId" />
+          </Key>
+          <Property Name="ReservationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ItemType" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="ProcessDate" Type="datetime" Nullable="false" />
+          <Property Name="PickupDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LibraryDB.dbo.ReservePC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ReservePC">
+          <Key>
+            <PropertyRef Name="PCId" />
+            <PropertyRef Name="PCName" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+          </Key>
+          <Property Name="PCId" Type="int" Nullable="false" />
+          <Property Name="PCName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LibraryDB.dbo.ReserveRoom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ReserveRoom">
+          <Key>
+            <PropertyRef Name="RoomId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+          </Key>
+          <Property Name="RoomId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="RoomId" />
+          </Key>
+          <Property Name="RoomId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Capacity" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_IssueBook_BookId">
+          <End Role="Book" Type="LibraryDBModel.Store.Book" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.Store.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="BookId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueBook_LibrarianId">
+          <End Role="Librarian" Type="LibraryDBModel.Store.Librarian" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.Store.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueBook_UserId">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.Store.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_DiscId">
+          <End Role="Disc" Type="LibraryDBModel.Store.Disc" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.Store.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disc">
+              <PropertyRef Name="DiscId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="DiscId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_LibrarianId">
+          <End Role="Librarian" Type="LibraryDBModel.Store.Librarian" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.Store.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_UserId">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.Store.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Ebook">
+          <End Role="Ebook" Type="LibraryDBModel.Store.Ebook" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.Store.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ebook">
+              <PropertyRef Name="EbookId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="EbookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Librarian">
+          <End Role="Librarian" Type="LibraryDBModel.Store.Librarian" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.Store.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Member">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.Store.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_UserId">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="Payment" Type="LibraryDBModel.Store.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Member">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="Reservation" Type="LibraryDBModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservePC_PCId">
+          <End Role="PC" Type="LibraryDBModel.Store.PC" Multiplicity="1" />
+          <End Role="ReservePC" Type="LibraryDBModel.Store.ReservePC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PC">
+              <PropertyRef Name="PCId" />
+            </Principal>
+            <Dependent Role="ReservePC">
+              <PropertyRef Name="PCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservePC_UserId">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="ReservePC" Type="LibraryDBModel.Store.ReservePC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ReservePC">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReserveRoom_Member">
+          <End Role="Member" Type="LibraryDBModel.Store.Member" Multiplicity="1" />
+          <End Role="ReserveRoom" Type="LibraryDBModel.Store.ReserveRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ReserveRoom">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReserveRoom_Room">
+          <End Role="Room" Type="LibraryDBModel.Store.Room" Multiplicity="1" />
+          <End Role="ReserveRoom" Type="LibraryDBModel.Store.ReserveRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomId" />
+            </Principal>
+            <Dependent Role="ReserveRoom">
+              <PropertyRef Name="RoomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LibraryDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Books" EntityType="LibraryDBModel.Book" />
+          <EntitySet Name="Discs" EntityType="LibraryDBModel.Disc" />
+          <EntitySet Name="Ebooks" EntityType="LibraryDBModel.Ebook" />
+          <EntitySet Name="IssueBooks" EntityType="LibraryDBModel.IssueBook" />
+          <EntitySet Name="IssueDiscs" EntityType="LibraryDBModel.IssueDisc" />
+          <EntitySet Name="IssueEbooks" EntityType="LibraryDBModel.IssueEbook" />
+          <EntitySet Name="Librarians" EntityType="LibraryDBModel.Librarian" />
+          <EntitySet Name="Managers" EntityType="LibraryDBModel.Manager" />
+          <EntitySet Name="Members" EntityType="LibraryDBModel.Member" />
+          <EntitySet Name="Payments" EntityType="LibraryDBModel.Payment" />
+          <EntitySet Name="PCs" EntityType="LibraryDBModel.PC" />
+          <EntitySet Name="Reservations" EntityType="LibraryDBModel.Reservation" />
+          <EntitySet Name="ReservePCs" EntityType="LibraryDBModel.ReservePC" />
+          <EntitySet Name="ReserveRooms" EntityType="LibraryDBModel.ReserveRoom" />
+          <EntitySet Name="Rooms" EntityType="LibraryDBModel.Room" />
+          <AssociationSet Name="FK_IssueBook_BookId" Association="LibraryDBModel.FK_IssueBook_BookId">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="IssueBook" EntitySet="IssueBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_DiscId" Association="LibraryDBModel.FK_IssueDisc_DiscId">
+            <End Role="Disc" EntitySet="Discs" />
+            <End Role="IssueDisc" EntitySet="IssueDiscs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Ebook" Association="LibraryDBModel.FK_IssueEbook_Ebook">
+            <End Role="Ebook" EntitySet="Ebooks" />
+            <End Role="IssueEbook" EntitySet="IssueEbooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueBook_LibrarianId" Association="LibraryDBModel.FK_IssueBook_LibrarianId">
+            <End Role="Librarian" EntitySet="Librarians" />
+            <End Role="IssueBook" EntitySet="IssueBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueBook_UserId" Association="LibraryDBModel.FK_IssueBook_UserId">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="IssueBook" EntitySet="IssueBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_LibrarianId" Association="LibraryDBModel.FK_IssueDisc_LibrarianId">
+            <End Role="Librarian" EntitySet="Librarians" />
+            <End Role="IssueDisc" EntitySet="IssueDiscs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueDisc_UserId" Association="LibraryDBModel.FK_IssueDisc_UserId">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="IssueDisc" EntitySet="IssueDiscs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Librarian" Association="LibraryDBModel.FK_IssueEbook_Librarian">
+            <End Role="Librarian" EntitySet="Librarians" />
+            <End Role="IssueEbook" EntitySet="IssueEbooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IssueEbook_Member" Association="LibraryDBModel.FK_IssueEbook_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="IssueEbook" EntitySet="IssueEbooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_UserId" Association="LibraryDBModel.FK_Payment_UserId">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Member" Association="LibraryDBModel.FK_Reservation_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservePC_UserId" Association="LibraryDBModel.FK_ReservePC_UserId">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="ReservePC" EntitySet="ReservePCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReserveRoom_Member" Association="LibraryDBModel.FK_ReserveRoom_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="ReserveRoom" EntitySet="ReserveRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservePC_PCId" Association="LibraryDBModel.FK_ReservePC_PCId">
+            <End Role="PC" EntitySet="PCs" />
+            <End Role="ReservePC" EntitySet="ReservePCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReserveRoom_Room" Association="LibraryDBModel.FK_ReserveRoom_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="ReserveRoom" EntitySet="ReserveRooms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BookTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Publisher" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PublishedYear" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalPages" Type="Int32" Nullable="false" />
+          <Property Name="ISBN" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ThumbnailPicture" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AvailableCopies" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="IssueBooks" Relationship="LibraryDBModel.FK_IssueBook_BookId" FromRole="Book" ToRole="IssueBook" />
+        </EntityType>
+        <EntityType Name="Disc">
+          <Key>
+            <PropertyRef Name="DiscId" />
+          </Key>
+          <Property Name="DiscId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DiscTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Artist" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Director" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Distributor" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Subtitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Duration" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ThumbnailPicture" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="IssueDiscs" Relationship="LibraryDBModel.FK_IssueDisc_DiscId" FromRole="Disc" ToRole="IssueDisc" />
+        </EntityType>
+        <EntityType Name="Ebook">
+          <Key>
+            <PropertyRef Name="EbookId" />
+          </Key>
+          <Property Name="EbookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EbookTitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Publisher" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PublishedYear" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalPages" Type="Int32" Nullable="false" />
+          <Property Name="ISBN" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ThumbnailPicture" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AvailableCopies" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="IssueEbooks" Relationship="LibraryDBModel.FK_IssueEbook_Ebook" FromRole="Ebook" ToRole="IssueEbook" />
+        </EntityType>
+        <EntityType Name="IssueBook">
+          <Key>
+            <PropertyRef Name="IssueBookId" />
+          </Key>
+          <Property Name="IssueBookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="LibrarianId" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfdays" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Book" Relationship="LibraryDBModel.FK_IssueBook_BookId" FromRole="IssueBook" ToRole="Book" />
+          <NavigationProperty Name="Librarian" Relationship="LibraryDBModel.FK_IssueBook_LibrarianId" FromRole="IssueBook" ToRole="Librarian" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_IssueBook_UserId" FromRole="IssueBook" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="IssueDisc">
+          <Key>
+            <PropertyRef Name="IssueDiscId" />
+          </Key>
+          <Property Name="IssueDiscId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DiscId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="LibrarianId" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfDays" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Disc" Relationship="LibraryDBModel.FK_IssueDisc_DiscId" FromRole="IssueDisc" ToRole="Disc" />
+          <NavigationProperty Name="Librarian" Relationship="LibraryDBModel.FK_IssueDisc_LibrarianId" FromRole="IssueDisc" ToRole="Librarian" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_IssueDisc_UserId" FromRole="IssueDisc" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="IssueEbook">
+          <Key>
+            <PropertyRef Name="IssueEbookId" />
+          </Key>
+          <Property Name="IssueEbookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EbookId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="LibrarianId" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfDays" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ebook" Relationship="LibraryDBModel.FK_IssueEbook_Ebook" FromRole="IssueEbook" ToRole="Ebook" />
+          <NavigationProperty Name="Librarian" Relationship="LibraryDBModel.FK_IssueEbook_Librarian" FromRole="IssueEbook" ToRole="Librarian" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_IssueEbook_Member" FromRole="IssueEbook" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Librarian">
+          <Key>
+            <PropertyRef Name="LibrarianId" />
+          </Key>
+          <Property Name="LibrarianId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="IssueBooks" Relationship="LibraryDBModel.FK_IssueBook_LibrarianId" FromRole="Librarian" ToRole="IssueBook" />
+          <NavigationProperty Name="IssueDiscs" Relationship="LibraryDBModel.FK_IssueDisc_LibrarianId" FromRole="Librarian" ToRole="IssueDisc" />
+          <NavigationProperty Name="IssueEbooks" Relationship="LibraryDBModel.FK_IssueEbook_Librarian" FromRole="Librarian" ToRole="IssueEbook" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="ManagerId" />
+          </Key>
+          <Property Name="ManagerId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Student" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="SchoolName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="IssueBooks" Relationship="LibraryDBModel.FK_IssueBook_UserId" FromRole="Member" ToRole="IssueBook" />
+          <NavigationProperty Name="IssueDiscs" Relationship="LibraryDBModel.FK_IssueDisc_UserId" FromRole="Member" ToRole="IssueDisc" />
+          <NavigationProperty Name="IssueEbooks" Relationship="LibraryDBModel.FK_IssueEbook_Member" FromRole="Member" ToRole="IssueEbook" />
+          <NavigationProperty Name="Payments" Relationship="LibraryDBModel.FK_Payment_UserId" FromRole="Member" ToRole="Payment" />
+          <NavigationProperty Name="Reservations" Relationship="LibraryDBModel.FK_Reservation_Member" FromRole="Member" ToRole="Reservation" />
+          <NavigationProperty Name="ReservePCs" Relationship="LibraryDBModel.FK_ReservePC_UserId" FromRole="Member" ToRole="ReservePC" />
+          <NavigationProperty Name="ReserveRooms" Relationship="LibraryDBModel.FK_ReserveRoom_Member" FromRole="Member" ToRole="ReserveRoom" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PaymentType" />
+            <PropertyRef Name="CardNumber" />
+            <PropertyRef Name="NameOnCard" />
+            <PropertyRef Name="ExpiryDate" />
+            <PropertyRef Name="CSV" />
+            <PropertyRef Name="BillingAddress" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="PostalCode" />
+            <PropertyRef Name="Country" />
+            <PropertyRef Name="CellPhone" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CardNumber" Type="String" Nullable="false" MaxLength="19" Unicode="false" FixedLength="false" />
+          <Property Name="NameOnCard" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CSV" Type="Int32" Nullable="false" />
+          <Property Name="BillingAddress" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CellPhone" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_Payment_UserId" FromRole="Payment" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="PCId" />
+          </Key>
+          <Property Name="PCId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ReservePCs" Relationship="LibraryDBModel.FK_ReservePC_PCId" FromRole="PC" ToRole="ReservePC" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="ReservationId" />
+          </Key>
+          <Property Name="ReservationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemType" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProcessDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PickupDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_Reservation_Member" FromRole="Reservation" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="ReservePC">
+          <Key>
+            <PropertyRef Name="PCId" />
+            <PropertyRef Name="PCName" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+          </Key>
+          <Property Name="PCId" Type="Int32" Nullable="false" />
+          <Property Name="PCName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_ReservePC_UserId" FromRole="ReservePC" ToRole="Member" />
+          <NavigationProperty Name="PC" Relationship="LibraryDBModel.FK_ReservePC_PCId" FromRole="ReservePC" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="ReserveRoom">
+          <Key>
+            <PropertyRef Name="RoomId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="StartTime" />
+            <PropertyRef Name="EndTime" />
+          </Key>
+          <Property Name="RoomId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="LibraryDBModel.FK_ReserveRoom_Member" FromRole="ReserveRoom" ToRole="Member" />
+          <NavigationProperty Name="Room" Relationship="LibraryDBModel.FK_ReserveRoom_Room" FromRole="ReserveRoom" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="RoomId" />
+          </Key>
+          <Property Name="RoomId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Capacity" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ReserveRooms" Relationship="LibraryDBModel.FK_ReserveRoom_Room" FromRole="Room" ToRole="ReserveRoom" />
+        </EntityType>
+        <Association Name="FK_IssueBook_BookId">
+          <End Role="Book" Type="LibraryDBModel.Book" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="BookId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_DiscId">
+          <End Role="Disc" Type="LibraryDBModel.Disc" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disc">
+              <PropertyRef Name="DiscId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="DiscId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Ebook">
+          <End Role="Ebook" Type="LibraryDBModel.Ebook" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ebook">
+              <PropertyRef Name="EbookId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="EbookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueBook_LibrarianId">
+          <End Role="Librarian" Type="LibraryDBModel.Librarian" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueBook_UserId">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="IssueBook" Type="LibraryDBModel.IssueBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueBook">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_LibrarianId">
+          <End Role="Librarian" Type="LibraryDBModel.Librarian" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueDisc_UserId">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="IssueDisc" Type="LibraryDBModel.IssueDisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueDisc">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Librarian">
+          <End Role="Librarian" Type="LibraryDBModel.Librarian" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Librarian">
+              <PropertyRef Name="LibrarianId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="LibrarianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IssueEbook_Member">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="IssueEbook" Type="LibraryDBModel.IssueEbook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="IssueEbook">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_UserId">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="Payment" Type="LibraryDBModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Member">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="Reservation" Type="LibraryDBModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservePC_UserId">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="ReservePC" Type="LibraryDBModel.ReservePC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ReservePC">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReserveRoom_Member">
+          <End Role="Member" Type="LibraryDBModel.Member" Multiplicity="1" />
+          <End Role="ReserveRoom" Type="LibraryDBModel.ReserveRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ReserveRoom">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservePC_PCId">
+          <End Role="PC" Type="LibraryDBModel.PC" Multiplicity="1" />
+          <End Role="ReservePC" Type="LibraryDBModel.ReservePC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PC">
+              <PropertyRef Name="PCId" />
+            </Principal>
+            <Dependent Role="ReservePC">
+              <PropertyRef Name="PCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReserveRoom_Room">
+          <End Role="Room" Type="LibraryDBModel.Room" Multiplicity="1" />
+          <End Role="ReserveRoom" Type="LibraryDBModel.ReserveRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomId" />
+            </Principal>
+            <Dependent Role="ReserveRoom">
+              <PropertyRef Name="RoomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibraryDBModelStoreContainer" CdmEntityContainer="LibraryDBEntities">
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="LibraryDBModel.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="PublishedYear" ColumnName="PublishedYear" />
+                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ThumbnailPicture" ColumnName="ThumbnailPicture" />
+                <ScalarProperty Name="AvailableCopies" ColumnName="AvailableCopies" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discs">
+            <EntityTypeMapping TypeName="LibraryDBModel.Disc">
+              <MappingFragment StoreEntitySet="Disc">
+                <ScalarProperty Name="DiscId" ColumnName="DiscId" />
+                <ScalarProperty Name="DiscTitle" ColumnName="DiscTitle" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Director" ColumnName="Director" />
+                <ScalarProperty Name="Distributor" ColumnName="Distributor" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ThumbnailPicture" ColumnName="ThumbnailPicture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ebooks">
+            <EntityTypeMapping TypeName="LibraryDBModel.Ebook">
+              <MappingFragment StoreEntitySet="Ebook">
+                <ScalarProperty Name="EbookId" ColumnName="EbookId" />
+                <ScalarProperty Name="EbookTitle" ColumnName="EbookTitle" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="PublishedYear" ColumnName="PublishedYear" />
+                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ThumbnailPicture" ColumnName="ThumbnailPicture" />
+                <ScalarProperty Name="AvailableCopies" ColumnName="AvailableCopies" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueBooks">
+            <EntityTypeMapping TypeName="LibraryDBModel.IssueBook">
+              <MappingFragment StoreEntitySet="IssueBook">
+                <ScalarProperty Name="IssueBookId" ColumnName="IssueBookId" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LibrarianId" ColumnName="LibrarianId" />
+                <ScalarProperty Name="NumberOfdays" ColumnName="NumberOfdays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueDiscs">
+            <EntityTypeMapping TypeName="LibraryDBModel.IssueDisc">
+              <MappingFragment StoreEntitySet="IssueDisc">
+                <ScalarProperty Name="IssueDiscId" ColumnName="IssueDiscId" />
+                <ScalarProperty Name="DiscId" ColumnName="DiscId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LibrarianId" ColumnName="LibrarianId" />
+                <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueEbooks">
+            <EntityTypeMapping TypeName="LibraryDBModel.IssueEbook">
+              <MappingFragment StoreEntitySet="IssueEbook">
+                <ScalarProperty Name="IssueEbookId" ColumnName="IssueEbookId" />
+                <ScalarProperty Name="EbookId" ColumnName="EbookId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LibrarianId" ColumnName="LibrarianId" />
+                <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Librarians">
+            <EntityTypeMapping TypeName="LibraryDBModel.Librarian">
+              <MappingFragment StoreEntitySet="Librarian">
+                <ScalarProperty Name="LibrarianId" ColumnName="LibrarianId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="LibraryDBModel.Manager">
+              <MappingFragment StoreEntitySet="Manager">
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="LibraryDBModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Student" ColumnName="Student" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="LibraryDBModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="NameOnCard" ColumnName="NameOnCard" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="CSV" ColumnName="CSV" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PCs">
+            <EntityTypeMapping TypeName="LibraryDBModel.PC">
+              <MappingFragment StoreEntitySet="PC">
+                <ScalarProperty Name="PCId" ColumnName="PCId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="LibraryDBModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="ReservationId" ColumnName="ReservationId" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="PickupDate" ColumnName="PickupDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservePCs">
+            <EntityTypeMapping TypeName="LibraryDBModel.ReservePC">
+              <MappingFragment StoreEntitySet="ReservePC">
+                <ScalarProperty Name="PCId" ColumnName="PCId" />
+                <ScalarProperty Name="PCName" ColumnName="PCName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReserveRooms">
+            <EntityTypeMapping TypeName="LibraryDBModel.ReserveRoom">
+              <MappingFragment StoreEntitySet="ReserveRoom">
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="LibraryDBModel.Room">
+              <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -15,6 +15,8 @@ namespace VirtualCollege.Utils
             Room,
             Pc
         }
+
+
         public enum ReserveStatus
         {
             Pending,

@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using VirtualCollege.Utils;
+using System.Data.Entity;
+using VirtualCollege.Models.EntityFramework;
 
 namespace VirtualCollege.Models.Entity
 {
@@ -63,9 +65,17 @@ namespace VirtualCollege.Models.Entity
             GenericDataAccess.ExecuteNonQuery(comm);
         }
 
-        public void UpdateReservation(Reservation reservation)
+        public void UpdateReservation(VirtualCollege.Models.EntityFramework.Reservation reservation)
         {
-            throw new NotImplementedException();
+            using (var db = new LibraryDBEntities())
+            {
+                // user-defined data entity to Entity Framework's default entity
+                var item = db.Reservations.Where(r => r.ReservationId == reservation.ReservationId).FirstOrDefault();
+                item.ProcessDate = reservation.ProcessDate;
+                item.PickupDate = reservation.PickupDate;
+                item.Status = reservation.Status;
+                db.SaveChanges();
+            }
         }
 
         public Reservation GetReservationById(string reservationId)
@@ -73,9 +83,19 @@ namespace VirtualCollege.Models.Entity
             throw new NotImplementedException();
         }
 
-        public List<Reservation> GetAllReservations()
+        public List<VirtualCollege.Models.EntityFramework.Reservation> GetAllReservations()
         {
-            throw new NotImplementedException();
+            List<VirtualCollege.Models.EntityFramework.Reservation> list = new List<VirtualCollege.Models.EntityFramework.Reservation>();
+            using (var db = new LibraryDBEntities())
+            {
+                var result = from r in db.Reservations
+                             select r;
+                foreach (var item in result)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
         }
 
 
@@ -86,9 +106,10 @@ namespace VirtualCollege.Models.Entity
             comm.Parameters.Add(new SqlParameter("@userId", DbType.String));
             comm.Parameters["@userId"].Value = userId;
             DataTable table = GenericDataAccess.ExecuteSelectCommand(comm);
-            
+
             List<Reservation> reservations = new List<Reservation>();
-            foreach (DataRow row in table.Rows){
+            foreach (DataRow row in table.Rows)
+            {
                 Reservation reservation = new Reservation();
                 reservation.reservationId = row["reservationId"].ToString();
                 reservation.itemType = row["itemtype"].ToString();
@@ -102,5 +123,43 @@ namespace VirtualCollege.Models.Entity
             }
             return reservations;
         }
+
+
+        public List<EntityFramework.Reservation> GetReservationByStatus(Settings.ReserveStatus reserveStatus)
+        {
+            List<VirtualCollege.Models.EntityFramework.Reservation> list = new List<EntityFramework.Reservation>();
+            switch (reserveStatus)
+            {
+                case Settings.ReserveStatus.Pending:
+                    using (var db = new LibraryDBEntities())
+                    {
+                        var result = db.Reservations.Where(r => r.Status == Settings.ReserveStatus.Pending.ToString()).Select(r => r);
+                        foreach (var item in result)
+                        {
+                            list.Add(item);
+                        }
+                    }
+                    break;
+                case Settings.ReserveStatus.Processed:
+                case Settings.ReserveStatus.Cancel:
+                case Settings.ReserveStatus.Close:
+                    using (var db = new LibraryDBEntities())
+                    {
+                        var result = db.Reservations
+                            .Where(r => (r.Status == Settings.ReserveStatus.Processed.ToString())
+                            || (r.Status == Settings.ReserveStatus.Close.ToString())
+                            || (r.Status == Settings.ReserveStatus.Processed.ToString()))
+                            .Select(r => r);
+                        foreach (var item in result)
+                        {
+                            list.Add(item);
+                        }
+                    }
+                    break;
+
+            }
+            return list;
+        }
+
     }
 }

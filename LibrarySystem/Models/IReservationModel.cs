@@ -11,10 +11,14 @@ namespace VirtualCollege.Models
     {
        void AddReservation(Reservation reservation);
        void DeleteReservation(Reservation reservation);
-       void UpdateReservation(Reservation reservation);
+       void UpdateReservation(VirtualCollege.Models.EntityFramework.Reservation reservation);
        Reservation GetReservationById(string reservationId);
-       List<Reservation> GetAllReservations();
+       List<VirtualCollege.Models.EntityFramework.Reservation> GetAllReservations();
 
        List<Reservation> GetReservationByUser(string userId);
+
+
+       List<EntityFramework.Reservation> GetReservationByStatus(Utils.Settings.ReserveStatus reserveStatus);
+
     }
 }
