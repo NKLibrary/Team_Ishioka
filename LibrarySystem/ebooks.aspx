@@ -1,22 +1,25 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="ebooks.aspx.cs" Inherits="VirtualCollege.Ebooks" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
+    <link href="css/menu.css" rel="stylesheet" />
           <br />
-        <br />
-          <br />
-        <br />
   Welcome to Ebooks page!
     
       &nbsp;&nbsp;<br />
+    <br />
           <table style="width: 100%">
               <tr>
-                  <td style="height: 30px; width: 382px">
-                      <asp:Label ID="ebook_titleLbl" runat="server" Text="Enter Ebook Title:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                  <td style="height: 30px; width: 152px">
+                      <asp:Label ID="ebook_titleLbl" runat="server" CssClass="infoLabel" Text="Enter Ebook Title:"></asp:Label>
+&nbsp;</td>
+                  <td style="height: 30px; width: 294px">
+                      <asp:DropDownList ID="drpBookTitle" runat="server" CssClass="infoDrop" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                  </td>
+                  <td style="height: 30px; width: 156px">
+                      <asp:Label ID="author_nameLbl" runat="server" CssClass="infoLabel" Text="Enter Author Name:"></asp:Label>
                   </td>
                   <td style="height: 30px">
-                      <asp:Label ID="author_nameLbl" runat="server" Text="Enter Author Name:"></asp:Label>
-    <asp:DropDownList ID="drpAuthor" runat="server" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+    <asp:DropDownList ID="drpAuthor" runat="server" CssClass="infoDrop" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
    
                   </td>
               </tr>
