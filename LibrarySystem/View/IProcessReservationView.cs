@@ -15,6 +15,7 @@ namespace VirtualCollege.View
         event EventHandler switchMode;
         event EventHandler processReservation;
 
+        void DisplayMessage(string message);
     }
 
     public enum Mode

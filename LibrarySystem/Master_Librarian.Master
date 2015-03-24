@@ -63,8 +63,8 @@
     <li><a href="Librarian_Home.aspx" title="Librarian Home Page">Librarian Home Page</a></li>
     <li><a href="#2" title="Update Account">Update Account</a></li>
     <li><a href="#3" title="Update Password">Update Password</a></li>
-    <li><a href="#4" title="Reservation List">Reservation List</a></li>
-    <li><a href="/View/AddBook.aspx" title="Update inventory">Update inventory</a></li>
+    <li><a href="/View/ProcessReservationListViewM.aspx" title="Reservation List">Reservation List</a></li>
+    <li><a href="#5" title="Update inventory">Update inventory</a></li>
     <li><a href="#6" title="Update User Data">Update User Data</a></li>
     <li><a href="#7" title="Charge Fine">Charge Fine</a></li>
     <li><a href="Default.aspx" title="LogOut">Log Out</a></li>

@@ -78,9 +78,12 @@ namespace VirtualCollege.Models.Entity
             }
         }
 
-        public Reservation GetReservationById(string reservationId)
+        public VirtualCollege.Models.EntityFramework.Reservation GetReservationById(string reservationId)
         {
-            throw new NotImplementedException();
+            using (var db = new LibraryDBEntities())
+            {
+                return db.Reservations.Where(r => r.ReservationId+"" == reservationId).FirstOrDefault();
+            }
         }
 
         public List<VirtualCollege.Models.EntityFramework.Reservation> GetAllReservations()
@@ -161,5 +164,17 @@ namespace VirtualCollege.Models.Entity
             return list;
         }
 
+
+
+        public Member GetMemberById(string memberId)
+        {
+            Member member;
+            using (var db = new LibraryDBEntities())
+            {
+                member = db.Members.Where(m => m.UserId + "" == memberId).FirstOrDefault();
+                if (member == null) throw new Exception("Sorry, cannot find the specified member");
+                else return member;
+            }
+        }
     }
 }

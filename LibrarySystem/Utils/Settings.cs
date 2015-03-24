@@ -36,7 +36,7 @@ namespace VirtualCollege.Utils
         public static int Pickup_DueDay = 2;
         public static string GetProcessMessage(string fullName, DateTime processDate)
         {
-            return fullName + ",\n\n" + "Your reservation request has been successfully processed. Please pick up your items at Ishioka Library before " + processDate.AddDays(Pickup_DueDay).ToShortDateString() + ".\n\nThank yous!";
+            return "Hi " + fullName + ",\n\n" + "Your reservation request has been successfully processed. Please pick up your items at Ishioka Library before " + processDate.AddDays(Pickup_DueDay).ToShortDateString() + ".\n\nThank yous!";
         }
     }
 }

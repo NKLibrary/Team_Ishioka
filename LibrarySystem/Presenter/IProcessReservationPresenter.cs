@@ -11,6 +11,7 @@ namespace VirtualCollege.Presenter
     {
         List<VirtualCollege.Models.EntityFramework.Reservation> getTodoReservations();
         List<Reservation> getHistoryReservations();
-        void updateReservation();
+        void UpdateReservation();
+        Member GetSelectedMember(string userId);
     }
 }

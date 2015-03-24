@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VirtualCollege.Models.Entity;
+using VirtualCollege.Models.EntityFramework;
 
 namespace VirtualCollege.Models
 {
    public interface IReservationModel
     {
-       void AddReservation(Reservation reservation);
-       void DeleteReservation(Reservation reservation);
+       // place a reserve request
+       List<VirtualCollege.Models.Entity.Reservation> GetReservationByUser(string userId);
+       void AddReservation(VirtualCollege.Models.Entity.Reservation reservation);
+       void DeleteReservation(VirtualCollege.Models.Entity.Reservation reservation);
+
+       // process reserve request
        void UpdateReservation(VirtualCollege.Models.EntityFramework.Reservation reservation);
-       Reservation GetReservationById(string reservationId);
+       VirtualCollege.Models.EntityFramework.Reservation GetReservationById(string reservationId);
        List<VirtualCollege.Models.EntityFramework.Reservation> GetAllReservations();
-
-       List<Reservation> GetReservationByUser(string userId);
-
-
        List<EntityFramework.Reservation> GetReservationByStatus(Utils.Settings.ReserveStatus reserveStatus);
-
+       Member GetMemberById(String memberId);
     }
 }

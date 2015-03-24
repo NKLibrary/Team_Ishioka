@@ -209,6 +209,7 @@
     <Content Include="View\Controls\DVDListView.aspx" />
     <Content Include="View\EbookListView.aspx" />
     <Content Include="View\PlaceReservationSample.aspx" />
+    <Content Include="View\ProcessReservationListViewM.aspx" />
     <Content Include="View\ReservationListViewM.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Master_Manager.Master" />
@@ -304,7 +305,6 @@
     <Content Include="View\EditBookView.aspx" />
     <Content Include="View\EditDiscView.aspx" />
     <Content Include="View\PcListView.aspx" />
-    <Content Include="View\ProcessReservationView.aspx" />
     <Content Include="View\_ReservationListView.aspx" />
     <Content Include="View\RoomListView.aspx" />
     <Content Include="Web.config">
@@ -748,6 +748,14 @@
     <Compile Include="View\AddDiscView.aspx.designer.cs">
       <DependentUpon>AddDiscView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\IProcessReservationListView.cs" />
+    <Compile Include="View\ProcessReservationListViewM.aspx.cs">
+      <DependentUpon>ProcessReservationListViewM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ProcessReservationListViewM.aspx.designer.cs">
+      <DependentUpon>ProcessReservationListViewM.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\_AddReservationView.aspx.cs">
       <DependentUpon>_AddReservationView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -832,13 +840,6 @@
     </Compile>
     <Compile Include="View\PlaceReservationSample.aspx.designer.cs">
       <DependentUpon>PlaceReservationSample.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProcessReservationView.aspx.cs">
-      <DependentUpon>ProcessReservationView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\ProcessReservationView.aspx.designer.cs">
-      <DependentUpon>ProcessReservationView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\_ReservationListView.aspx.cs">
       <DependentUpon>_ReservationListView.aspx</DependentUpon>
