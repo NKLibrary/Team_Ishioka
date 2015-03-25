@@ -11,23 +11,5 @@ namespace VirtualCollege.Account {
     
     
     public partial class MemberWelcome {
-        
-        /// <summary>
-        /// horiNav1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::VirtualCollege.horizontalNav horiNav1;
-        
-        /// <summary>
-        /// leftNav1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::VirtualCollege.leftNav leftNav1;
     }
 }
