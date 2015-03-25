@@ -1,19 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Member.Master" AutoEventWireup="true" CodeBehind="Member_Pay.aspx.cs" Inherits="VirtualCollege.WebForm9" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="Master_Member_Content" runat="server">
 
-
-    Fine Calculator<br />
+    <link href="css/menu.css" rel="stylesheet" />
+    <asp:Label ID="Label1" runat="server" BackColor="#66FFFF" Font-Bold="True" Font-Names="Castellar" Font-Size="Large" ForeColor="#FF0066" Text="Fine Calculator"></asp:Label>
+    <br />
     <br />
 
 
-    <asp:Label ID="lblmsg" runat="server" Text="Select dates:"></asp:Label>
+    <asp:Label ID="lblmsg"  runat="server" Text="Select dates:"></asp:Label>
 
 
-    &nbsp;From:
-    <input type="text" id="startdate" />
-    To:
-    <input type="text" id="enddate" />
-     <div style="margin:1%;" id="Result"> </div>
+    <table style="width: 124%">
+        <tr>
+            <td>
+                <asp:Label ID="FromLbl" runat="server" CssClass ="infoLabel" Width="100px" Text="From"></asp:Label>
+            </td>
+            <td style="width: 182px">
+    <input type="text" id="startdate" runat="server"   /></td>
+            <td>
+                <asp:Label ID="ToLbl" runat="server" CssClass ="infoLabel" Width="100px" Text="To"></asp:Label>
+            </td>
+            <td>
+    <input type="text" id="enddate"  runat="server" /></td>
+        </tr>
+    </table>
+&nbsp;<div style="margin:1%;" id="Result"> </div>
     <button type="button" onclick="Calculatedays();" style="padding:1px; color:#0C6;margin-left:15%;margin-top:5%" >Calculate</button>
 
 </asp:Content>

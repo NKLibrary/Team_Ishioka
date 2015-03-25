@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Member.Master" AutoEventWireup="true" CodeBehind="Member_InfoUpdate.aspx.cs" Inherits="VirtualCollege.WebForm8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Master_Member_Content" runat="server">
 
-
+    <link href="css/menu.css" rel="stylesheet" />
   
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
@@ -18,28 +18,26 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <table style="width: 929px; height: 651px">
                     <tr>
-                        <td style="width: 113px; height: 34px">
-                        <td style="width: 131px; height: 34px">
-                <asp:Label ID="NameLbl" runat="server" Text="Name:" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
+                        <td style="width: 113px; height: 31px">
+                        <td style="width: 135px; height: 31px">
+                <asp:Label ID="NameLbl" runat="server" Text="Name:" Width="123px" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
                         </td>
-                        <td style="width: 267px; height: 34px">
-                            <%--<asp:TextBox ID="Nametb" runat="server" Width="240px" CssClass="textContact" ></asp:TextBox>--%>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        <td style="width: 267px; height: 31px">
                             <asp:TextBox ID="Nametb" runat="server" Width="240px" CssClass="textContact"></asp:TextBox>
                         </td>
-                        <td style="width: 240px; height: 34px">
+                        <td style="width: 240px; height: 31px">
                             &nbsp;&nbsp;
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Nametb" CssClass="textContact" ErrorMessage="User Name is required." ToolTip="User Name is required." ID="UserNameRequired" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Name</asp:RequiredFieldValidator>
                             </td>
                     </tr>
-                    <tr><td></td><td style="width: 131px">
-                <asp:Label ID="NameLbl0" runat="server" Text="Password:" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
-                        </td><td style="width: 267px"> &nbsp;<asp:TextBox ID="passwordtb" runat="server" TextMode="Password"></asp:TextBox>
+                    <tr><td></td><td style="width: 135px">
+                <asp:Label ID="NameLbl0" runat="server" Text="Password:" Width="123px" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
+                        </td><td style="width: 267px"> <asp:TextBox ID="passwordtb" runat="server" TextMode="Password"></asp:TextBox>
                         </td></tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px; height: 50px;">
-                <asp:Label ID="GenderLbl" CssClass ="infoLabel" runat="server" Text="Gender:"></asp:Label>
+                        <td style="width: 135px; height: 50px;">
+                <asp:Label ID="GenderLbl" CssClass ="infoLabel" runat="server" Width="123px" Text="Gender:"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 50px;">
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server" style="margin-left: 7px">
@@ -55,12 +53,11 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="AddressLbl" CssClass ="infoLabel" runat="server" Text="Address:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="AddressLbl" CssClass ="infoLabel" Width="123px" runat="server" Text="Address:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="Addresstb" runat="server" CssClass="textContact"></asp:TextBox>
+                            <asp:TextBox ID="Addresstb" runat="server"  CssClass="textContact"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Addresstb" ErrorMessage="Address is required." ToolTip="Address is required." ID="UserNameRequired1" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Address</asp:RequiredFieldValidator>
@@ -68,11 +65,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="CityLbl" runat="server" CssClass ="infoLabel" Text="City:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="CityLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="City:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="Citytb" CssClass="textContact" runat="server"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
@@ -81,11 +77,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="PostalLbl" runat="server" CssClass ="infoLabel" Text="Postal Code:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="PostalLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Postal Code:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="Postaltb" CssClass="textContact" runat="server"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
@@ -96,11 +91,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="ProLbl" runat="server" CssClass ="infoLabel" Text="Province:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="ProLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Province:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;
                             <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="False">
                                 <asp:ListItem>AB</asp:ListItem>
                                 <asp:ListItem>BC</asp:ListItem>
@@ -119,11 +113,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="HomeLbl" runat="server" CssClass ="infoLabel" Text="Home Phone #:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="HomeLbl" runat="server" CssClass ="infoLabel"  Width="123px" Text="Home Phone #:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="Hometb" CssClass="textContact" runat="server" TextMode="Phone"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
@@ -134,12 +127,11 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px; height: 42px;">
-                <asp:Label ID="CellLbl" runat="server" CssClass ="infoLabel" Text="Cell Phone #:"></asp:Label>
+                        <td style="width: 135px; height: 42px;">
+                <asp:Label ID="CellLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Cell Phone #:"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 42px;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="Celltb" CssClass="textContact" runat="server" TextMode="Phone"></asp:TextBox>
+                            <asp:TextBox ID="Celltb" CssClass="textContact" runat="server" TextMode="Phone" ></asp:TextBox>
                         </td>
                         <td style="width: 240px; height: 42px;">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Celltb" ErrorMessage="Cell # is required." ToolTip="Cell # is required." ID="UserNameRequired5" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Cell Phone #</asp:RequiredFieldValidator>
@@ -149,11 +141,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="EmailLbl" runat="server" CssClass ="infoLabel" Text="Primary Email ID:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="EmailLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Primary Email ID:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="Emailtb" CssClass="textContact" runat="server" TextMode="Email"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
@@ -165,11 +156,10 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="SecEmailLbl" runat="server" CssClass ="infoLabel" Text="Secondary Email ID:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="SecEmailLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Secondary Email ID:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="SecEmailtb" CssClass="textContact" runat="server" TextMode="Email"></asp:TextBox>
                         </td>
                         <td style="width: 240px">
@@ -177,8 +167,8 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="StudentLbl" runat="server" CssClass ="infoLabel" Text="Student:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="StudentLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Student:"></asp:Label>
                         </td>
                         <td style="width: 267px">
                             <asp:RadioButtonList ID="RadioButtonList2" runat="server">
@@ -192,12 +182,11 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="SchoolLbl" runat="server" CssClass ="infoLabel" Text="School Name:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="SchoolLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="School Name:"></asp:Label>
                         </td>
                         <td style="width: 267px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="Schooltb" CssClass="textContact" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="Schooltb" CssClass="textContact" runat="server" ></asp:TextBox>
                         </td>
                         <td style="width: 240px">
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Schooltb" ErrorMessage="School Name is required." ToolTip="School Name is required." ID="UserNameRequired7" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter School Name</asp:RequiredFieldValidator>
@@ -205,8 +194,8 @@
                     </tr>
                     <tr>
                         <td style="width: 113px">
-                        <td style="width: 131px">
-                <asp:Label ID="StatusLbl" runat="server" CssClass ="infoLabel" Text="Status:"></asp:Label>
+                        <td style="width: 135px">
+                <asp:Label ID="StatusLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Status:"></asp:Label>
                         </td>
                         <td style="width: 267px">
                             <asp:RadioButtonList ID="RadioButtonList3" runat="server">
@@ -220,8 +209,8 @@
                     </tr>
                     <tr>
                         <td style="width: 113px; height: 34px;">
-                        <td style="width: 131px; height: 34px;">
-                <asp:Label ID="DateLbl" runat="server" CssClass ="infoLabel" Text="Current Date:"></asp:Label>
+                        <td style="width: 135px; height: 34px;">
+                <asp:Label ID="DateLbl" runat="server" CssClass ="infoLabel" Width="123px" Text="Current Date:"></asp:Label>
                         </td>
                         <td style="width: 267px; height: 34px;">
                             <asp:Label ID="DateTimeLbl" CssClass ="infoLabel" runat="server" Text="DateTime"></asp:Label>
@@ -244,7 +233,6 @@
                         <td style="width: 235px">
                             <br />
                             <asp:Button ID="Submitbtn" runat="server" CssClass="infoButton" Text="Submit"  Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
-                           
                         </td>
                         <td>
                             <br />

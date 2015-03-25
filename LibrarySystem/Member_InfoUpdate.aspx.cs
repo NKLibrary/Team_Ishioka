@@ -11,7 +11,21 @@ namespace VirtualCollege
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void Submitbtn_Click(object sender, EventArgs e)
+        {
 
         }
+
+        protected void Celltb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+     
+       
     }
 }
