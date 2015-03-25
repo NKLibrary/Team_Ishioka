@@ -60,8 +60,9 @@ namespace VirtualCollege.View
         {
             List<VirtualCollege.Models.EntityFramework.Reservation> list = presenter.getTodoReservations();
             Reservations = from reservation in list
-                           select reservation;
+                           select new { reservation.ReservationId, reservation.ItemType, MemberName = presenter.GetUserName(reservation.UserId + ""), MemberEmail = presenter.GetSelectedMember(reservation.UserId + "").Email, reservation.ExpireDate };
         }
+                    
 
         protected void rbtnHistory_CheckedChanged(object sender, EventArgs e)
         {
@@ -74,7 +75,7 @@ namespace VirtualCollege.View
         {
             List<VirtualCollege.Models.EntityFramework.Reservation> list = presenter.getHistoryReservations();
             Reservations = from reservation in list
-                           select new { reservation.ReservationId, reservation.ItemType, reservation.ExpireDate };
+                           select new { reservation.ReservationId, reservation.ItemType, MemberName = presenter.GetUserName(reservation.UserId + ""), MemberEmail=presenter.GetSelectedMember(reservation.UserId+"").Email, reservation.ExpireDate, reservation.ProcessDate };
             // hide process button
             for (int i = 0; i < gvReservation.Rows.Count; i++)
             {

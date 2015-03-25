@@ -73,5 +73,11 @@ namespace VirtualCollege.Presenter
         {
             return model.GetMemberById(userId);
         }
+
+
+        public string GetUserName(string userId)
+        {
+            return model.getMemberNameById(userId);
+        }
     }
 }

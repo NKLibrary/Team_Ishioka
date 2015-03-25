@@ -176,5 +176,19 @@ namespace VirtualCollege.Models.Entity
                 else return member;
             }
         }
+
+
+        public string getMemberNameById(string userId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                Member member = db.Members.Where(m => m.UserId + "" == userId).FirstOrDefault();
+                if (member != null)
+                {
+                    return member.FirstName + " " + member.LastName;
+                }
+                else return "N/A";
+            }
+        }
     }
 }

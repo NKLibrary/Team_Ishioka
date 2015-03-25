@@ -21,5 +21,7 @@ namespace VirtualCollege.Models
        List<VirtualCollege.Models.EntityFramework.Reservation> GetAllReservations();
        List<EntityFramework.Reservation> GetReservationByStatus(Utils.Settings.ReserveStatus reserveStatus);
        Member GetMemberById(String memberId);
+
+       string getMemberNameById(string userId);
     }
 }

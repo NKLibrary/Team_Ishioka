@@ -13,5 +13,6 @@ namespace VirtualCollege.Presenter
         List<Reservation> getHistoryReservations();
         void UpdateReservation();
         Member GetSelectedMember(string userId);
+        string GetUserName(string userId);
     }
 }
