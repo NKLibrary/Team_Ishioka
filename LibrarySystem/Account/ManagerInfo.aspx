@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Master_Manager_Content" runat="server">
 
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="ManagerId" DataSourceID="SqlDataSource11">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ManagerId" DataSourceID="SqlDataSource11" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:BoundField DataField="ManagerId" HeaderText="ManagerId" InsertVisible="False" ReadOnly="True" SortExpression="ManagerId" />
         <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
@@ -19,15 +20,15 @@
         <asp:BoundField DataField="CellPhone" HeaderText="CellPhone" SortExpression="CellPhone" />
         <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
     </Columns>
-    <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-    <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-    <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-    <RowStyle BackColor="White" ForeColor="#003399" />
-    <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-    <SortedAscendingCellStyle BackColor="#EDF6F6" />
-    <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-    <SortedDescendingCellStyle BackColor="#D6DFDF" />
-    <SortedDescendingHeaderStyle BackColor="#002876" />
+    <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
+    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+    <SortedDescendingHeaderStyle BackColor="#820000" />
 </asp:GridView>
 <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:connectionString %>" DeleteCommand="DELETE FROM [Manager] WHERE [ManagerId] = @original_ManagerId AND [Password] = @original_Password AND [FirstName] = @original_FirstName AND (([MiddleName] = @original_MiddleName) OR ([MiddleName] IS NULL AND @original_MiddleName IS NULL)) AND [LastName] = @original_LastName AND [JoiningDate] = @original_JoiningDate AND [Gender] = @original_Gender AND [Address] = @original_Address AND [City] = @original_City AND [Province] = @original_Province AND [PostalCode] = @original_PostalCode AND [Country] = @original_Country AND [CellPhone] = @original_CellPhone AND [Email] = @original_Email" InsertCommand="INSERT INTO [Manager] ([Password], [FirstName], [MiddleName], [LastName], [JoiningDate], [Gender], [Address], [City], [Province], [PostalCode], [Country], [CellPhone], [Email]) VALUES (@Password, @FirstName, @MiddleName, @LastName, @JoiningDate, @Gender, @Address, @City, @Province, @PostalCode, @Country, @CellPhone, @Email)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Manager]" UpdateCommand="UPDATE [Manager] SET [Password] = @Password, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [JoiningDate] = @JoiningDate, [Gender] = @Gender, [Address] = @Address, [City] = @City, [Province] = @Province, [PostalCode] = @PostalCode, [Country] = @Country, [CellPhone] = @CellPhone, [Email] = @Email WHERE [ManagerId] = @original_ManagerId AND [Password] = @original_Password AND [FirstName] = @original_FirstName AND (([MiddleName] = @original_MiddleName) OR ([MiddleName] IS NULL AND @original_MiddleName IS NULL)) AND [LastName] = @original_LastName AND [JoiningDate] = @original_JoiningDate AND [Gender] = @original_Gender AND [Address] = @original_Address AND [City] = @original_City AND [Province] = @original_Province AND [PostalCode] = @original_PostalCode AND [Country] = @original_Country AND [CellPhone] = @original_CellPhone AND [Email] = @original_Email">
     <DeleteParameters>

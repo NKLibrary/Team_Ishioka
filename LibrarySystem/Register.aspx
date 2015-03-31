@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Master_Main.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="VirtualCollege.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="Master_Main_Content">
-    
+ <link href="css/menu.css" rel="stylesheet" />
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -24,16 +24,16 @@
                         <td style="width: 267px; height: 34px">
                             <%--<asp:TextBox ID="Nametb" runat="server" Width="240px" CssClass="textContact" ></asp:TextBox>--%>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="Nametb" runat="server" Width="240px" CssClass="textContact"></asp:TextBox>
+                            <asp:TextBox ID="Nametb" runat="server" Width="134px" CssClass="textContact"></asp:TextBox>
                         </td>
                         <td style="width: 240px; height: 34px">
-                            &nbsp;&nbsp;
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Nametb" CssClass="textContact" ErrorMessage="User Name is required." ToolTip="User Name is required." ID="UserNameRequired" BackColor="White" BorderColor="White" ForeColor="Red">*Please Enter Name</asp:RequiredFieldValidator>
+                            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="Nametb" ErrorMessage="*Please enter UserName" ForeColor="Red" ToolTip="Please enter UserName"></asp:RequiredFieldValidator>
+                            &nbsp;
                             </td>
                     </tr>
                     <tr><td></td><td style="width: 131px">
                 <asp:Label ID="NameLbl0" runat="server" Text="Password:" CssClass ="infoLabel" Font-Bold="False" Font-Names="Lucida Console"></asp:Label>
-                        </td><td style="width: 267px"> &nbsp;<asp:TextBox ID="passwordtb" runat="server" TextMode="Password"></asp:TextBox>
+                        </td><td style="width: 267px"> &nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="passwordtb" runat="server" CssClass="textContact" TextMode="Password"></asp:TextBox>
                         </td></tr>
                     <tr>
                         <td style="width: 113px">
@@ -49,7 +49,7 @@
                           
                         </td>
                         <td style="width: 240px; height: 50px;">
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="*Please select any one" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="*Please select Gender" ForeColor="Red" ToolTip="Please select Gender"></asp:RequiredFieldValidator>
                             </td>
                     </tr>
                     <tr>
@@ -237,11 +237,11 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />--%>
-                <table style="width: 53%; margin-left: 139px">
+                <table style="width: 53%; margin-left: 139px; height: 68px;">
                     <tr>
                         <td style="width: 235px">
                             <br />
-                            <asp:Button ID="Submitbtn" runat="server" CssClass="infoButton" Text="Submit"  OnClick="Submitbtn_Click" Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
+                            <asp:Button ID="Submitbtn" runat="server" CssClass="infoButton" Text="Submit"   OnClick="Submitbtn_Click" Font-Bold="True" Font-Names="Bradley Hand ITC" Font-Size="Medium" />
                            
                         </td>
                         <td>

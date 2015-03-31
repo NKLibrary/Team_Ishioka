@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="Master_Main_Content" runat="server">
     <!DOCTYPE html>
-
+    <link href="css/menu.css" rel="stylesheet" />
 <html>
 
 <body>
@@ -18,12 +18,12 @@
         <table style="width: 100%">
             <tr>
                 <td style="width: 466px">
-                    <asp:Label ID="book_titleLbl" runat="server" Text="Enter Book Title:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                    <asp:Label ID="book_titleLbl" CssClass="infoLabel" runat="server" Text="Enter Book Title"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpBookTitle" runat="server" CssClass="infoDrop" OnSelectedIndexChanged="drpBookTitle_SelectedIndexChanged" AutoPostBack="True" Width=""></asp:DropDownList>
                 </td>
                 <td>
-                    <asp:Label ID="author_nameLbl" runat="server" Text="Enter Author Name:"></asp:Label>
-&nbsp;<asp:DropDownList ID="drpAuthor" runat="server" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                    <asp:Label ID="author_nameLbl" runat="server" CssClass="infoLabel" Text="Enter Author Name:"></asp:Label>
+&nbsp;<asp:DropDownList ID="drpAuthor" runat="server" CssClass="infoDrop" OnSelectedIndexChanged="drpAuthor_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
    
                 </td>
             </tr>
