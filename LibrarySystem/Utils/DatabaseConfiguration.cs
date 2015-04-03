@@ -16,7 +16,11 @@ namespace VirtualCollege.Utils
 
         static DatabaseConfiguration()
         {
-            //dbConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            // ado.net database config
+            //dbConnectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            // entity framework database config
+            //dbConnectionString = @"metadata=res://*/Models.EntityFramework.Model1.csdl|res://*/Models.EntityFramework.Model1.ssdl|res://*/Models.EntityFramework.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost\SQLEXPRESS;initial catalog=LibraryDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;";
+            // database connection in web.config
             dbConnectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             dbProviderName = "System.Data.SqlClient";
             productsPerPage = 10;

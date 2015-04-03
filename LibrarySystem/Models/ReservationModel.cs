@@ -14,7 +14,36 @@ namespace VirtualCollege.Models.Entity
 {
     public class ReservationModel : IReservationModel
     {
-        private void Test()
+        private void TestDeleteReservationByAdo()
+        {
+            Reservation r = new Reservation();
+            r.reservationId = "11027";
+            r.itemType = VirtualCollege.Utils.Settings.ItemType.Book.ToString();
+            r.itemId = "1002";
+            r.userId = "3001477";
+            r.expireDate = DateTime.Now;
+            r.processDate = DateTime.Now;
+            r.pickupDate = DateTime.Now;
+            r.status = VirtualCollege.Utils.Settings.ReserveStatus.Pending.ToString();
+
+            this.DeleteReservation(r);
+        }
+
+        private void TestUpdateReservationByEntityFramework()
+        {
+            VirtualCollege.Models.EntityFramework.Reservation r = new VirtualCollege.Models.EntityFramework.Reservation();
+            r.ReservationId = 12029;
+            r.ItemType = VirtualCollege.Utils.Settings.ItemType.Book.ToString();
+            r.ItemId = 20001;
+            r.UserId = 3001477;
+            r.ExpireDate = DateTime.Now;
+            r.ProcessDate = DateTime.Now;
+            r.PickupDate = DateTime.Now;
+            r.Status = VirtualCollege.Utils.Settings.ReserveStatus.Pending.ToString();
+
+            this.UpdateReservation(r);
+        }
+        private void TestAddReservationByAdo()
         {
             Reservation r = new Reservation();
             r.reservationId = "11025";
@@ -26,8 +55,7 @@ namespace VirtualCollege.Models.Entity
             r.pickupDate = DateTime.Now;
             r.status = VirtualCollege.Utils.Settings.ReserveStatus.Pending.ToString();
 
-            //this.AddReservation(r);
-            this.DeleteReservation(r);
+            this.AddReservation(r);
         }
         public void AddReservation(Reservation reservation)
         {
@@ -59,6 +87,7 @@ namespace VirtualCollege.Models.Entity
         public void DeleteReservation(Reservation reservation)
         {
             string sql = "delete from Reservation where reservationId = @reservationId";
+            Console.WriteLine(sql);
             DbCommand comm = GenericDataAccess.CreateCommand(sql);
             comm.Parameters.Add(new SqlParameter("@reservationId", DbType.String));
             comm.Parameters["@reservationId"].Value = reservation.reservationId;

@@ -24,11 +24,11 @@ namespace VirtualCollege.View
             // get current user id
             string userId = "3001477";
             List<Reservation> reservations = presenter.LoadReservationByUser(userId);
-            Reservations = from reservation in reservations
-                   select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
+            //Reservations = from reservation in reservations
+            //       select new { reservation.reservationId, reservation.itemType, reservation.expireDate };
         }
 
-        public object Reservations
+        public List<Reservation> Reservations
         {
             set
             {

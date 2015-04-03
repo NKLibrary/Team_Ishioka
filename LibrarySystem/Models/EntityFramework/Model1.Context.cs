@@ -17,7 +17,9 @@ namespace VirtualCollege.Models.EntityFramework
     {
         public LibraryDBEntities()
             : base("name=LibraryDBEntities")
-        {
+           // : base(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False")
+           //: base(@"metadata=res://*/Models.EntityFramework.Model1.csdl|res://*/Models.EntityFramework.Model1.ssdl|res://*/Models.EntityFramework.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost\SQLEXPRESS;initial catalog=LibraryDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;")
+       {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
