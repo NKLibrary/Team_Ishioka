@@ -69,7 +69,7 @@ namespace VirtualCollege.Account
 
                     
                     Session["Userid"] = username;
-                    Response.Redirect("~/Home.aspx?login=true");
+                    Response.Redirect("~/Member_Home.aspx?login=true");
                 }
                 else
                 {

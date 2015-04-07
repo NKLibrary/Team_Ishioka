@@ -15,7 +15,7 @@ namespace VirtualCollege
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["Userid"]!=null)
+            if(Session["Userid"]!=null) 
             {
                 string userid = Session["Userid"].ToString();
                 
