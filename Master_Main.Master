@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Main.master.cs" Inherits="VirtualCollege.Master_Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="css/style_Menu.css" rel="stylesheet" />
+    <link href="css/style_VerticalMenu.css" rel="stylesheet" />
+<title></title>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div style="float:right;margin:5px 0px;">
+        <asp:Button ID="btnlogin" runat="server" Text="Login" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnlogin_Click" />&nbsp; <asp:Button ID="btnreg" runat="server" Text="Register" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnreg_Click" /><asp:Label ID="lbluid" runat="server" Text="username" Visible="false"></asp:Label>
+        <asp:Button ID="btnlogout" runat="server" Text="Logout" Visible="false" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnlogout_Click" />
+      <%--  <a href="Login.aspx">Login</a>&nbsp;|&nbsp;<a href="Register.aspx">Register</a>--%>
+
+    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+
+<div>
+<asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="138px" Width="100%" />
+</div>
+<hr />
+<div id="tabs30" style="font-family:Arial; font-size:large; text-align:center;">
+  <ul>
+
+<li><a class='' href='Default.aspx' title='Home'><span>Home</span></a></li>
+<li><a href='Books.aspx' title='Books'><span>Books</span></a></li>
+<li><a href='ebooks.aspx' title='eBooks'><span>eBooks</span></a></li>
+<li><a href='dvd.aspx' title='DVDs'><span>DVDs</span></a></li>
+<li><a href="Room.aspx" title='Book Room'><span>Book a room</span></a></li>
+<li><a href='pc1.aspx' title='Book PC'><span>Book a PC</span></a></li>
+<li><a href='About.aspx' title='About Us'><span>About Us</span></a></li>
+<li><a href='Contact.aspx' title='Contact Us'><span>Contact Us</span></a></li>
+  </ul>
+</div>
+<hr />
+<br />
+
+<table>
+<tr>
+
+<td style="height:auto; width:auto;">
+
+</td>
+
+</tr>
+<tr>
+<td>
+<div>
+<asp:ContentPlaceHolder ID="Master_Main_Content" runat="server">
+        
+</asp:ContentPlaceHolder>
+</div>
+</td>
+</tr>
+</table>
+<p style="background-color:yellow; text-align:center; width:100%; height:20px;">
+&copy; Centennial College ~ Comp 231 Project ~ Ishioka Library Management System
+</p>
+
+
+
+</form>
+ 
+</body>
+</html>
+
+
+
+
