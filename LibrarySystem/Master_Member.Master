@@ -49,8 +49,8 @@
     <li><a href="/Account/ResetPassword.aspx" runat="server" title="Reset Password">Reset Password</a></li>
     <li><a href="/View/ReservationListViewM.aspx" runat="server" title="My Reservations">My Reservations</a></li>
     <li><a href="~/Member_Pay.aspx" runat="server" title="Pay Outstanding Balance">Pay Outstanding Balance</a></li>
-    <li><a href="~/Member_Print.aspx" title="Print" runat="server">Print</a></li>
-    <li><a href="~/home.aspx" title="LogOut" runat="server">Log Out</a></li>
+ <%--   <li><a href="~/Member_Print.aspx" title="Print" runat="server">Print</a></li>
+ --%>   <li><a href="~/home.aspx" title="LogOut" runat="server">Log Out</a></li>
 
   </ul>
 </div>

@@ -219,6 +219,8 @@
     <Content Include="Member_.aspx" />
     <Content Include="Member_Print.aspx" />
     <Content Include="Room.aspx" />
+    <Content Include="Manager_Librarians.aspx" />
+    <Content Include="Manager_Members.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="Account\ManagerInfo.aspx" />
     <Content Include="WebForm5.aspx" />
@@ -886,6 +888,20 @@
     </Compile>
     <Compile Include="Room.aspx.designer.cs">
       <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Librarians.aspx.cs">
+      <DependentUpon>Manager_Librarians.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Librarians.aspx.designer.cs">
+      <DependentUpon>Manager_Librarians.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Members.aspx.cs">
+      <DependentUpon>Manager_Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Members.aspx.designer.cs">
+      <DependentUpon>Manager_Members.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
