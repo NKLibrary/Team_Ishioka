@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master_Member.Master" AutoEventWireup="true" CodeBehind="AddReservationViewM.aspx.cs" Inherits="VirtualCollege.View.AddReservationViewM" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Master_Member_Content" runat="server">
+    Your are reserving:
+    <asp:Label ID="lblItem" runat="server" ForeColor="#0033CC"></asp:Label>
+    <br />
+    <br />
     <asp:Label ID="Label1" runat="server" Text="Expire date(I do not need this item after):"></asp:Label>
     <asp:Calendar ID="calExpireDate" runat="server"></asp:Calendar>
     <asp:CustomValidator ID="valCalendar" runat="server" EnableClientScript="False" ErrorMessage="Expire date is required" OnServerValidate="valCalendar_ServerValidate" ForeColor="Red"></asp:CustomValidator>

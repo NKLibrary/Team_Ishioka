@@ -9,6 +9,11 @@ namespace VirtualCollege.Presenter
 {
     public interface IAddReservationPresenter
     {
-        void AddReservation(Reservation reservation); 
+        void AddReservation(Reservation reservation);
+        VirtualCollege.Models.EntityFramework.Book GetBook(string bookId);
+        VirtualCollege.Models.EntityFramework.Ebook GetEbook(string ebookId);
+        VirtualCollege.Models.EntityFramework.Disc getDisc(string discId);
+        VirtualCollege.Models.EntityFramework.Room getRoom(string roomId);
+        VirtualCollege.Models.EntityFramework.PC getPc(string pcId);
     }
 }

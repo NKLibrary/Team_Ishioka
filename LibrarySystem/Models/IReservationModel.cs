@@ -23,5 +23,12 @@ namespace VirtualCollege.Models
        Member GetMemberById(String memberId);
 
        string getMemberNameById(string userId);
+
+       // get reserving item
+       VirtualCollege.Models.EntityFramework.Book GetBookById(string bookId);
+       VirtualCollege.Models.EntityFramework.Disc GetDiscById(String discId);
+       VirtualCollege.Models.EntityFramework.Ebook GetEbookById(string ebookId);
+       VirtualCollege.Models.EntityFramework.Room GetRoomById(string roomId);
+       PC getPcById(string pcId);
     }
 }

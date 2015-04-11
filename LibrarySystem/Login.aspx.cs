@@ -56,7 +56,16 @@ namespace VirtualCollege.Account
             if (mem > 0)
             {
                 Session["Userid"] = username;
-                Response.Redirect("Member_Home.aspx");
+                if (Request.QueryString["forward"] != null && Request.QueryString["itemId"] != null && Request.QueryString["itemType"] != null)
+                {
+                    Response.Redirect(Request.QueryString["forward"] + "?itemType=" + Request.QueryString["itemType"] + "&itemId=" + Request.QueryString["itemId"]);
+                }
+
+                else
+                {
+                    Response.Redirect("Member_Home.aspx");
+                }
+                
             }
             else if (lib>0)
             {

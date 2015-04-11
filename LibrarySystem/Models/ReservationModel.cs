@@ -193,8 +193,6 @@ namespace VirtualCollege.Models.Entity
             return list;
         }
 
-
-
         public Member GetMemberById(string memberId)
         {
             Member member;
@@ -217,6 +215,48 @@ namespace VirtualCollege.Models.Entity
                     return member.FirstName + " " + member.LastName;
                 }
                 else return "N/A";
+            }
+        }
+
+
+
+        public EntityFramework.Book GetBookById(string bookId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                return db.Books.Where(b => b.BookId + "" == bookId).FirstOrDefault();
+            }
+        }
+
+        public EntityFramework.Disc GetDiscById(string discId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                return db.Discs.Where(d => d.DiscId + "" == discId).FirstOrDefault();
+            }
+        }
+
+        public EntityFramework.Ebook GetEbookById(string ebookId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                return db.Ebooks.Where(e => e.EbookId + "" == ebookId).FirstOrDefault();
+            }
+        }
+
+        public EntityFramework.Room GetRoomById(string roomId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                return db.Rooms.Where(r => r.RoomId + "" == roomId).FirstOrDefault();
+            }
+        }
+
+        public PC getPcById(string pcId)
+        {
+            using (var db = new LibraryDBEntities())
+            {
+                return db.PCs.Where(p => p.PCId + "" == pcId).FirstOrDefault();
             }
         }
     }
