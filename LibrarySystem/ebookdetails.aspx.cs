@@ -47,7 +47,7 @@ namespace VirtualCollege
 
         protected void btnReserveEBook_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("View/AddReservationViewM.aspx?itemtype=Ebook&itemid=" + ebookid);
+            Response.Redirect("View/AddReservationViewM.aspx?itemtype=EBook&itemid=" + ebookid);
         }
     }
 }
