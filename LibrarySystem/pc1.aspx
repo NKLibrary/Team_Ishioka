@@ -9,11 +9,6 @@
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="PCId" HeaderText="PCId" InsertVisible="False" ReadOnly="True" SortExpression="PCId" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                    <asp:TemplateField HeaderText="Reserve">
-<ItemTemplate>
-<asp:ImageButton ID="imageButtonreserve" ImageUrl="~/img/reserve-button.png" OnClientClick="javascript:return alert('you have successfully reserved the room');" AlternateText="reserve" CommandName="reserve" runat="server" />
-</ItemTemplate>
-</asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

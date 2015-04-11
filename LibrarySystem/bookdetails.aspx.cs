@@ -44,5 +44,10 @@ namespace VirtualCollege
             }
             catch (SqlException ex) { }
         }
+
+        protected void btnReserveBook_Click(object sender, EventArgs e)
+        {
+
+        }
         }
     }

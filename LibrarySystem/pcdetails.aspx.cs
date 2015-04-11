@@ -35,5 +35,10 @@ namespace VirtualCollege
             catch (SqlException ex) { }
         
         }
+
+        protected void btnReservePC_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

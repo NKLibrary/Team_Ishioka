@@ -63,5 +63,11 @@
                 <asp:TextBox ID="txtstatus" runat="server" CssClass="textContact" ReadOnly="True"></asp:TextBox>
             </td>
         </tr>
+        <tr>
+            <td>
+                <asp:Button Text="Reserve" runat="server" ID="btnReserveEBook" OnClick="btnReserveEBook_Click1" />
+            </td>
+        </tr>
+
     </table>
 </asp:Content>

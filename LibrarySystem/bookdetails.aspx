@@ -61,6 +61,13 @@
                 <asp:TextBox ID="txtstatus" CssClass="textContact" runat="server" Height="22px" ReadOnly="True"></asp:TextBox>
             </td>
         </tr>
+
+        <tr>
+            <td>
+                <asp:Button Text="Reserve" runat="server" ID="btnReserveBook" OnClick="btnReserveBook_Click" />
+            </td>
+        </tr>
+
     </table>
 
 

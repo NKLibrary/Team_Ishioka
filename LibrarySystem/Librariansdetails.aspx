@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Master_Manager_Content" runat="server">
     <link href="css/menu.css" rel="stylesheet" />
     <br />
-    <span style="font-size: large"><strong>Manage all Librarians</strong><asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="LibrarianId" DataSourceID="sdsLibrarians" CellPadding="4" ForeColor="#333333" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
+    <span style="font-size: large"><strong>Manage all Librarians</strong><asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="LibrarianId" DataSourceID="sdsLibrarians" CellPadding="4" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="LibrarianId" HeaderText="LibrarianId" InsertVisible="False" ReadOnly="True" SortExpression="LibrarianId" />
@@ -22,15 +21,15 @@
             <asp:BoundField DataField="CellPhone" HeaderText="CellPhone" SortExpression="CellPhone" />
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
         </Columns>
-        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-        <SortedAscendingCellStyle BackColor="#FDF5AC" />
-        <SortedAscendingHeaderStyle BackColor="#4D0000" />
-        <SortedDescendingCellStyle BackColor="#FCF6C0" />
-        <SortedDescendingHeaderStyle BackColor="#820000" />
+        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+        <RowStyle BackColor="White" ForeColor="#003399" />
+        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+        <SortedDescendingHeaderStyle BackColor="#002876" />
     </asp:GridView>
     <asp:SqlDataSource ID="sdsLibrarians" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>" DeleteCommand="DELETE FROM [Librarian] WHERE [LibrarianId] = @LibrarianId" InsertCommand="INSERT INTO [Librarian] ([Password], [FirstName], [MiddleName], [LastName], [JoiningDate], [Gender], [Address], [City], [Province], [PostalCode], [Country], [CellPhone], [Email]) VALUES (@Password, @FirstName, @MiddleName, @LastName, @JoiningDate, @Gender, @Address, @City, @Province, @PostalCode, @Country, @CellPhone, @Email)" SelectCommand="SELECT * FROM [Librarian]" UpdateCommand="UPDATE [Librarian] SET [Password] = @Password, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [JoiningDate] = @JoiningDate, [Gender] = @Gender, [Address] = @Address, [City] = @City, [Province] = @Province, [PostalCode] = @PostalCode, [Country] = @Country, [CellPhone] = @CellPhone, [Email] = @Email WHERE [LibrarianId] = @LibrarianId">
         <DeleteParameters>
