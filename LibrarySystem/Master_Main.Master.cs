@@ -23,6 +23,7 @@ namespace VirtualCollege
                 btnlogin.Visible = false;
                 btnlogout.Visible = true;
                 btnreg.Visible = false;
+                Button1.Visible = true;
                 string name = fetchname(userid);
                 lbluid.Text = "Welcome " + name + " !!";
 
@@ -46,6 +47,7 @@ namespace VirtualCollege
             btnlogin.Visible = true;
             btnlogout.Visible = false;
             btnreg.Visible = true;
+            Button1.Visible = false;
             Response.Redirect("~/Default.aspx");
             
         }
@@ -124,6 +126,11 @@ namespace VirtualCollege
             //}
             //catch (SqlException ex) { }
             return name;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Member_Home.aspx");
         }
     }
 }
