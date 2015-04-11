@@ -13,9 +13,10 @@ namespace VirtualCollege
 {
     public partial class ebookdetails : System.Web.UI.Page
     {
+        string ebookid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-             string ebookid=Request.QueryString["id"];
+             ebookid=Request.QueryString["id"];
             int id = Convert.ToInt32(ebookid);
             try
             {
@@ -46,7 +47,7 @@ namespace VirtualCollege
 
         protected void btnReserveEBook_Click1(object sender, EventArgs e)
         {
-
+            Response.Redirect("View/AddReservationViewM.aspx?itemtype=Ebook&itemid=" + ebookid);
         }
     }
 }

@@ -13,9 +13,10 @@ namespace VirtualCollege
 {
     public partial class dvddetails : System.Web.UI.Page
     {
+        string dvdid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string dvdid=Request.QueryString["id"];
+            dvdid=Request.QueryString["id"];
             int id = Convert.ToInt32(dvdid);
             try
             {
@@ -45,7 +46,7 @@ namespace VirtualCollege
         }
         protected void btnReserveDVD_Click1(object sender, EventArgs e)
         {
-
+            Response.Redirect("View/AddReservationViewM.aspx?itemtype=Disc&itemid="+dvdid);
         }
     }
 }
