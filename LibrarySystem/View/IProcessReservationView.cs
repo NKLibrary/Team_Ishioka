@@ -14,6 +14,7 @@ namespace VirtualCollege.View
 
         event EventHandler switchMode;
         event EventHandler processReservation;
+        event EventHandler cancelReservation;
 
         void DisplayMessage(string message);
     }

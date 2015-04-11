@@ -18,6 +18,15 @@ namespace VirtualCollege.Presenter
             this.view = processReservationView;
             this.model = reservationModel;
             view.processReservation += ProcessReservation;
+            view.cancelReservation += CancelReservation;
+        }
+
+        private void CancelReservation(object sender, EventArgs e)
+        {
+            string reservationId = this.view.SelectedReservationId;
+            VirtualCollege.Models.Entity.Reservation reservation = new VirtualCollege.Models.Entity.Reservation();
+            reservation.reservationId = reservationId;
+            model.DeleteReservation(reservation);
         }
 
         private void ProcessReservation(object sender, EventArgs e)
