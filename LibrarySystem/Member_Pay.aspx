@@ -13,29 +13,20 @@
     <table style="width: 124%">
         <tr>
             <td>
-                <asp:Label ID="FromLbl" runat="server" CssClass ="infoLabel" Width="45px" Text="From"></asp:Label>
+                <asp:Label ID="FromLbl" runat="server" CssClass ="infoLabel" Width="100px" Text="From"></asp:Label>
             </td>
             <td style="width: 182px">
-    <input type="text" id="startdate"/></td>
+    <input type="text" id="startdate" runat="server"   /></td>
             <td>
-                <asp:Label ID="ToLbl" runat="server" CssClass ="infoLabel" Width="45px" Text="To"></asp:Label>
+                <asp:Label ID="ToLbl" runat="server" CssClass ="infoLabel" Width="100px" Text="To"></asp:Label>
             </td>
             <td>
-    <input type="text" id="enddate"/></td>
+    <input type="text" id="enddate"  runat="server" /></td>
         </tr>
     </table>
-
-&nbsp;<table style="width: 100%">
-        <tr>
-            <td>&nbsp;</td>
-            <td>
+&nbsp;<div style="margin:1%;" id="Result"> </div>
     <button type="button" onclick="Calculatedays();" style="padding:1px; color:#0C6;margin-left:15%;margin-top:5%" >Calculate</button>
 
-            </td>
-        </tr>
-    </table>
-    <div style="margin:1%;" id="Result"> </div>
-    
 </asp:Content>
 
 
