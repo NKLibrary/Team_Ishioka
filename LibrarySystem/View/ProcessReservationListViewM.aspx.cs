@@ -82,6 +82,12 @@ namespace VirtualCollege.View
                 LinkButton lb = gvReservation.Rows[i].FindControl("LinkButton1") as LinkButton;
                 lb.Visible = false;
             }
+            // hide cancle button
+            for (int i = 0; i < gvReservation.Rows.Count; i++)
+            {
+                LinkButton lbCancel = gvReservation.Rows[i].FindControl("LinkButton2") as LinkButton;
+                lbCancel.Visible = false;
+            }
         }
 
         protected void gvReservation_RowEditing(object sender, GridViewEditEventArgs e)
@@ -97,5 +103,15 @@ namespace VirtualCollege.View
         {
             Response.Write("<script>alert('" + message + "');</script>");
         }
+
+        protected void gvReservation_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            this.selecteReservationId = gvReservation.DataKeys[e.RowIndex].Value.ToString();
+            cancelReservation(sender, e);
+            LoadTodoList();
+        }
+
+
+        public event EventHandler cancelReservation;
     }
 }
