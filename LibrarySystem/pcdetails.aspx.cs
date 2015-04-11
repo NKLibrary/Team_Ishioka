@@ -13,9 +13,10 @@ namespace VirtualCollege
 {
     public partial class pcdetails : System.Web.UI.Page
     {
+        string pid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string pid = Request.QueryString["id"];
+            pid = Request.QueryString["id"];
             int id = Convert.ToInt32(pid);
              try
             {
@@ -34,6 +35,11 @@ namespace VirtualCollege
             }
             catch (SqlException ex) { }
         
+        }
+
+        protected void btnReservePC_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("View/AddReservationViewM.aspx?itemtype=PC&itemid=" + pid);
         }
     }
 }

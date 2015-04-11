@@ -5,11 +5,16 @@
     <br />
     <table class="nav-justified">
         <tr>
-            <td style="width: 115px">PC ID:<asp:Label ID="lblid" runat="server" style="font-weight: 700" Text="Label"></asp:Label>
+            <td style="width: 115px">PC ID : <asp:Label ID="lblid" runat="server" style="font-weight: 700" Text="Label"></asp:Label>
             </td>
             <td>&nbsp;Status:
                 <asp:TextBox ID="txtstatus" runat="server" ReadOnly="True"></asp:TextBox>
                 &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Button Text="Reserve" runat="server" ID="btnReservePC" OnClick="btnReservePC_Click" />
+            </td>
         </tr>
     </table>
 

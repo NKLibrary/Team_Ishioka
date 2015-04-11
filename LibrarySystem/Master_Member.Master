@@ -10,6 +10,12 @@
 </head>
 <body>
 <form id="form1" runat="server">
+      <div style="float:right;margin:5px 0px;">
+        <asp:Button ID="btnlogin" runat="server" Text="Login" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnlogin_Click" />&nbsp; <asp:Button ID="btnreg" runat="server" Text="Register" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnreg_Click" /><asp:Label ID="lbluid" runat="server" Text="username" Visible="false"></asp:Label>
+        <asp:Button ID="btnlogout" runat="server" Text="Logout" Visible="false" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="btnlogout_Click" />
+      <%--  <a href="Login.aspx">Login</a>&nbsp;|&nbsp;<a href="Register.aspx">Register</a>--%>
+
+    </div>
 <div>
 <asp:Image ID="ImageBanner" runat="server" ImageUrl="~/Images/ImageBanner.jpg" Height="109px" Width="100%" />
 </div>
@@ -43,8 +49,8 @@
     <li><a href="/Account/ResetPassword.aspx" runat="server" title="Reset Password">Reset Password</a></li>
     <li><a href="/View/ReservationListViewM.aspx" runat="server" title="My Reservations">My Reservations</a></li>
     <li><a href="~/Member_Pay.aspx" runat="server" title="Pay Outstanding Balance">Pay Outstanding Balance</a></li>
-    <li><a href="~/Member_Print.aspx" title="Print" runat="server">Print</a></li>
-    <li><a href="~/home.aspx" title="LogOut" runat="server">Log Out</a></li>
+ <%--   <li><a href="~/Member_Print.aspx" title="Print" runat="server">Print</a></li>
+ --%>   <li><a href="~/home.aspx" title="LogOut" runat="server">Log Out</a></li>
 
   </ul>
 </div>

@@ -13,10 +13,11 @@ namespace VirtualCollege
 {
     public partial class bookdetails : System.Web.UI.Page
     {
+        string bookid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-             string ebookid=Request.QueryString["id"];
-            int id = Convert.ToInt32(ebookid);
+           bookid=  Request.QueryString["id"];
+            int id = Convert.ToInt32(bookid);
             try
             {
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
@@ -43,6 +44,11 @@ namespace VirtualCollege
                 }
             }
             catch (SqlException ex) { }
+        }
+
+        protected void btnReserveBook_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("View/AddReservationViewM.aspx?itemtype=Book&itemid=" + bookid);
         }
         }
     }
