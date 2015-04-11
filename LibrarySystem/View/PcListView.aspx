@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BookListView.aspx.cs" Inherits="VirtualCollege.View.BookListView" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Librarian.Master" AutoEventWireup="true" CodeBehind="BookListView.aspx.cs" Inherits="VirtualCollege.View.BookListView" %>
 
-    <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
+    <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="Master_Librarian_Content">
     
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
     <div class="form-horizontal">
-        <h4>PcView</h4>
+        <h4>PC List View</h4>
+        <p>You can edit and delete PC's here</p>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="PCId" DataSourceID="SqlDataSource1" InsertItemPosition="LastItem">
             <AlternatingItemTemplate>
                 <tr style="background-color: #FAFAD2;color: #284775;">

@@ -63,7 +63,7 @@
     <li><a href="Librarian_Home.aspx" title="Librarian Home Page">Librarian Home Page</a></li>
     <li><a href="updateAccount.aspx" title="Update Account">Update Account</a></li>
     <li><a href="#3" title="Update Password">Update Password</a></li>
-    <li><a href="/View/ProcessReservationListViewM.aspx" title="Reservation List">Reservation List</a></li>
+    <li><a href="/View/ProcessReservationListViewM.aspx" title="Reservation List">Reservations List</a></li>
     <li><a href="/View/BookListView.aspx" title="Edit BookListView">Edit BookListView</a></li>
     <li><a href="/View/EbookListView.aspx" title="Edit BookListView">Edit EBookListView</a></li>
     <li><a href="/View/PcListView.aspx" title="Edit BookListView">Edit PcListView</a></li>
