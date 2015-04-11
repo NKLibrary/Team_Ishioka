@@ -52,20 +52,77 @@ namespace VirtualCollege
 
         protected string fetchname(string uid)
         {
-            string name = "";
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
-            string q1 = "select FirstName from Member where UserId = " + Convert.ToInt32(uid);
-            SqlDataAdapter ad = new SqlDataAdapter();
-            DataSet ds = new DataSet();
-            try
+            string name = "";
+            string f1 = uid.Substring(0, 1);
+            int ii = Convert.ToInt32(f1);
+            if (ii == 3) 
             {
-                conn.Open();
-                ad.SelectCommand = new SqlCommand(q1, conn);
-                ad.Fill(ds);
-                conn.Close();
-                name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                string q1 = "select FirstName from Member where UserId = " + Convert.ToInt32(uid);
+                SqlDataAdapter ad = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+
+                    ad.SelectCommand = new SqlCommand(q1, conn);
+                    ad.Fill(ds);
+                    conn.Close();
+                    name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                }
+                catch (SqlException ex) { }
+               
             }
-            catch (SqlException ex) { }
+            else if (ii == 4) 
+            {
+                string q2 = "select FirstName from Librarian where LibrarianId = " + Convert.ToInt32(uid);
+                SqlDataAdapter ad = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+
+                    ad.SelectCommand = new SqlCommand(q2, conn);
+                    ad.Fill(ds);
+                    conn.Close();
+                    name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                }
+                catch (SqlException ex) { }
+                   
+            }
+            else if (ii == 7) 
+            {
+                string q3 = "select FirstName from Manager where ManagerId = " + Convert.ToInt32(uid);
+                SqlDataAdapter ad = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+
+                    ad.SelectCommand = new SqlCommand(q3, conn);
+                    ad.Fill(ds);
+                    conn.Close();
+                    name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                }
+                catch (SqlException ex) { }
+                
+            }
+           
+            //string q1 = "select FirstName from Member where UserId = " + Convert.ToInt32(uid);
+            //string q2 = "select FirstName from Librarian where LibrarianId = " + Convert.ToInt32(uid);
+            //string q3 = "select FirstName from Manager where ManagerId = " + Convert.ToInt32(uid);
+            //SqlDataAdapter ad = new SqlDataAdapter();
+            //DataSet ds = new DataSet();
+            //try
+            //{
+            //    conn.Open();
+               
+            //    ad.SelectCommand = new SqlCommand(q1, conn);
+            //    ad.Fill(ds);
+            //    conn.Close();
+            //    name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+            //}
+            //catch (SqlException ex) { }
             return name;
         }
     }

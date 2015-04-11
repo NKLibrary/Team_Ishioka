@@ -14,6 +14,7 @@ namespace VirtualCollege.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             // ForgotPasswordHyperLink.NavigateUrl = "Forgot";
@@ -27,6 +28,10 @@ namespace VirtualCollege.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
+            int mem = 0, lib = 0, manager = 0;
+            string username = UserName.Text.ToString();
+            string password = Password.Text.ToString();
             if (con.State == System.Data.ConnectionState.Closed)
             {
                 con.Open();
