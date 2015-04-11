@@ -10,7 +10,7 @@
 namespace VirtualCollege {
     
     
-    public partial class WebForm1 {
+    public partial class WebForm13 {
         
         /// <summary>
         /// GridView1 control.

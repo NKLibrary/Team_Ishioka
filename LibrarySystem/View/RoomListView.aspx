@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BookListView.aspx.cs" Inherits="VirtualCollege.View.BookListView" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master_Librarian.Master" AutoEventWireup="true" CodeBehind="BookListView.aspx.cs" Inherits="VirtualCollege.View.BookListView" %>
 
-    <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
+    <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="Master_Librarian_Content">
     
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
     <div class="form-horizontal">
-        <h4>RoomView</h4>
+        <h4>Room View Page</h4>
         <p>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RoomId" DataSourceID="SqlDataSource1">
                 <Columns>
