@@ -38,43 +38,63 @@ namespace VirtualCollege.Account
                      IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
-
+            int mem=0,lib=0,manager=0;
             string username = UserName.Text.ToString();
             string password = Password.Text.ToString();
+             if (con.State == System.Data.ConnectionState.Closed)
+                {
+                   con.Open();
+                }
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
+                mem = int.Parse(cmd.ExecuteScalar().ToString());    
+             SqlCommand cmd1 = new SqlCommand("select COUNT(*) from Librarian where LibrarianId='" + username + "' and Password='" + password + "'", con);
+            lib = int.Parse(cmd1.ExecuteScalar().ToString());    
+                SqlCommand cmd2 = new SqlCommand("select COUNT(*) from Manager where ManagerId='" + username + "' and Password='" + password + "'", con);
+    manager = int.Parse(cmd2.ExecuteScalar().ToString());  
+            
 
-
-            if (username.Equals("user") && password.Equals("user"))
+            if (mem > 0)
             {
+                Session["Userid"] = username;
                 Response.Redirect("Member_Home.aspx");
             }
-            else if (username.Equals("300001") && password.Equals("lib"))
+            else if (lib>0)
             {
+                Session["Userid"] = username;
                 Response.Redirect("~/Librarian_Home.aspx");
             }
-            else if (username.Equals("manager") && password.Equals("manager"))
+            else if (manager>0)
             {
+                Session["Userid"] = username;
                 Response.Redirect("~/Manager_Home.aspx");
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
 
-                if (con.State == System.Data.ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+                FailureText.Text = "Invalid username or password.";
+                ErrorMessage.Visible = true;
+                //SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
+                //con.Open();
+                ////if (con.State == System.Data.ConnectionState.Closed)
+                ////{
+                   
+                ////}
+                // SqlCommand cmd = new SqlCommand("select COUNT(*) from Librarian where LibrarianId='" + username + "' and Password='" + password + "'", con);
+                //con.Open(); 
+                //SqlCommand cmd = new SqlCommand("select COUNT(*) from Manager where ManagerId='" + username + "' and Password='" + password + "'", con);
+                //con.Open();
 
-                if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
-                {
+                //if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
+                //{
 
                     
-                    Session["Userid"] = username;
-                    Response.Redirect("~/Member_Home.aspx?login=true");
-                }
-                else
+                //    Session["Userid"] = username;
+                //    Response.Redirect("~/Home.aspx?login=true");
+                //}
+                //else if()
+                //{}
                 {
-                    FailureText.Text = "Invalid username or password.";
-                    ErrorMessage.Visible = true;
+                   
                 }
             }
         }

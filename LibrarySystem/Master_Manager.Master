@@ -62,8 +62,7 @@
     <li><a href="Account/ManagerInfo.aspx" title="Update Info">Update Info</a></li>
     <li><a href="View/EditBookView.aspx" title="Manage Books">Manage Books</a></li>
     <li><a href="View/AddBook.aspx" title="Order Books">Order Books</a></li>
-    <li><a href="Manager_Librarians.aspx" title="Manage Librarians">Manage Librarians</a></li>
-    <li><a href="Manager_Members.aspx" title="Manage Members">Manage Members</a></li>
+    <li><a href="Librariansdetails.aspx" title="Manage Librarians">Manage Librarians</a></li>
     <li><a href="#7" title="Reports">Reports</a></li>
     <li><a href="Default.aspx" title="LogOut">Log Out</a></li>
 
