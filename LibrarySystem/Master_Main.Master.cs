@@ -13,6 +13,8 @@ namespace VirtualCollege
 {
     public partial class Master_Main : System.Web.UI.MasterPage
     {
+         string gobalstring = "";  
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Session["Userid"]!=null) 
@@ -125,12 +127,27 @@ namespace VirtualCollege
             //    name = ds.Tables[0].Rows[0].ItemArray[0].ToString();
             //}
             //catch (SqlException ex) { }
+            gobalstring = name;
             return name;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Member_Home.aspx");
+            string cetainstring = gobalstring.Substring(0, 1);
+            string cetainstring1 = gobalstring.Substring(0, 1);
+            if (cetainstring == "3")
+            {
+                Response.Redirect("../Member_Home.aspx");
+            }
+            if (cetainstring1 == "4")
+            {
+                Response.Redirect("../Librarian_Home");
+            }
+            if (cetainstring == "7")
+            {
+                Response.Redirect("../Manager_Home");
+            }
         }
+        
     }
 }

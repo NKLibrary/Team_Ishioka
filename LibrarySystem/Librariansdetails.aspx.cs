@@ -14,7 +14,7 @@ namespace VirtualCollege
 {
     public partial class Librariansdetails : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=H-Machine;Initial Catalog=LibraryDB;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Server=tcp:kx7kmubsk6.database.windows.net,1433;Database=LibraryDB2;User ID=weiyan@kx7kmubsk6;Password=Andylau123;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;");
       //  SqlConnection con = new SqlConnection(@"Data Source=H-MACHINE;Initial Catalog=LibraryDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
         protected void Page_Load(object sender, EventArgs e)
         {
