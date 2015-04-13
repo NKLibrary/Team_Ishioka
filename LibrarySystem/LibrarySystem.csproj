@@ -298,7 +298,7 @@
     </Content>
     <Content Include="slider.js" />
     <Content Include="css\Style1.css" />
-    <Content Include="updateAccount.aspx" />
+    <Content Include="Librarian_UpdateAccount.aspx" />
     <Content Include="UserControls\AddReservationControl.ascx" />
     <Content Include="UserControls\WebForm1.aspx" />
     <Content Include="Utils\ErrorPage.aspx" />
@@ -711,12 +711,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="updateAccount.aspx.cs">
-      <DependentUpon>updateAccount.aspx</DependentUpon>
+    <Compile Include="Librarian_UpdateAccount.aspx.cs">
+      <DependentUpon>Librarian_UpdateAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="updateAccount.aspx.designer.cs">
-      <DependentUpon>updateAccount.aspx</DependentUpon>
+    <Compile Include="Librarian_UpdateAccount.aspx.designer.cs">
+      <DependentUpon>Librarian_UpdateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AddReservationControl.ascx.cs">
       <DependentUpon>AddReservationControl.ascx</DependentUpon>
