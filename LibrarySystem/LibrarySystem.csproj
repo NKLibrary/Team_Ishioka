@@ -159,6 +159,7 @@
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\MemberWelcome.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Manager_Members.aspx" />
     <Content Include="pcdetails.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
@@ -374,6 +375,13 @@
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Members.aspx.cs">
+      <DependentUpon>Manager_Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_Members.aspx.designer.cs">
+      <DependentUpon>Manager_Members.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Book.cs">
       <DependentUpon>Model1.tt</DependentUpon>

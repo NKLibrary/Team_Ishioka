@@ -66,9 +66,7 @@
     <li><a href="/View/EbookListView.aspx" title="Edit BookListView">Edit EBookListView</a></li>
     <li><a href="/View/PcListView.aspx" title="Edit BookListView">Edit PcListView</a></li>
     <li><a href="/View/RoomListView.aspx" title="Edit BookListView">Edit Room</a></li>
-    <li><a href="#5" title="Update inventory">Update inventory</a></li>
-    <li><a href="#6" title="Update User Data">Update User Data</a></li>
-    <li><a href="#7" title="Charge Fine">Charge Fine</a></li>
+    <li><a href="~/Member_Pay.aspx" title="Charge Fine">Charge Fine</a></li>
     <li><a href="Default.aspx" title="LogOut">Log Out</a></li>
 
   </ul>
