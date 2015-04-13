@@ -41,5 +41,31 @@ namespace VirtualCollege.Presenter
             model.AddReservation(reservation);
         }
 
+
+
+        public Models.EntityFramework.Book GetBook(string bookId)
+        {
+            return model.GetBookById(bookId);
+        }
+
+        public Models.EntityFramework.Ebook GetEbook(string ebookId)
+        {
+            return model.GetEbookById(ebookId);
+        }
+
+        public Models.EntityFramework.Disc getDisc(string discId)
+        {
+            return model.GetDiscById(discId);
+        }
+
+        public Models.EntityFramework.Room getRoom(string roomId)
+        {
+            return model.GetRoomById(roomId);
+        }
+
+        public Models.EntityFramework.PC getPc(string pcId)
+        {
+            return model.getPcById(pcId);
+        }
     }
 }

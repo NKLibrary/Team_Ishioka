@@ -38,7 +38,7 @@ namespace VirtualCollege.View
                     case "disc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Disc;
                         break;
                     default:
-                        string message = itemTypeValue + " " + Settings.Invalid_BookType;
+                        string message = itemTypeValue + " " + Settings.Invalid_Item;
                         Response.Redirect(Link.GetErrorPage(message, ""));
                         break;
                 }

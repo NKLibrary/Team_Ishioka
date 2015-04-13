@@ -45,7 +45,7 @@ namespace VirtualCollege
             btnlogin.Visible = true;
             btnlogout.Visible = false;
             btnreg.Visible = true;
-            Response.Redirect("Default.aspx");
+            Response.Redirect("~/Default.aspx");
 
         }
 

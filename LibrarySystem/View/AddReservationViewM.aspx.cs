@@ -16,50 +16,104 @@ namespace VirtualCollege.View
         private VirtualCollege.Utils.Settings.ItemType itemType;
         private string itemId = "0";
         private bool isInputValid = false;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            // connect presenter
+            IAddReservationPresenter presenter = new AddReservationPresenter(this, new ReservationModel());
+
+            // get item id
+            if (Request.QueryString["itemId"] != null)
+            {
+                itemId = Request.QueryString["itemId"].ToString();
+            }
+            // get item type
+            if (Request.QueryString["itemType"] != null)
+            {
+                string itemTypeValue = Request.QueryString["itemType"].ToString();
+                switch (itemTypeValue.ToLower())
+                {
+                    case "book":
+                        this.itemType = VirtualCollege.Utils.Settings.ItemType.Book;
+                        VirtualCollege.Models.EntityFramework.Book book = presenter.GetBook(itemId);
+                        if (book == null)
+                        {
+                            string message = itemTypeValue + " " + Settings.Invalid_Item;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                        }
+                        else
+                        {
+                            lblItem.Text = book.BookTitle + " written by " + book.Author;
+                        }
+
+                        break;
+                    case "room": this.itemType = VirtualCollege.Utils.Settings.ItemType.Room;
+                        VirtualCollege.Models.EntityFramework.Room room = presenter.getRoom(itemId);
+                        if (room == null)
+                        {
+                            string message = itemTypeValue + " " + Settings.Invalid_Item;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                        }
+                        else
+                        {
+                            lblItem.Text = "Room No." + room.RoomId;
+                        }
+
+                        break;
+                    case "pc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Pc;
+                        VirtualCollege.Models.EntityFramework.PC pc = presenter.getPc(itemId);
+                        if (pc == null)
+                        {
+                            string message = itemTypeValue + " " + Settings.Invalid_Item;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                        }
+                        else
+                        {
+                            lblItem.Text = "Pc No." + pc.PCId;
+                        }
+
+                        break;
+                    case "disc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Disc;
+                        VirtualCollege.Models.EntityFramework.Disc disc = presenter.getDisc(itemId);
+                        if (disc == null)
+                        {
+                            string message = itemTypeValue + " " + Settings.Invalid_Item;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                        }
+                        else
+                        {
+                            lblItem.Text = disc.DiscTitle + " by " + disc.Artist;
+                        }
+
+                        break;
+                    case "ebook": this.itemType = VirtualCollege.Utils.Settings.ItemType.Ebook;
+                        VirtualCollege.Models.EntityFramework.Ebook ebook = presenter.GetEbook(itemId);
+                        if (ebook == null)
+                        {
+                            string message = itemTypeValue + " " + Settings.Invalid_Item;
+                            Response.Redirect(Link.GetErrorPage(message, ""));
+                        }
+                        else
+                        {
+                            lblItem.Text = ebook.EbookTitle + " published by " + ebook.Publisher;
+                        }
+                        break;
+                    default:
+                        string message1 = itemTypeValue + " " + Settings.Invalid_Item;
+                        Response.Redirect(Link.GetErrorPage(message1, ""));
+                        break;
+                }
+            }
+
             // get user id from session
             if (Session["Userid"] != null)
             {
                 currentUserId = Session["Userid"].ToString();
-                // get item type
-                if (Request.QueryString["itemType"] != null)
-                {
-                    string itemTypeValue = Request.QueryString["itemType"].ToString();
-                    switch (itemTypeValue.ToLower())
-                    {
-                        case "book":
-                            this.itemType = VirtualCollege.Utils.Settings.ItemType.Book;
-                            break;
-                        case "room": this.itemType = VirtualCollege.Utils.Settings.ItemType.Room;
-                            break;
-                        case "pc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Pc;
-                            break;
-                        case "disc": this.itemType = VirtualCollege.Utils.Settings.ItemType.Disc;
-                            break;
-                        default:
-                            string message = itemTypeValue + " " + Settings.Invalid_BookType;
-                            Response.Redirect(Link.GetErrorPage(message, ""));
-                            break;
-                    }
-                }
-
-
-                // get item id
-                if (Request.QueryString["itemId"] != null)
-                {
-                    itemId = Request.QueryString["itemId"].ToString();
-                }
-
-                // connect presenter
-                new AddReservationPresenter(this, new ReservationModel());
-            
             }
-                // prompt to login
+            // prompt to login
             else
             {
-                Response.Write("<script>alert('Please login first');window.location.href='../Login.aspx?forward="+Link.GetAddReservation()+"'</script>");
+                Response.Write("<script>alert('Please login first');window.location.href='../Login.aspx?forward=" + Link.GetAddReservation() + "&itemType=" + itemType + "&itemId=" + itemId + "'</script>");
             }
 
 
@@ -139,8 +193,8 @@ namespace VirtualCollege.View
 
         protected void valCompareValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            DateTime tomorrow = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day +1);
-            if (calExpireDate.SelectedDate !=  default(DateTime))
+            DateTime tomorrow = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1);
+            if (calExpireDate.SelectedDate != default(DateTime))
             {
                 if (calExpireDate.SelectedDate.CompareTo(tomorrow) < 0)
                 {

@@ -14,6 +14,7 @@ namespace VirtualCollege.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             // ForgotPasswordHyperLink.NavigateUrl = "Forgot";
@@ -27,54 +28,73 @@ namespace VirtualCollege.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            /* if (IsValid)
-             {
-                 // Validate the user password
-                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                 ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                 if (user != null)
-                 {
-                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response); */
-
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
-
+            int mem = 0, lib = 0, manager = 0;
             string username = UserName.Text.ToString();
             string password = Password.Text.ToString();
-
-
-            if (username.Equals("user") && password.Equals("user"))
+            if (con.State == System.Data.ConnectionState.Closed)
             {
-                Response.Redirect("Member_Home.aspx");
+                con.Open();
             }
-            else if (username.Equals("300001") && password.Equals("lib"))
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
+            mem = int.Parse(cmd.ExecuteScalar().ToString());
+            SqlCommand cmd1 = new SqlCommand("select COUNT(*) from Librarian where LibrarianId='" + username + "' and Password='" + password + "'", con);
+            lib = int.Parse(cmd1.ExecuteScalar().ToString());
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from Manager where ManagerId='" + username + "' and Password='" + password + "'", con);
+            manager = int.Parse(cmd2.ExecuteScalar().ToString());
+
+
+            if (mem > 0)
             {
+                Session["Userid"] = username;
+                if (Request.QueryString["forward"] != null && Request.QueryString["itemId"] != null && Request.QueryString["itemType"] != null)
+                {
+                    Response.Redirect(Request.QueryString["forward"] + "?itemType=" + Request.QueryString["itemType"] + "&itemId=" + Request.QueryString["itemId"]);
+                }
+
+                else
+                {
+                    Response.Redirect("Member_Home.aspx");
+                }
+                
+            }
+            else if (lib > 0)
+            {
+                Session["Userid"] = username;
                 Response.Redirect("~/Librarian_Home.aspx");
             }
-            else if (username.Equals("manager") && password.Equals("manager"))
+            else if (manager > 0)
             {
+                Session["Userid"] = username;
                 Response.Redirect("~/Manager_Home.aspx");
             }
             else
             {
-                SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
 
-                if (con.State == System.Data.ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+                FailureText.Text = "Invalid username or password.";
+                ErrorMessage.Visible = true;
+                //SqlCommand cmd = new SqlCommand("select COUNT(*) from Member where UserId='" + username + "' and password='" + password + "'", con);
+                //con.Open();
+                ////if (con.State == System.Data.ConnectionState.Closed)
+                ////{
 
-                if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
+                ////}
+                // SqlCommand cmd = new SqlCommand("select COUNT(*) from Librarian where LibrarianId='" + username + "' and Password='" + password + "'", con);
+                //con.Open(); 
+                //SqlCommand cmd = new SqlCommand("select COUNT(*) from Manager where ManagerId='" + username + "' and Password='" + password + "'", con);
+                //con.Open();
+
+                //if (int.Parse(cmd.ExecuteScalar().ToString()) > 0)
+                //{
+
+
+                //    Session["Userid"] = username;
+                //    Response.Redirect("~/Home.aspx?login=true");
+                //}
+                //else if()
+                //{}
                 {
 
-                    
-                    Session["Userid"] = username;
-                    Response.Redirect("~/Member_Home.aspx?login=true");
-                }
-                else
-                {
-                    FailureText.Text = "Invalid username or password.";
-                    ErrorMessage.Visible = true;
                 }
             }
         }
