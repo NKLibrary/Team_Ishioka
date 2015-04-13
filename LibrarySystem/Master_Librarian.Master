@@ -66,7 +66,7 @@
     <li><a href="/View/EbookListView.aspx" title="Edit BookListView">Edit EBookListView</a></li>
     <li><a href="/View/PcListView.aspx" title="Edit BookListView">Edit PcListView</a></li>
     <li><a href="/View/RoomListView.aspx" title="Edit BookListView">Edit Room</a></li>
-    <li><a href="~/Member_Pay.aspx" title="Charge Fine">Charge Fine</a></li>
+    <li><a href="/Librarian_Pay.aspx" title="Charge Fine">Charge Fine</a></li>
     <li><a href="Default.aspx" title="LogOut">Log Out</a></li>
 
   </ul>
@@ -76,6 +76,9 @@
 <td style="width:70%; height:auto">
 <div>
 <asp:ContentPlaceHolder ID="Master_Librarian_Content" runat="server">
+        
+</asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="Master_Librarian_Content1" runat="server">
         
 </asp:ContentPlaceHolder>
 </div>
