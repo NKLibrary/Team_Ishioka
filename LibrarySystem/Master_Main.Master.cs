@@ -13,7 +13,8 @@ namespace VirtualCollege
 {
     public partial class Master_Main : System.Web.UI.MasterPage
     {
-         string gobalstring = "";  
+         string gobalstring = "";
+         int ii=0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace VirtualCollege
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ToString());
             string name = "";
             string f1 = uid.Substring(0, 1);
-            int ii = Convert.ToInt32(f1);
+            ii = Convert.ToInt32(f1);
             if (ii == 3) 
             {
                 string q1 = "select FirstName from Member where UserId = " + Convert.ToInt32(uid);
@@ -135,17 +136,17 @@ namespace VirtualCollege
         {
             string cetainstring = gobalstring.Substring(0, 1);
             string cetainstring1 = gobalstring.Substring(0, 1);
-            if (cetainstring == "3")
+            if (ii == 3)
             {
-                Response.Redirect("../Member_Home.aspx");
+                Response.Redirect("~/Member_Home.aspx");
             }
-            if (cetainstring1 == "4")
+            if (ii == 4)
             {
-                Response.Redirect("../Librarian_Home");
+                Response.Redirect("~/Librarian_Home");
             }
-            if (cetainstring == "7")
+            if (ii == 7)
             {
-                Response.Redirect("../Manager_Home");
+                Response.Redirect("~/Manager_Home");
             }
         }
         
